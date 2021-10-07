@@ -1,0 +1,8 @@
+mixin navList(content, inFooter)
+  .nav
+    if content.title 
+      h3.nav__title= content.title
+    ul.nav__list(class=inFooter ? 'nav__list--footer' : '')
+      each val in content.items
+        li.nav__item(class=inFooter ? 'nav__item--footer' : '')
+          a.nav__link(href=val.href)= val.label 
