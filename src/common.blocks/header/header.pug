@@ -1,0 +1,23 @@
+- var headerNavContent = {
+-   items: [
+-     {href: '/about-us', label: 'О нас'},
+-     {href: '/services', label: 'Услуги', expand: true},
+-     {href: '/vacancies', label: 'Вакансии'},
+-     {href: '/news', label: 'Новости'},
+-     {href: '/agreements', label: 'Соглашения', expand: true},
+-   ],
+- };
+- var logged = false;
+
+include ../nav/nav.pug
+include ../account/account.pug
+
+header.header
+    .header__wrapper
+      a.header__logo(href="/")
+        img.logo(src=require('/src/images/logo.svg'), alt="logo")
+      .header__menu 
+        nav.header__nav
+          +navList(headerNavContent, false)
+        .header__account
+          +accountBlock(logged)

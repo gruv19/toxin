@@ -1,0 +1,40 @@
+.header {}
+
+.header__wrapper {
+  // @include helpLine(red);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (min-width: 1440px) {
+    width: 1440px;
+    padding: 0 140px;
+    height: 70px;
+  }
+  &--uikit {
+    @media (min-width: 1440px) {
+      max-width: 1440px;
+      width: 100%;
+      height: unset;
+      padding: 30px 158px 0px 30px;
+    }
+  }
+}
+// .header__logo {}
+.header__menu {
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+.header__nav {
+  padding-right: 20px;
+}
+// .header__account {
+// padding-left: 20px;
+// border-left: 1px solid rgba($dark, 0.1);
+// height: 30px;
+// display: flex;
+// align-items: center;
+// }
