@@ -1,0 +1,8 @@
+mixin accountBlock(logged=false)
+  if logged
+    .account.account--logged
+      a.account__cabinet(href="/cabinet") Юлий цезарь
+  else
+    .account
+      a.account__button.account__button--primary(href="/login") Войти
+      a.account__button.account__button--secondary(href="/register") Зарегистрироваться
