@@ -2,7 +2,9 @@ mixin navList(content, inFooter)
   .nav
     if content.title 
       h3.nav__title= content.title
-    ul.nav__list(class=inFooter ? 'nav__list--footer' : '')
+    ul.nav__list(class=inFooter ? 'nav__list--footer' : 'nav__list--header')
       each val in content.items
-        li.nav__item(class=inFooter ? 'nav__item--footer' : '')
+        li.nav__item(class=inFooter ? 'nav__item--footer' : 'nav__item--header')
           a.nav__link(href=val.href)= val.label 
+            if val.expand
+              i.nav__expand 
