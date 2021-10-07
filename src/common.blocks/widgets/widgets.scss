@@ -1,0 +1,58 @@
+// .widgets {}
+.widgets__wrapper {
+  // @include helpLine(red);
+  margin: 0 auto;
+  max-width: 768px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120px;
+  @media (min-width: 1440px) {
+    max-width: 1440px;
+    padding: 100px 140px;
+    justify-content: space-between;
+  }
+}
+.widgets__logo {
+  @media (min-width: 1440px) {
+    width: 260px;
+  }
+}
+.widgets__nav {
+  display: none;
+  @media (min-width: 1440px) {
+    display: block;
+    width: 150px;
+  }
+}
+.widgets__subcribe {
+  display: none;
+  @media (min-width: 1440px) {
+    display: block;
+    width: 260px;
+  }
+}
+.widgets__title {
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+}
+.widgets__text {
+  display: none;
+  @media (min-width: 1440px) {
+    display: block;
+    margin: 20px 0;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: rgba($dark, 0.75);
+    font-weight: normal;
+  }
+}
+.widgets__form {
+  @media (min-width: 1440px) {
+    width: 260px;
+  }
+}

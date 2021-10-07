@@ -1,0 +1,45 @@
+- var navigationNavContent = {
+-   title: 'Навигация',
+-   items: [
+-     {href: '/about-us', label: 'О нас'},
+-     {href: '/news', label: 'Новости'},
+-     {href: '/support', label: 'Служба поддержки'},
+-     {href: '/services', label: 'Услуги'},
+-   ],
+- };
+- var aboutNavContent = {
+-   title: 'О нас',
+-   items: [
+-     {href: '/about-service', label: 'О сервисе'},
+-     {href: '/team', label: 'Наша команда'},
+-     {href: '/vacancies', label: 'Вакансии'},
+-     {href: '/investors', label: 'Инвесторы'},
+-   ],
+- };
+- var supportNavContent = {
+-   title: 'Служба поддержки',
+-   items: [
+-     {href: '/agreements', label: 'Соглашения'},
+-     {href: '/communities', label: 'Сообщества'},
+-     {href: '/contact-us', label: 'Связь с нами'},
+-   ],
+- };
+include ../nav/nav.pug
+
+.widgets 
+  .widgets__wrapper 
+    .widgets__logo
+      a.widgets__link(href="/")
+        img.widgets__img.logo(src=require('./images/logo.svg'), alt="logo")
+      p.widgets__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+    .widgets__nav
+      +navList(navigationNavContent, true)
+    .widgets__nav.nav
+      +navList(aboutNavContent, true)
+    .widgets__nav.nav
+      +navList(supportNavContent, true)
+    .widgets__subcribe
+      h3.widgets__title Подписка
+      p.widgets__text Получайте специальные предложения и новости сервиса
+      .widgets__form
+        include ../form/form.pug
