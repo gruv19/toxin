@@ -1,18 +1,21 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");  // - использовать вместо style-loader для product-mode
 
 module.exports = {
   entry: {
     index: "./src/index.js",
+    "headers-and-footers": "./src/headers-and-footers.js",
   },
   module: {
     rules: [
-      { test: /\.css$/, use: ["style-loader", "css-loader"] },
+      { test: /\.css$/, use: ["style-loader", /*MiniCssExtractPlugin.loader,*/"css-loader"] },
       { test: /\.(js)$/, use: "babel-loader", exclude: "/node_modules/" },
       {
         test: /\.scss$/,
         use: [
           "style-loader",
+          // MiniCssExtractPlugin.loader,
           "css-loader",
           "sass-loader",
           {
@@ -39,14 +42,21 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js",
+    filename: "[name][hash].bundle.js",
     clean: true,
+    assetModuleFilename: 'assets/[name][hash][ext]'
   },
   plugins: [
+    // new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.pug",
       chunks: ["index"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "headers-and-footers.html",
+      template: "./src/headers-and-footers.pug",
+      chunks: ["headers-and-footers"],
     }),
   ],
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
