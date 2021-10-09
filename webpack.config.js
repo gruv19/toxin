@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     index: "./src/index.js",
     "headers-and-footers": "./src/headers-and-footers.js",
+    "colors-and-types": "./src/colors-and-types.js",
   },
   module: {
     rules: [
@@ -28,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        type: "asset/inline",
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -57,6 +58,11 @@ module.exports = {
       filename: "headers-and-footers.html",
       template: "./src/headers-and-footers.pug",
       chunks: ["headers-and-footers"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "colors-and-types.html",
+      template: "./src/colors-and-types.pug",
+      chunks: ["colors-and-types"],
     }),
   ],
   mode: process.env.NODE_ENV === "production" ? "production" : "development",

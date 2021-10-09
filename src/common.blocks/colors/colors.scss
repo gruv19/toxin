@@ -1,0 +1,50 @@
+.colors {
+}
+.colors__list {
+}
+.colors__item {
+  display: flex;
+  align-items: center;
+  & + & {
+    margin-top: 20px;
+  }
+}
+.colors__cube {
+  width: 70px;
+  height: 70px;
+  margin-right: 40px;
+  border-radius: 6px;
+  &--dr-100 {
+    background-color: $dark;
+  }
+  &--dr-75 {
+    background-color: rgba($dark, 0.75);
+  }
+  &--dr-50 {
+    background-color: rgba($dark, 0.5);
+  }
+  &--dr-25 {
+    background-color: rgba($dark, 0.25);
+  }
+  &--dr-5 {
+    background-color: rgba($dark, 0.5);
+  }
+  &--purple {
+    background-color: $primary;
+  }
+  &--green {
+    background-color: $secondary;
+  }
+}
+.colors__desc {
+  font-size: 1.9rem;
+  line-height: 2.7rem;
+}
+.colors__label {
+  margin: 0;
+  font-weight: bold;
+}
+.colors__code {
+  margin: 0;
+  font-weight: normal;
+}
