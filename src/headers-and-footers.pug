@@ -44,10 +44,11 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Headers And Footers
-  body 
+  body.body.body--uikit 
 
     +header({}, false, true, false, false, true, 62)
-    +header(headerNavData, false, false, true, true)
-    +header(headerNavData, true, false, true, true)
-    +footer(navigationNavData, aboutNavData, supportNavData, false, true, true)
-    +footer(navigationNavData, aboutNavData, supportNavData, true, true, true)
+    main 
+      +header(headerNavData, false, false, true, true)
+      +header(headerNavData, true, false, true, true)
+      +footer(navigationNavData, aboutNavData, supportNavData, false, true, true)
+      +footer(navigationNavData, aboutNavData, supportNavData, true, true, true)

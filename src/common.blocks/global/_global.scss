@@ -13,10 +13,12 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  background-color: #F4F4F6;
+.body {
   margin: 0;
   padding: 0;
+  &--uikit {
+    background-color: #f4f4f6;
+  }
 }
 
 ul {
