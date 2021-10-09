@@ -1,8 +1,12 @@
 include ../widgets/widgets.pug
 include ../copyright/copyright.pug
 
-mixin footer(navigationNavData, aboutNavData, supportNavData, onlyMoblie=false)
-  footer.footer 
+mixin footer(navigationNavData, aboutNavData, supportNavData, onlyMoblie=false, hasShadow=false, hasMargin=false)
+  - var footerClasses = ['footer'];
+  - if (hasShadow) footerClasses.push('footer--shadow');
+  - if (hasMargin) footerClasses.push('footer--margin');
+  
+  footer.footer(class=footerClasses)
     .footer__widgets 
       +widgets(navigationNavData, aboutNavData, supportNavData, onlyMoblie)
     .footer__copyright-bar

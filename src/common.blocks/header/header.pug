@@ -1,13 +1,25 @@
 include ../nav/nav.pug
 include ../account/account.pug
 
-mixin header(navContent, accountContent=false)
-  header.header
-    .header__wrapper
+mixin header(navContent, accountContent=false, uikitHeader=false, hasShadow=false, hasMargin=false, transp=false, inlineMargin=0)
+  - var headerClasses = ['header'];
+  - if (hasShadow) headerClasses.push('header--shadow');
+  - if (hasMargin) headerClasses.push('header--margin');
+  - if (transp) headerClasses.push('header--transp');
+
+  - var headerWrapperClasses = ['header__wrapper'];
+  - if (uikitHeader) headerWrapperClasses.push('header__wrapper--uikit');
+
+  header(class=headerClasses)(style=inlineMargin ? {'margin-bottom': inlineMargin +'px'} : '')
+    div(class=headerWrapperClasses)
       a.header__logo(href="/")
-        img.logo(src=require('/src/images/logo.svg'), alt="logo")
-      .header__menu 
-        nav.header__nav
-          +navList(navContent, false)
-        .header__account
-          +accountBlock(accountContent)
+        if uikitHeader
+          img.logo(src=require('/src/images/logo--uikit.svg'), alt="logo")
+        else 
+          img.logo(src=require('/src/images/logo.svg'), alt="logo")
+      if !uikitHeader
+        .header__menu 
+          nav.header__nav
+            +navList(navContent, false)
+          .header__account
+            +accountBlock(accountContent)

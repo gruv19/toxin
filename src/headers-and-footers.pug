@@ -45,7 +45,9 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Headers And Footers
   body 
-    +header(headerNavData)
-    +header(headerNavData, true)
-    +footer(navigationNavData, aboutNavData, supportNavData)
-    +footer(navigationNavData, aboutNavData, supportNavData, true)
+
+    +header({}, false, true, false, false, true, 62)
+    +header(headerNavData, false, false, true, true)
+    +header(headerNavData, true, false, true, true)
+    +footer(navigationNavData, aboutNavData, supportNavData, false, true, true)
+    +footer(navigationNavData, aboutNavData, supportNavData, true, true, true)

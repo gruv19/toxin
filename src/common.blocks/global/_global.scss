@@ -1,5 +1,5 @@
-html{
-  font-family: 'Montserrat', sans-serif;
+html {
+  font-family: "Montserrat", sans-serif;
   font-weight: normal;
   font-size: 10px;
   box-sizing: border-box;
@@ -7,22 +7,30 @@ html{
   color: $dark;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: inherit;
 }
 
-ul{
+body {
+  background-color: #F4F4F6;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-h1{
+h1 {
   margin: 0;
   padding: 0;
 }
 
-a{
+a {
   text-decoration: none;
   color: $dark;
 }

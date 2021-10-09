@@ -1,5 +1,15 @@
 .header {
-  @include helpLine(blue);
+  // @include helpLine(blue);
+  background-color: #ffffff;
+  &--shadow {
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
+  &--margin {
+    margin-bottom: 40px;
+  }
+  &--transp {
+    background-color: transparent;
+  }
 }
 
 .header__wrapper {
