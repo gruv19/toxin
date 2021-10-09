@@ -1,38 +1,9 @@
-mixin colors
+mixin colors(colorsListData)
   .colors
     ul.colors__list
-      li.colors__item
-        .colors__cube.colors__cube--dr-100
-        .colors__desc
-          p.colors__label Dark Shade 100%
-          p.colors__code #1F2041
-      li.colors__item
-        .colors__cube.colors__cube--dr-75
-        .colors__desc
-          p.colors__label Dark Shade 75%
-          p.colors__code #1F2041
-      li.colors__item
-        .colors__cube.colors__cube--dr-50
-        .colors__desc
-          p.colors__label Dark Shade 50%
-          p.colors__code #1F2041
-      li.colors__item
-        .colors__cube.colors__cube--dr-25
-        .colors__desc
-          p.colors__label Dark Shade 25%
-          p.colors__code #1F2041
-      li.colors__item
-        .colors__cube.colors__cube--dr-5
-        .colors__desc
-          p.colors__label Dark Shade 5%
-          p.colors__code #1F2041
-      li.colors__item
-        .colors__cube.colors__cube--purple
-        .colors__desc
-          p.colors__label Purple
-          p.colors__code #BC9CFF
-      li.colors__item
-        .colors__cube.colors__cube--green
-        .colors__desc
-          p.colors__label Green
-          p.colors__code #6FCF97
+      each item in colorsListData
+        li.colors__item
+          .colors__cube(class=item.cubeClass)
+          .colors__desc
+            p.colors__label= item.colorLabel
+            p.colors__code= item.colorCode

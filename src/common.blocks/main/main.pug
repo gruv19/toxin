@@ -1,10 +1,10 @@
 include ../colors/colors.pug
 include ../types/types.pug
 
-mixin main
+mixin main(colorsListData, typesListData)
   main.main 
     .main__wrapper 
       section.main__colors
-        +colors
+        +colors(colorsListData)
       section.main__types
-        +types
+        +types(typesListData)
