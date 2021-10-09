@@ -1,7 +1,8 @@
-.header {}
+.header {
+  @include helpLine(blue);
+}
 
 .header__wrapper {
-  // @include helpLine(red);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

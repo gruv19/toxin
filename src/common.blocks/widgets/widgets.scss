@@ -1,6 +1,4 @@
-// .widgets {}
 .widgets__wrapper {
-  // @include helpLine(red);
   margin: 0 auto;
   max-width: 768px;
   width: 100%;
@@ -12,11 +10,21 @@
     max-width: 1440px;
     padding: 100px 140px;
     justify-content: space-between;
+    &--mobile {
+      max-width: 768px;
+      width: 100%;
+      justify-content: center;
+      padding: 0;
+      padding-top: 120px;
+    }
   }
 }
 .widgets__logo {
   @media (min-width: 1440px) {
     width: 260px;
+    &--mobile {
+      width: unset;
+    }
   }
 }
 .widgets__nav {
@@ -24,6 +32,9 @@
   @media (min-width: 1440px) {
     display: block;
     width: 150px;
+    &--mobile {
+      display: none;
+    }
   }
 }
 .widgets__subcribe {
@@ -31,6 +42,9 @@
   @media (min-width: 1440px) {
     display: block;
     width: 260px;
+    &--mobile {
+      display: none;
+    }
   }
 }
 .widgets__title {
@@ -49,6 +63,9 @@
     line-height: 2.4rem;
     color: rgba($dark, 0.75);
     font-weight: normal;
+    &--mobile {
+      display: none;
+    }
   }
 }
 .widgets__form {
