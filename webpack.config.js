@@ -7,6 +7,7 @@ module.exports = {
     index: "./src/index.js",
     "headers-and-footers": "./src/headers-and-footers.js",
     "colors-and-types": "./src/colors-and-types.js",
+    "form-elements": "./src/form-elements.js",
   },
   module: {
     rules: [
@@ -63,6 +64,11 @@ module.exports = {
       filename: "colors-and-types.html",
       template: "./src/colors-and-types.pug",
       chunks: ["colors-and-types"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "form-elements.html",
+      template: "./src/form-elements.pug",
+      chunks: ["form-elements"],
     }),
   ],
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
