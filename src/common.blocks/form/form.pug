@@ -1,4 +1,5 @@
-form.form(action="/subscribe" method="post")
-  .form__input-block 
-    input.form__input(type="email" placeholder="Email")
-    button.form__button.button.button--forward(type="submit")
+mixin form
+  form.form(action="/subscribe" method="post")
+    .form__input-block 
+      input.form__input(type="email" placeholder="Email")
+      button.form__button.button.button--forward(type="submit")

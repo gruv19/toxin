@@ -1,4 +1,8 @@
-.copyright__wrapper
-  .copyright__info Copyright © 2018 Toxin отель. Все права защищены.
-  .copyright__socials
-    include ../socials/socials.pug
+include ../socials/socials.pug
+
+mixin copyright-bar(onlyMoblie=flase)
+  .copyright
+    .copyright__wrapper(class=onlyMoblie ? 'copyright__wrapper--mobile' : '')
+      .copyright__info(class=onlyMoblie ? 'copyright__info--mobile' : '') Copyright © 2018 Toxin отель. Все права защищены.
+      .copyright__socials
+        +socials
