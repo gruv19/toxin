@@ -1,0 +1,22 @@
+.form__like-button {
+  width: 40px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid rgba($dark, 0.25);
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: rgba($dark, 0.25);
+  background-image: url("/src/images/favorite.svg");
+  background-repeat: no-repeat;
+  background-position: 6px center;
+  padding: 0;
+  padding-left: 15px;
+  &--active {
+    background-image: url("/src/images/favorite-active.svg");
+    border: 1px solid $primary;
+    color: $primary;
+  }
+}
