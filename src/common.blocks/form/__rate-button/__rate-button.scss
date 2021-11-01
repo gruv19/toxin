@@ -8,12 +8,12 @@
     background-color: #FFFFFF;
     width: 24px;
     height: 24px;
-    background-image: url("/src/images/star.svg");
+    background-image: url("./star.svg");
     background-repeat: no-repeat;
     background-position: center;
   }
 }
 
 .my-gl-star-rating--stars > .my-gl-active {
-  background-image: url("/src/images/star-active.svg");
+  background-image: url("./star-active.svg");
 }
