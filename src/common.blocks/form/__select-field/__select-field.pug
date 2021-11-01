@@ -1,0 +1,31 @@
+mixin selectField(label="", state="")
+  .form__textfield-block
+    label
+      span.form__select-field-label Dropdown
+      .form__select-field Сколько гостей
+        .form__down-arrow
+        .form__select-list(tabindex="1")
+          .form__select-item
+            input.visually-hidden(type="number", name="adult", min="0", step="1")
+            .form__select-item-left Взрослые
+            .form__select-item-right
+              span.form__select-item-minus
+              span.form__select-item-count 0
+              span.form__select-item-plus
+          .form__select-item
+            input.visually-hidden(type="number", name="child", min="0", step="1")
+            .form__select-item-left Дети
+            .form__select-item-right
+              span.form__select-item-minus
+              span.form__select-item-count 0
+              span.form__select-item-plus
+          .form__select-item
+            input.visually-hidden(type="number", name="baby", min="0", step="1")
+            .form__select-item-left Младенцы
+            .form__select-item-right
+              span.form__select-item-minus
+              span.form__select-item-count 0
+              span.form__select-item-plus
+          .form__select-buttons 
+              button.form__select-button-clean Очистить
+              button.form__select-button-save Применить
