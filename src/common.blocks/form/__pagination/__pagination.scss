@@ -35,7 +35,7 @@
 }
 
 .my-pagination .paginationjs-pages li.active > a {
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: bold;
   background-color: $primary;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -70,6 +70,18 @@
   }
 }
 
-.my-pagination .paginationjs-pages li.J-paginationjs-previous, .my-pagination .paginationjs-pages li.J-paginationjs-next {
-  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+.my-pagination .paginationjs-pages li.J-paginationjs-previous,
+.my-pagination .paginationjs-pages li.J-paginationjs-next {
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  & > a {
+    background-image: url(/src/images/arrow_forward-white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.my-pagination .paginationjs-pages li.J-paginationjs-previous {
+  & > a {
+    transform: rotateZ(180deg);
+  }
 }

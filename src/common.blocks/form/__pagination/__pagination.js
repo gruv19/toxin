@@ -20,8 +20,8 @@ $(".paginate-container").pagination({
   autoHidePrevious: true,
   autoHideNext: true,
   className: "my-pagination",
-  prevText: "<",
-  nextText: ">",
+  prevText: "",
+  nextText: "",
   callback: function(data, pagination) {
       // template method of yourself
       let html = simpleTemplate(data);
