@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");  // - использовать вместо style-loader для product-mode
 
@@ -29,11 +30,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
         type: "asset/inline",
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
       {
@@ -64,16 +65,26 @@ module.exports = {
       filename: "colors-and-types.html",
       template: "./src/colors-and-types.pug",
       chunks: ["colors-and-types"],
+      inject: "body",
     }),
     new HtmlWebpackPlugin({
       filename: "form-elements.html",
       template: "./src/form-elements.pug",
       chunks: ["form-elements"],
+      inject: "body",
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.$": "jquery",
+      "window.jQuery": "jquery",
+      // pagination: "paginationjs",
     }),
   ],
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
+    hot: true,
   },
 };
