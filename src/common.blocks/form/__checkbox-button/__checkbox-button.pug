@@ -1,0 +1,11 @@
+mixin checkboxButton(data)
+  .form__checkbox-button
+    //- .form__checkbox-button-group-label Checkbox Buttons
+    each val in data
+      label.form__checkbox-button-group
+        if val.state
+          input.form__checkbox-button-input.visually-hidden(type="checkbox", value=val.value, name=val.name, checked)
+        else
+          input.form__checkbox-button-input.visually-hidden(type="checkbox", value=val.value, name=val.name)
+        span.form__checkbox-button-field
+        span.form__checkbox-button-label= val.label
