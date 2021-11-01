@@ -1,5 +1,5 @@
 include ../nav/nav.pug
-include ../form/form.pug
+include ../subscribe-form/subscribe-form.pug
 
 mixin widgets(navigationNavData, aboutNavData, supportNavData, onlyMoblie=false)
   .widgets 
@@ -18,4 +18,4 @@ mixin widgets(navigationNavData, aboutNavData, supportNavData, onlyMoblie=false)
         h3.widgets__title Подписка
         p.widgets__text Получайте специальные предложения и новости сервиса
         .widgets__form
-          +form
+          +subscribe-form
