@@ -17,27 +17,6 @@ include ./common.blocks/bullet-list/bullet-list.pug
 -   },
 - ];
 
-- var checkboxData = [
--   {
--     label: "Можно курить",
--     name: "smoke",
--     val: "true",
--     state: false,
--   },
--   {
--     label: "Можно с питомцами",
--     name: "pet",
--     val: "true",
--     state: true,
--   },
--   {
--     label: "Можно пригласить гостей (до 10 человек)",
--     name: "guests",
--     val: "true",
--     state: true,
--   },
-- ];
-
 - var checkboxListData = [
 -   {
 -     label: "Завтрак",
@@ -127,7 +106,10 @@ html(lang="en")
         +dateDropdown
         +filterDateDropdown
         +subscribeTextField
-        +checkboxButton(checkboxData)
+        div
+          +checkboxButton(false, "true", "smoke", "Можно курить")
+          +checkboxButton(true, "true", "pet", "Можно с питомцами")
+          +checkboxButton(true, "true", "guests", "Можно пригласить гостей (до 10 человек)")
         +expandableCheckboxList(checkboxListData)
         +rangeSlider
         div(style={display: "flex", "justify-content": "space-between", "flex-wrap": "wrap"})

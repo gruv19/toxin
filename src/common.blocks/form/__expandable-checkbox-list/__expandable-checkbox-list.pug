@@ -6,4 +6,5 @@ mixin expandableCheckboxList(checkboxData)
       .form__expandable-checkbox-label expandable checkbox list
       .form__down-arrow
     .form__expandable-checkbox-buttons
-      +checkboxButton(checkboxData)
+      each val in checkboxData
+        +checkboxButton(val.state, val.value, val.name, val.label)
