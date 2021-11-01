@@ -18,9 +18,11 @@ noUiSlider.create(handlesSlider, {
   connect: [false, true, false],
   format: {
     to: function (value) {
-      return new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 0 }).format(
-        value
-      );
+      return new Intl.NumberFormat("ru-RU", {
+        maximumFractionDigits: 0,
+        style: "currency",
+        currency: "RUB",
+      }).format(value);
     },
     from: function (value) {
       return +value;
