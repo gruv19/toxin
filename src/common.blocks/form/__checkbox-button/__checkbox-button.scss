@@ -1,6 +1,12 @@
 .form__checkbox-button {
   max-width: 222px;
   width: 100%;
+  &--rich {
+    max-width: 266px;
+  }
+  &+& {
+    margin-top: 10px;
+  }
 }
 
 .form__checkbox-button-group-label {
@@ -15,10 +21,14 @@
 .form__checkbox-button-group {
   width: 100%;
   display: grid;
-  grid-gap: 10px;
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
   grid-template-columns: 20px 190px;
   & + & {
     margin-top: 11px;
+  }
+  &--rich {
+    grid-template-columns: 20px 230px;
   }
 }
 
@@ -46,4 +56,15 @@
   font-weight: normal;
   font-size: 1.4rem;
   line-height: 1.8rem;
+  &--rich {
+    color: rgba($dark, 0.75);
+    font-weight: bold;
+  }
+}
+
+.form__checkbox-button-rich-text {
+  color: rgba($dark, 0.5);
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
 }
