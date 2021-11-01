@@ -1,10 +1,150 @@
 include ./common.blocks/header/header.pug
+include ./common.blocks/form/form.pug
+
+- var selectOptions = [
+-   {
+-     val: "adult",
+-     label: "Взрослые",
+-   },
+-   {
+-     val: "child",
+-     label: "Дети",
+-   },
+-   {
+-     val: "baby",
+-     label: "Младенцы",
+-   },
+- ];
+
+- var checkboxData = [
+-   {
+-     label: "Можно курить",
+-     name: "smoke",
+-     val: "true",
+-     state: false,
+-   },
+-   {
+-     label: "Можно с питомцами",
+-     name: "pet",
+-     val: "true",
+-     state: true,
+-   },
+-   {
+-     label: "Можно пригласить гостей (до 10 человек)",
+-     name: "guests",
+-     val: "true",
+-     state: true,
+-   },
+- ];
+
+- var checkboxListData = [
+-   {
+-     label: "Завтрак",
+-     name: "breakfast",
+-     val: "true",
+-     state: false,
+-   },
+-   {
+-     label: "Письменный стол",
+-     name: "desk",
+-     val: "true",
+-     state: true,
+-   },
+-   {
+-     label: "Стул для кормления",
+-     name: "feedong-chair",
+-     val: "true",
+-     state: true,
+-   },
+-   {
+-     label: "Кроватка",
+-     name: "cot",
+-     val: "true",
+-     state: true,
+-   },
+-   {
+-     label: "Телевизор",
+-     name: "tv",
+-     val: "true",
+-     state: false,
+-   },
+-   {
+-     label: "Шампунь",
+-     name: "shampoo",
+-     val: "true",
+-     state: false,
+-   },
+- ];
+
+- var radioData = {
+-   name: "sex",
+-   values: [
+-     {
+-       label: "Мужчина",
+-       value: "male",
+-       state: true,
+-     },
+-     {
+-       label: "Женщина",
+-       value: "female",
+-       state: false,
+-     },
+-   ],
+- };
+
+- var toggleDataChecked = {
+-   label: "Получать спецпредложения",
+-   name: "special",
+-   value: "true",
+- };
+
+- var toggleDataUnchecked = {
+-   label: "Получать спецпредложения",
+-   name: "special",
+-   value: "false",
+- };
+
+- var rateButtonData = {
+-   name: "rate-button",
+-   values: [1, 2, 3, 4, 5],
+- };
+
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Headers And Footers
+    title Form Elements
   body.body
     +header({}, false, true, false, false, false, 62)
+    main.main
+      .main__wrapper.main__wrapper--grid
+        +textField("Text Field", "Default")(name="email", placeholder="Email")
+        +selectField("Dropdown")
+        +maskedTextField("Masked Text Field")(name="birthday", placeholder="ДД.ММ.ГГГГ")
+        +dateDropdown
+        +filterDateDropdown
+        +subscribeTextField
+        +checkboxButton(checkboxData)
+        +expandableCheckboxList(checkboxListData)
+        +rangeSlider
+        div(style={display: "flex", "justify-content": "space-between", "flex-wrap": "wrap"})
+          +button
+        +radioButton(radioData)
+        div 
+          +toggle(toggleDataChecked)
+          +toggle(toggleDataUnchecked)
+        +rateButton(rateButtonData)
+        div
+          +likeButton
+          +likeButton(true)
+        div
+          +pagination
+        br 
+        br 
+        br
+        br
+        br
+        br
+        
