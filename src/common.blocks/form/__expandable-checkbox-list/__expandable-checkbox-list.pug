@@ -1,0 +1,9 @@
+include ../__checkbox-button/__checkbox-button.pug
+
+mixin expandableCheckboxList(checkboxData)
+  .form__expandable-checkbox-list(tabindex="0")
+    .form__expandable-checkbox-title-group
+      .form__expandable-checkbox-label expandable checkbox list
+      .form__down-arrow
+    .form__expandable-checkbox-buttons
+      +checkboxButton(checkboxData)
