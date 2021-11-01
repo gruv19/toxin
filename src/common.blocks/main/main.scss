@@ -11,6 +11,11 @@
     width: 100%;
     padding: 67px 158px 0px 150px;
   }
+  &--grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+  }
 }
 .main__colors {
 }
