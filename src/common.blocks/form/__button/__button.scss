@@ -1,0 +1,66 @@
+.form__button {
+  text-decoration: none;
+  padding: 0;
+  border: none;
+  background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 9px 20px 10px;
+  border-radius: 22px;
+  display: inline-block;
+  ////
+  color: $primary;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%) border-box;
+  border: 2px solid transparent;
+  &:hover {
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
+      linear-gradient(180deg, rgba(#bc9cff, 0.5) 0%, rgba(#8ba4f9, 0.5) 100%)
+        border-box;
+  }
+}
+
+.form__button--primary {
+  color: #ffffff;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border: none;
+  &:hover {
+    background: linear-gradient(180deg, rgba(#bc9cff, 0.5) 0%, rgba(#8ba4f9, 0.5) 100%);
+  }
+}
+
+.form__button--link {
+  padding: 0;
+  background-color: transparent;
+  background: none;
+  border: none;
+  color: $primary;
+  &:hover {
+    color: rgba($dark, 0.5);
+  }
+}
+
+.form__button--full {
+  width: 100%;
+  color: #ffffff;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border: none;
+  position: relative;
+  &:hover {
+    background: linear-gradient(180deg, rgba(#bc9cff, 0.5) 0%, rgba(#8ba4f9, 0.5) 100%);
+  }
+}
+.form__button-arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url(/src/images/arrow_forward-white.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 44px;
+  height: 100%;
+}
