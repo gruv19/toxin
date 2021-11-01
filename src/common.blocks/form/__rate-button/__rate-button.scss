@@ -1,0 +1,19 @@
+.my-gl-star-rating--stars {
+  max-width: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > span {
+    background-color: #FFFFFF;
+    width: 24px;
+    height: 24px;
+    background-image: url("/src/images/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.my-gl-star-rating--stars > .my-gl-active {
+  background-image: url("/src/images/star-active.svg");
+}

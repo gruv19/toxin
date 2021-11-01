@@ -1,0 +1,4 @@
+mixin rateButton(data)
+  select.form__rate-button(name=data.name)
+    each val in data.values
+      option.form__rate-button-value(value=val)= val
