@@ -1,0 +1,75 @@
+// .my-pagination .paginationjs-pages li:first-child {
+//   width: 40px;
+//   height: 40px;
+//   border-radius: 50%;
+//   background-color: $primary;
+//   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+//   color: #FFFFFF;
+//   font-family: "Montserrat", sans-serif;
+//   font-weight: bold;
+//   font-size: 1.2rem;
+// }
+// .paginationjs .paginationjs-pages li:first-child > a {
+//   background-color: transparent;
+//   height: 100%;
+//   width: 100%;
+//   border-radius: 50%;
+//   font-family: "Montserrat", sans-serif;
+//   font-weight: bold;
+//   font-size: 1.2rem;
+// }
+.my-pagination .paginationjs-pages li > a,
+.my-pagination .paginationjs-pages li.active > a {
+  color: rgba($dark, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: none;
+}
+
+.my-pagination .paginationjs-pages li > a:hover {
+  background: none;
+}
+
+.my-pagination .paginationjs-pages li.active > a {
+  color: #FFFFFF;
+  font-weight: bold;
+  background-color: $primary;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border-radius: 50%;
+}
+
+.my-pagination .paginationjs-pages li {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: rgba($dark, 0.5);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  &:first-child {
+    border: none;
+    border-radius: 50%;
+  }
+  &:first-child > a {
+    border: none;
+    border-radius: 50%;
+  }
+  &:last-child {
+    border: none;
+    border-radius: 50%;
+  }
+  &:last-child > a {
+    border: none;
+    border-radius: 50%;
+  }
+}
+
+.my-pagination .paginationjs-pages li.J-paginationjs-previous, .my-pagination .paginationjs-pages li.J-paginationjs-next {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
