@@ -1,5 +1,6 @@
 include ./common.blocks/header/header.pug
 include ./common.blocks/form/form.pug
+include ./common.blocks/bullet-list/bullet-list.pug
 
 - var selectOptions = [
 -   {
@@ -141,6 +142,7 @@ html(lang="en")
           +likeButton(true)
         div
           +pagination
+        +bulletList
         br 
         br 
         br

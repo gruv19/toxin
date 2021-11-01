@@ -1,0 +1,30 @@
+.bullet-list {
+  max-width: 300px;
+  width: 100%;
+}
+.bullet-list__title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: $dark;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+.bullet-list__ul {
+  width: 100%;
+  color: rgba($dark, 0.75);
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  display: grid;
+  margin-left: 11px;
+}
+.bullet-list__li {
+  padding-left: 10px;
+  &::marker {
+    content: url(./ellipse.svg);
+  }
+  & + & {
+    margin-top: 10px;
+  }
+}
