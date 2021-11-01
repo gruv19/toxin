@@ -1,0 +1,48 @@
+.form__toggle {
+  max-width: 260px;
+  width: 100%;
+}
+.form__toggle-group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-gap: 10px;
+  align-items: center;
+}
+// .form__toggle-input {}
+.form__toggle-input:checked ~ .form__toggle-field {
+  border: 1px solid $primary;
+}
+
+.form__toggle-input:checked ~ .form__toggle-field::after {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  left: calc(100% - 16px);
+}
+
+.form__toggle-field {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid rgba($dark, 0.25);
+  position: relative;
+  &::after {
+    transition: left 0.3s;
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    top: 50%;
+    left: 4px;
+    background: rgba($dark, 0.25);
+    transform: translate(0, -50%)
+  }
+}
+.form__toggle-label {
+  color: rgba($dark, 0.75);
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
