@@ -7,3 +7,4 @@ import "./common.blocks/form/form.js";
 import "./common.blocks/bullet-list/bullet-list.js";
 import "./common.blocks/info-card/info-card.js";
 import "./common.blocks/review/review.js";
+import "./common.blocks/button/button.js";

@@ -8,7 +8,6 @@ import "./__subscribe-text-field/__subscribe-text-field.js";
 import "./__checkbox-button/__checkbox-button.js";
 import "./__expandable-checkbox-list/__expandable-checkbox-list.js";
 import "./__range-slider/__range-slider.js";
-import "./__button/__button.js";
 import "./__radio-button/__radio-button.js";
 import "./__toggle/__toggle.js";
 import "./__rate-button/__rate-button.js";
