@@ -2,6 +2,8 @@ $dark: #1F2041;
 $primary: #BC9CFF;
 $secondary: #6FCF97;
 
+$primaryFont: "Montserrat", sans-serif;
+
 @mixin helpLine($color) {
   outline: 2px solid $color; 
   outline-offset: -2px;
