@@ -1,0 +1,11 @@
+mixin info-card(type="fire", title="title", text="text")
+  .info-card
+    case type
+      when "smile"
+        .info-card__icon.info-card__icon--smile
+      when "location"
+        .info-card__icon.info-card__icon--location
+      default
+        .info-card__icon.info-card__icon--fire
+    .info-card__title= title
+    p.info-card__text= text

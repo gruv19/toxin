@@ -1,6 +1,7 @@
 include ./common.blocks/header/header.pug
 include ./common.blocks/form/form.pug
 include ./common.blocks/bullet-list/bullet-list.pug
+include ./common.blocks/info-card/info-card.pug
 
 - var selectOptions = [
 -   {
@@ -128,6 +129,11 @@ html(lang="en")
         div 
           +checkboxButton(false, "wide", "corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
           +checkboxButton(false, "helper", "disabled-person", "Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
+        div
+          +info-card("smile", "Комфорт", "Шумопоглощающие стены")
+          +info-card("location", "Удобство", "Окно в каждой из спален")
+          +info-card("fire", "Уют", "Номер оснащён камином")
+
         br 
         br 
         br

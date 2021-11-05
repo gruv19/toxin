@@ -5,3 +5,4 @@ import "./common.blocks/main/main.scss";
 import "./common.blocks/header/header.js";
 import "./common.blocks/form/form.js";
 import "./common.blocks/bullet-list/bullet-list.js";
+import "./common.blocks/info-card/info-card.js";
