@@ -1,0 +1,12 @@
+mixin button(text="click me", type="")
+  case type
+    when "primary"
+      button.button.button--primary&attributes(attributes)= text
+    when "link"
+      button.button.button--link&attributes(attributes)= text
+    when "full"
+      button.button.button--full&attributes(attributes)= text
+        span.button__arrow
+    default
+      button.button&attributes(attributes)= text
+  

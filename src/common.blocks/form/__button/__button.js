@@ -1,1 +1,0 @@
-import "./__button.scss";
