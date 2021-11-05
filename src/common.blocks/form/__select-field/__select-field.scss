@@ -27,11 +27,15 @@
   height: 44px;
   width: 44px;
   display: inline-block;
-  background-image: url(/src/images/expand_more.svg);
+  background-image: url(./expand_more.svg);
   background-repeat: no-repeat;
   background-position: center center;
   right: 0;
   top: 0;
+}
+
+.form__select-field:focus-within .form__down-arrow {
+  transform: rotateZ(180deg);
 }
 
 .form__select-list {
@@ -98,14 +102,14 @@
 .form__select-item-minus {
   width: 30px;
   height: 30px;
-  background-image: url(/src/images/minus.svg);
+  background-image: url(./minus.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
   border: none;
   &:active,
   &:hover {
-    background-image: url(/src/images/minus-active.svg);
+    background-image: url(./minus-active.svg);
   }
 }
 
@@ -120,14 +124,14 @@
 .form__select-item-plus {
   width: 30px;
   height: 30px;
-  background-image: url(/src/images/plus.svg);
+  background-image: url(./plus.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
   border: none;
   &:active,
   &:hover {
-    background-image: url(/src/images/plus-active.svg);
+    background-image: url(./plus-active.svg);
   }
 }
 
