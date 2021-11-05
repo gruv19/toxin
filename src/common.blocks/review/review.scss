@@ -1,0 +1,28 @@
+.review {
+  display: grid;
+  grid-template-columns: 48px 655px;
+  grid-gap: 10px;
+}
+
+.review__author-photo {
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+}
+.review__header {
+  padding-top: 3px;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: rgba($dark, 0.75);
+}
+.review__author-name {
+  font-weight: bold;
+}
+// .review__date {}
+.review__text {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: rgba($dark, 0.75);
+}

@@ -2,6 +2,7 @@ include ./common.blocks/header/header.pug
 include ./common.blocks/form/form.pug
 include ./common.blocks/bullet-list/bullet-list.pug
 include ./common.blocks/info-card/info-card.pug
+include ./common.blocks/review/review.pug
 
 - var selectOptions = [
 -   {
@@ -90,6 +91,13 @@ include ./common.blocks/info-card/info-card.pug
 -   values: [1, 2, 3, 4, 5],
 - };
 
+- var reviewData = {
+-   author: "Мурад Сарафанов",
+-   img: "/src/images/users/guest1.jpg",
+-   date: "5 дней назад",
+-   text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+- };
+
 doctype html
 html(lang="en")
   head
@@ -133,7 +141,7 @@ html(lang="en")
           +info-card("smile", "Комфорт", "Шумопоглощающие стены")
           +info-card("location", "Удобство", "Окно в каждой из спален")
           +info-card("fire", "Уют", "Номер оснащён камином")
-
+        +review(reviewData)
         br 
         br 
         br

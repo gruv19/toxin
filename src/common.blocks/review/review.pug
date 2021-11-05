@@ -1,0 +1,10 @@
+include ../form/__like-button/__like-button.pug
+
+mixin review(reviewData)
+  .review
+    img(src=img, alt="Фото пользователя " + reviewData.author ).review__author-photo
+    .review__header 
+      .review__author-name= reviewData.author
+      .review__date= reviewData.date
+    +likeButton(true)
+    .review__text= reviewData.text
