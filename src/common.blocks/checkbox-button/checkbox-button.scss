@@ -1,0 +1,65 @@
+.checkbox-button {
+  font-family: $primaryFont;
+  max-width: 222px;
+  width: 100%;
+  &--rich {
+    max-width: 266px;
+  }
+}
+
+.checkbox-button-group-label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: $dark;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+
+.checkbox-button-group {
+  width: 100%;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
+  grid-template-columns: 20px 190px;
+  &--rich {
+    grid-template-columns: 20px 230px;
+  }
+}
+
+.checkbox-button-input:checked ~ .checkbox-button-field {
+  border: 1px solid $primary;
+  background-image: url(./checked.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.checkbox-button-input:hover ~ .checkbox-button-field {
+  border: 1px solid $primary;
+}
+
+.checkbox-button-field {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba($dark, 0.25);
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.checkbox-button-label {
+  color: rgba($dark, 0.5);
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  &--rich {
+    color: rgba($dark, 0.75);
+    font-weight: bold;
+  }
+}
+
+.checkbox-button-rich-text {
+  color: rgba($dark, 0.5);
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
