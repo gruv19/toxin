@@ -18,7 +18,6 @@ new AirDatepicker(".form__filter-date-dropdown-input", {
   container: ".form__filter-date-dropdown-label",
   position: "bottom left",
   dateFormat: "dd MMM",
-  // monthsField: ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"],
   locale: {
     monthsShort: ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"],
   },
@@ -29,15 +28,15 @@ new AirDatepicker(".form__filter-date-dropdown-input", {
       let text = $(".form__filter-date-dropdown-input").val();
       $(".form__filter-date-dropdown").text(text);
     }
-    // const rangeFrom = datepicker.$content.querySelector(".-range-from-");
-    // const rangeTo = datepicker.$content.querySelector(".-range-to-");
-    // if(!rangeTo) {
-    //   rangeFrom.classList.add("-range-to-");
-    // }
-    // if (date[1]) {
-    //   $(".form__date-dropdown--to").text(
-    //     new Intl.DateTimeFormat("ru").format(date[1])
-    //   );
-    // }
+  },
+  onShow() {
+    document.querySelectorAll(".form__filter-date-dropdown-block .form__down-arrow").forEach(arrow => {
+      arrow.classList.add("form__down-arrow--active");
+    });
+  },
+  onHide() {
+    document.querySelectorAll(".form__filter-date-dropdown-block .form__down-arrow").forEach(arrow => {
+      arrow.classList.remove("form__down-arrow--active");
+    });
   },
 });
