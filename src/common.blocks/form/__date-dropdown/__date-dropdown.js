@@ -43,4 +43,14 @@ new AirDatepicker(".form__date-dropdown-input", {
       );
     }
   },
+  onShow() {
+    document.querySelectorAll(".form__date-dropdown-block .form__down-arrow").forEach(arrow => {
+      arrow.classList.add("form__down-arrow--active");
+    });
+  },
+  onHide() {
+    document.querySelectorAll(".form__date-dropdown-block .form__down-arrow").forEach(arrow => {
+      arrow.classList.remove("form__down-arrow--active");
+    });
+  },
 });

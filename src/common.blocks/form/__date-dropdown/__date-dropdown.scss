@@ -50,6 +50,10 @@
   border: 1px solid rgba($dark, 0.75);
 }
 
+.form__down-arrow--active {
+  transform: rotateZ(180deg);
+}
+
 .form__date-dropdown-datepicker {
   // --adp-width: 320px;
   width: 320px !important;
