@@ -1,25 +1,25 @@
-.form__toggle {
+.toggle {
+  font-family: $primaryFont;
   max-width: 260px;
   width: 100%;
 }
-.form__toggle-group {
+.toggle-group {
   width: 100%;
   display: grid;
   grid-template-columns: 40px auto;
   grid-gap: 10px;
   align-items: center;
 }
-// .form__toggle-input {}
-.form__toggle-input:checked ~ .form__toggle-field {
+.toggle-input:checked ~ .toggle-field {
   border: 1px solid $primary;
 }
 
-.form__toggle-input:checked ~ .form__toggle-field::after {
+.toggle-input:checked ~ .toggle-field::after {
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   left: calc(100% - 16px);
 }
 
-.form__toggle-field {
+.toggle-field {
   display: inline-block;
   width: 40px;
   height: 20px;
@@ -40,7 +40,7 @@
     transform: translate(0, -50%)
   }
 }
-.form__toggle-label {
+.toggle-label {
   color: rgba($dark, 0.75);
   font-weight: normal;
   font-size: 1.4rem;

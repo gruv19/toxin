@@ -1,9 +1,0 @@
-mixin toggle(data)
-  .form__toggle
-    label.form__toggle-group
-      if data.value == "true"
-        input.form__toggle-input.visually-hidden(type="checkbox", value=data.value, name=data.name, checked)
-      else
-        input.form__toggle-input.visually-hidden(type="checkbox", value=data.value, name=data.name)
-      span.form__toggle-field
-      span.form__toggle-label= data.label
