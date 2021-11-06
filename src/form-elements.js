@@ -14,7 +14,10 @@ import checkboxList from "./common.blocks/expandable-checkbox-list/expandable-ch
 import "./common.blocks/toggle/toggle.js";
 import "./common.blocks/radio-button/radio-button.js";
 import "./common.blocks/textfield/textfield.js";
+import filterDateDropdown from "./common.blocks/filter-date-dropdown/filter-date-dropdown.js";
 
 $(window).on("load", () => {
   checkboxList();
+  filterDateDropdown(".test-date");
+  filterDateDropdown(".test-date1");
 });
