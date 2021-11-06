@@ -8,6 +8,7 @@ include ./common.blocks/button/button.pug
 include ./common.blocks/checkbox-button/checkbox-button.pug
 include ./common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
 include ./common.blocks/toggle/toggle.pug
+include ./common.blocks/radio-button/radio-button.pug
 
 - var selectOptions = [
 -   {
@@ -24,24 +25,21 @@ include ./common.blocks/toggle/toggle.pug
 -   },
 - ];
 
-- var radioData = {
--   name: "sex",
--   values: [
--     {
--       label: "Мужчина",
--       value: "male",
--       state: true,
--     },
--     {
--       label: "Женщина",
--       value: "female",
--       state: false,
--     },
--   ],
-- };
-
-var toggleDataChecked = ;
-var toggleDataUnchecked = ;
+//- var radioData = {
+//-   name: "sex",
+//-   values: [
+//-     {
+//-       label: "Мужчина",
+//-       value: "male",
+//-       state: true,
+//-     },
+//-     {
+//-       label: "Женщина",
+//-       value: "female",
+//-       state: false,
+//-     },
+//-   ],
+//- };
 
 - var rateButtonData = {
 -   name: "rate-button",
@@ -133,7 +131,21 @@ html(lang="en")
         +rangeSlider
         div(style={display: "flex", "justify-content": "space-between", "flex-wrap": "wrap"})
           +button("click me", "full")
-        +radioButton(radioData)
+        div 
+          +radio-button(
+            {
+              name: "sex",
+              label: "Мужчина",
+              value: "male",
+              state: true,
+            },
+            {
+              name: "sex",
+              label: "Женщина",
+              value: "female",
+              state: false,
+            }
+          )
         div 
           +toggle({
             label: "Получать спецпредложения",
