@@ -1,0 +1,65 @@
+.expandable-checkbox-list {
+  font-family: $primaryFont;
+  max-width: 266px;
+  width: 100%;
+  max-height: 1000px;
+  cursor: pointer;
+  // &:focus .expandable-checkbox-list__checkbox-buttons {
+  //   max-height: 1000px;
+  // }
+  // &:focus-within .expandable-checkbox-list__checkbox-buttons {
+  //   max-height: 1000px;
+  // }
+  // &:focus .expandable-checkbox-list__down-arrow {
+  //   transform: rotateZ(180deg);
+  //   transition: transform 0.5s;
+  // }
+  // &:focus-within .expandable-checkbox-list__down-arrow {
+  //   transform: rotateZ(180deg);
+  //   transition: transform 0.5s;
+  // }
+  &--focus .expandable-checkbox-list__checkbox-buttons {
+    max-height: 1000px;
+  }
+  &--focus .expandable-checkbox-list__down-arrow {
+    transform: rotateZ(180deg);
+    transition: transform 0.5s;
+  }
+}
+
+.expandable-checkbox-list__down-arrow {
+  position: absolute;
+  height: 8px;
+  width: 12px;
+  display: inline-block;
+  background-image: url(./expand_more.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  right: 16px;
+  transition: transform 1s;
+}
+
+.expandable-checkbox-list__title-group {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+}
+
+.expandable-checkbox-list__label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: $dark;
+  text-transform: uppercase;
+}
+
+.expandable-checkbox-list__checkbox-buttons {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  display: grid;
+  grid-row-gap: 10px;
+}
