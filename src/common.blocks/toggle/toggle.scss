@@ -3,23 +3,23 @@
   max-width: 260px;
   width: 100%;
 }
-.toggle-group {
+.toggle__group {
   width: 100%;
   display: grid;
   grid-template-columns: 40px auto;
   grid-gap: 10px;
   align-items: center;
 }
-.toggle-input:checked ~ .toggle-field {
+.toggle__input:checked ~ .toggle__field {
   border: 1px solid $primary;
 }
 
-.toggle-input:checked ~ .toggle-field::after {
+.toggle__input:checked ~ .toggle__field::after {
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   left: calc(100% - 16px);
 }
 
-.toggle-field {
+.toggle__field {
   display: inline-block;
   width: 40px;
   height: 20px;
@@ -40,7 +40,7 @@
     transform: translate(0, -50%)
   }
 }
-.toggle-label {
+.toggle__label {
   color: rgba($dark, 0.75);
   font-weight: normal;
   font-size: 1.4rem;

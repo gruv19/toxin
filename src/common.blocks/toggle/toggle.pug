@@ -1,9 +1,9 @@
 mixin toggle(data)
   .toggle&attributes(attributes)
-    label.toggle-group
+    label.toggle__group
       if data.value == "true"
-        input.toggle-input.visually-hidden(type="checkbox", value=data.value, name=data.name, checked)
+        input.toggle__input.visually-hidden(type="checkbox", value=data.value, name=data.name, checked)
       else
-        input.toggle-input.visually-hidden(type="checkbox", value=data.value, name=data.name)
-      span.toggle-field
-      span.toggle-label= data.label
+        input.toggle__input.visually-hidden(type="checkbox", value=data.value, name=data.name)
+      span.toggle__field
+      span.toggle__label= data.label
