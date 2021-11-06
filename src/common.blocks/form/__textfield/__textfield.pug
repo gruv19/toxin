@@ -1,8 +1,0 @@
-mixin textField(label="", state="")
-  .form__textfield-block 
-    label.form__label
-      if label
-        span.form__label-text= label
-      if state
-        span.form__label-state= state
-      input.form__textfield(type="text")&attributes(attributes)
