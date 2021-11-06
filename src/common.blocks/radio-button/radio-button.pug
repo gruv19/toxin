@@ -1,0 +1,10 @@
+mixin radio-button(...data) 
+  each val in data
+    .radio-button&attributes(attributes)
+      label.radio-button__group
+        if val.state
+          input.radio-button__input.visually-hidden(type="radio", value=val.value, name=val.name, checked)
+        else
+          input.radio-button__input.visually-hidden(type="radio", value=val.value, name=val.name)
+        span.radio-button__field
+        span.radio-button__label= val.label
