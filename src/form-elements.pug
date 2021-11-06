@@ -3,7 +3,10 @@ include ./common.blocks/form/form.pug
 include ./common.blocks/bullet-list/bullet-list.pug
 include ./common.blocks/info-card/info-card.pug
 include ./common.blocks/review/review.pug
+
 include ./common.blocks/button/button.pug
+include ./common.blocks/checkbox-button/checkbox-button.pug
+include ./common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
 
 - var selectOptions = [
 -   {
@@ -20,44 +23,44 @@ include ./common.blocks/button/button.pug
 -   },
 - ];
 
-- var checkboxListData = [
--   {
--     label: "Завтрак",
--     name: "breakfast",
--     val: "true",
--     state: false,
--   },
--   {
--     label: "Письменный стол",
--     name: "desk",
--     val: "true",
--     state: true,
--   },
--   {
--     label: "Стул для кормления",
--     name: "feedong-chair",
--     val: "true",
--     state: true,
--   },
--   {
--     label: "Кроватка",
--     name: "cot",
--     val: "true",
--     state: true,
--   },
--   {
--     label: "Телевизор",
--     name: "tv",
--     val: "true",
--     state: false,
--   },
--   {
--     label: "Шампунь",
--     name: "shampoo",
--     val: "true",
--     state: false,
--   },
-- ];
+//-  var checkboxListData = [
+   {
+     label: "Завтрак",
+     name: "breakfast",
+     val: "true",
+     state: false,
+   },
+   {
+     label: "Письменный стол",
+     name: "desk",
+     val: "true",
+     state: true,
+   },
+   {
+     label: "Стул для кормления",
+     name: "feedong-chair",
+     val: "true",
+     state: true,
+   },
+   {
+     label: "Кроватка",
+     name: "cot",
+     val: "true",
+     state: true,
+   },
+   {
+     label: "Телевизор",
+     name: "tv",
+     val: "true",
+     state: false,
+   },
+   {
+     label: "Шампунь",
+     name: "shampoo",
+     val: "true",
+     state: false,
+   },
+ ];
 
 - var radioData = {
 -   name: "sex",
@@ -117,10 +120,63 @@ html(lang="en")
         +filterDateDropdown
         +subscribeTextField
         div
-          +checkboxButton(false, "true", "smoke", "Можно курить")
-          +checkboxButton(true, "true", "pet", "Можно с питомцами")
-          +checkboxButton(true, "true", "guests", "Можно пригласить гостей (до 10 человек)")
-        +expandableCheckboxList(checkboxListData)
+          +checkbox-button({
+            state: false, 
+            value: "true", 
+            name: "smoke", 
+            label: "Можно курить"
+          })
+          +checkbox-button({
+            state: true, 
+            value: "true", 
+            name: "pet", 
+            label: "Можно с питомцами"
+          })
+          +checkbox-button({
+            state: true, 
+            value: "true", 
+            name: "guests", 
+            label: "Можно пригласить гостей (до 10 человек)"
+          })
+        +expandable-checkbox-list(
+          "expandable checkbox list",
+          {
+            label: "Завтрак",
+            name: "breakfast",
+            val: "true",
+            state: false,
+          },
+          {
+            label: "Письменный стол",
+            name: "desk",
+            val: "true",
+            state: true,
+          },
+          {
+            label: "Стул для кормления",
+            name: "feedong-chair",
+            val: "true",
+            state: true,
+          },
+          {
+            label: "Кроватка",
+            name: "cot",
+            val: "true",
+            state: true,
+          },
+          {
+            label: "Телевизор",
+            name: "tv",
+            val: "true",
+            state: false,
+          },
+          {
+            label: "Шампунь",
+            name: "shampoo",
+            val: "true",
+            state: false,
+          }
+        )
         +rangeSlider
         div(style={display: "flex", "justify-content": "space-between", "flex-wrap": "wrap"})
           +button("click me", "full")
@@ -136,8 +192,20 @@ html(lang="en")
           +pagination
         +bulletList
         div 
-          +checkboxButton(false, "wide", "corridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-          +checkboxButton(false, "helper", "disabled-person", "Помощник для инвалидов", "На 1 этаже вас встретит специалист  и проводит до номера.")
+          +checkbox-button({
+            state: false, 
+            value: "wide", 
+            name: "corridor", 
+            label: "Широкий коридор",
+            rich: "Ширина коридоров в номере не менее 91 см."
+          })
+          +checkbox-button({
+            state: false, 
+            value: "helper", 
+            name: "disabled-person", 
+            label: "Помощник для инвалидов",
+            rich: "На 1 этаже вас встретит специалист  и проводит до номера."
+          })
         div
           +info-card("smile", "Комфорт", "Шумопоглощающие стены")
           +info-card("location", "Удобство", "Окно в каждой из спален")
@@ -145,6 +213,46 @@ html(lang="en")
         div(style={'grid-column': '1/3'})
           //- a(style={color: 'red', background: 'green'})
           +review(reviewData)
+        div 
+          +expandable-checkbox-list(
+            "expandable checkbox list",
+            {
+              label: "Завтрак",
+              name: "breakfast",
+              val: "true",
+              state: false,
+            },
+            {
+              label: "Письменный стол",
+              name: "desk",
+              val: "true",
+              state: true,
+            },
+            {
+              label: "Стул для кормления",
+              name: "feedong-chair",
+              val: "true",
+              state: true,
+            },
+            {
+              label: "Кроватка",
+              name: "cot",
+              val: "true",
+              state: true,
+            },
+            {
+              label: "Телевизор",
+              name: "tv",
+              val: "true",
+              state: false,
+            },
+            {
+              label: "Шампунь",
+              name: "shampoo",
+              val: "true",
+              state: false,
+            }
+          )
         br 
         br 
         br
