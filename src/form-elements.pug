@@ -13,6 +13,7 @@ include ./common.blocks/textfield/textfield.pug
 include ./common.blocks/filter-date-dropdown/filter-date-dropdown.pug
 include ./common.blocks/date-dropdown/date-dropdown.pug
 include ./common.blocks/like-button/like-button.pug
+include ./common.blocks/rate-button/rate-button.pug
 
 - var selectOptions = [
 -   {
@@ -28,11 +29,6 @@ include ./common.blocks/like-button/like-button.pug
 -     label: "Младенцы",
 -   },
 - ];
-
-- var rateButtonData = {
--   name: "rate-button",
--   values: [1, 2, 3, 4, 5],
-- };
 
 - var reviewData = {
 -   author: "Мурад Сарафанов",
@@ -151,7 +147,11 @@ html(lang="en")
             name: "special",
             value: "false",
           })
-        +rateButton(rateButtonData)
+        div 
+          +rate-button({
+            name: "rate-button",
+            values: [1, 2, 3, 4, 5],
+          })
         div
           +like-button
           +like-button(true, 10)
