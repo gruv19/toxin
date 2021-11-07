@@ -16,9 +16,11 @@ import "./common.blocks/radio-button/radio-button.js";
 import "./common.blocks/textfield/textfield.js";
 import filterDateDropdown from "./common.blocks/filter-date-dropdown/filter-date-dropdown.js";
 import dateDropdown from "./common.blocks/date-dropdown/date-dropdown.js";
+import likeButtons from "./common.blocks/like-button/like-button.js";
 
 $(window).on("load", () => {
   checkboxList();
   filterDateDropdown(".test-date");
-  dateDropdown(".test-date-dropdown")
+  dateDropdown(".test-date-dropdown");
+  likeButtons();
 });

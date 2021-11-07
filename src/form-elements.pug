@@ -12,6 +12,7 @@ include ./common.blocks/radio-button/radio-button.pug
 include ./common.blocks/textfield/textfield.pug
 include ./common.blocks/filter-date-dropdown/filter-date-dropdown.pug
 include ./common.blocks/date-dropdown/date-dropdown.pug
+include ./common.blocks/like-button/like-button.pug
 
 - var selectOptions = [
 -   {
@@ -152,8 +153,8 @@ html(lang="en")
           })
         +rateButton(rateButtonData)
         div
-          +likeButton
-          +likeButton(true)
+          +like-button
+          +like-button(true, 10)
         div
           +pagination
         +bulletList

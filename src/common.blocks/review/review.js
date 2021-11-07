@@ -1,4 +1,4 @@
-import "../form/__like-button/__like-button.js";
+import "../like-button/like-button.js";
 
 import "./review.scss";
 

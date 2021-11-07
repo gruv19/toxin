@@ -1,4 +1,4 @@
-include ../form/__like-button/__like-button.pug
+include ../like-button/like-button.pug
 
 mixin review(reviewData)
   .review
@@ -6,5 +6,5 @@ mixin review(reviewData)
     .review__header 
       .review__author-name= reviewData.author
       .review__date= reviewData.date
-    +likeButton(true)
+    +like-button(true, 10)
     .review__text= reviewData.text
