@@ -11,6 +11,7 @@ include ./common.blocks/toggle/toggle.pug
 include ./common.blocks/radio-button/radio-button.pug
 include ./common.blocks/textfield/textfield.pug
 include ./common.blocks/filter-date-dropdown/filter-date-dropdown.pug
+include ./common.blocks/date-dropdown/date-dropdown.pug
 
 - var selectOptions = [
 -   {
@@ -57,14 +58,10 @@ html(lang="en")
             name: "email",
             placeholder: "Email"
           })
-        div 
-          input.test(type="text")
         +selectField("Dropdown")
         +maskedTextField("Masked Text Field")(name="birthday", placeholder="ДД.ММ.ГГГГ")
-        +dateDropdown
-        //- +filterDateDropdown
+        +date-dropdown(class="test-date-dropdown")
         +filter-date-dropdown(class="test-date")
-        +filter-date-dropdown(class="test-date1")
         +subscribeTextField
         div
           +checkbox-button({
