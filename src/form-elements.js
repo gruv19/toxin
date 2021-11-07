@@ -18,6 +18,7 @@ import filterDateDropdown from "./common.blocks/filter-date-dropdown/filter-date
 import dateDropdown from "./common.blocks/date-dropdown/date-dropdown.js";
 import likeButtons from "./common.blocks/like-button/like-button.js";
 import rateButton from "./common.blocks/rate-button/rate-button.js";
+import maskedTextfield from "./common.blocks/masked-textfield/masked-textfield.js";
 
 $(window).on("load", () => {
   checkboxList();
@@ -25,4 +26,5 @@ $(window).on("load", () => {
   dateDropdown(".test-date-dropdown");
   likeButtons();
   rateButton();
+  maskedTextfield();
 });
