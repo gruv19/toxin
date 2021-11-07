@@ -1,0 +1,4 @@
+mixin rate-button(data)
+  select.rate-button(name=data.name)&attributes(attributes)
+    each val in data.values
+      option.rate-button__value(value=val)= val
