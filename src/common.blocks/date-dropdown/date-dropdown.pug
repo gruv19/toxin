@@ -1,0 +1,24 @@
+//- mixin dateDropdown
+//-   .form__date-dropdown-block
+//-     label.form__date-dropdown-label
+//-       input.form__date-dropdown-input.visually-hidden
+//-       .form__date-dropdown-group
+//-         .form__date-dropdown-group-label date Dropdown
+//-         .form__date-dropdown.form__date-dropdown--from ДД.ММ.ГГГГ
+//-           .form__down-arrow
+//-       .form__date-dropdown-group
+//-         .form__date-dropdown-group-label date Dropdown
+//-         .form__date-dropdown.form__date-dropdown--to ДД.ММ.ГГГГ
+//-           .form__down-arrow
+
+mixin date-dropdown(fromLabel="date Dropdown", toLabel="date Dropdown")
+  .date-dropdown&attributes(attributes)
+    label.date-dropdown__group
+      input.date-dropdown__input.visually-hidden
+      .date-dropdown__visually
+        .date-dropdown__label= fromLabel
+        .date-dropdown__field.date-dropdown__field--from ДД.ММ.ГГГГ
+      .date-dropdown__visually
+        .date-dropdown__label= toLabel
+        .date-dropdown__field.date-dropdown__field--to ДД.ММ.ГГГГ
+      
