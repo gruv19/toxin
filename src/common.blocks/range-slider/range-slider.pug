@@ -1,0 +1,7 @@
+mixin range-slider(label="range slider")
+  .range-slider
+    .range-slider__group&attributes(attributes)
+      label.range-slider__label= label
+        input.range-slider__input.range-slider__input--from.visually-hidden(type="number", name="slider-from")
+        input.range-slider__input.range-slider__input--to.visually-hidden(type="number", name="slider-to")
+      .range-slider__visually
