@@ -19,12 +19,24 @@ import dateDropdown from "./common.blocks/date-dropdown/date-dropdown.js";
 import likeButtons from "./common.blocks/like-button/like-button.js";
 import rateButton from "./common.blocks/rate-button/rate-button.js";
 import maskedTextfield from "./common.blocks/masked-textfield/masked-textfield.js";
+import pagination from "./common.blocks/pagination/pagination.js";
 
 $(window).on("load", () => {
+
+  function paginateTestTemplate(data) {
+    let html = "<ul>";
+    data.forEach(item => {
+      html += `<li>${item}</li>`;
+    });
+    html += "</ul>";
+    return html;
+  } 
+
   checkboxList();
   filterDateDropdown(".test-date");
   dateDropdown(".test-date-dropdown");
   likeButtons();
   rateButton();
   maskedTextfield();
+  pagination(".paginate-container", ".data-container", Array(40).fill(""), paginateTestTemplate);
 });
