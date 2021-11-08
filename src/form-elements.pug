@@ -15,6 +15,7 @@ include ./common.blocks/date-dropdown/date-dropdown.pug
 include ./common.blocks/like-button/like-button.pug
 include ./common.blocks/rate-button/rate-button.pug
 include ./common.blocks/masked-textfield/masked-textfield.pug
+include ./common.blocks/range-slider/range-slider.pug
 
 - var selectOptions = [
 -   {
@@ -113,7 +114,7 @@ html(lang="en")
             state: false,
           }
         )
-        +rangeSlider
+        +range-slider(class="ui-range-slider")
         div(style={display: "flex", "justify-content": "space-between", "flex-wrap": "wrap"})
           +button("click me", "full")
         div 

@@ -20,6 +20,7 @@ import likeButtons from "./common.blocks/like-button/like-button.js";
 import rateButton from "./common.blocks/rate-button/rate-button.js";
 import maskedTextfield from "./common.blocks/masked-textfield/masked-textfield.js";
 import pagination from "./common.blocks/pagination/pagination.js";
+import rangeSlider from "./common.blocks/range-slider/range-slider.js";
 
 $(window).on("load", () => {
 
@@ -39,4 +40,5 @@ $(window).on("load", () => {
   rateButton();
   maskedTextfield();
   pagination(".paginate-container", ".data-container", Array(40).fill(""), paginateTestTemplate);
+  rangeSlider(".ui-range-slider");
 });
