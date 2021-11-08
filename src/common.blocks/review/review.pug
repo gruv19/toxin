@@ -2,7 +2,7 @@ include ../like-button/like-button.pug
 
 mixin review(reviewData)
   .review
-    img(src=img, alt="Фото пользователя " + reviewData.author ).review__author-photo
+    img(src=require("/src/images/users/" + reviewData.img), alt="Фото пользователя " + reviewData.author ).review__author-photo
     .review__header 
       .review__author-name= reviewData.author
       .review__date= reviewData.date
