@@ -16,6 +16,7 @@ include ./common.blocks/like-button/like-button.pug
 include ./common.blocks/rate-button/rate-button.pug
 include ./common.blocks/masked-textfield/masked-textfield.pug
 include ./common.blocks/range-slider/range-slider.pug
+include ./common.blocks/subscribe-form/subscribe-form.pug
 
 - var selectOptions = [
 -   {
@@ -55,7 +56,7 @@ html(lang="en")
         +masked-textfield("birthday2")
         +date-dropdown(class="test-date-dropdown")
         +filter-date-dropdown(class="test-date")
-        +subscribeTextField
+        +subscribe-form("/subscribe")
         div
           +checkbox-button({
             state: false, 
