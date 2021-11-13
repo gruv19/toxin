@@ -35,8 +35,8 @@ function dateDropdown(dateDropdownSelector) {
       }
     },
     onHide(isFinished) {
-      outputFieldFrom.classList.add("date-dropdown__field--active");
-      outputFieldto.classList.add("date-dropdown__field--active");
+      outputFieldFrom.classList.remove("date-dropdown__field--active");
+      outputFieldto.classList.remove("date-dropdown__field--active");
       if (isFinished) {
         return;
       }
