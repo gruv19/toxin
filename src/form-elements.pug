@@ -1,5 +1,4 @@
 include ./common.blocks/header/header.pug
-include ./common.blocks/form/form.pug
 include ./common.blocks/bullet-list/bullet-list.pug
 include ./common.blocks/info-card/info-card.pug
 include ./common.blocks/review/review.pug
@@ -17,21 +16,7 @@ include ./common.blocks/rate-button/rate-button.pug
 include ./common.blocks/masked-textfield/masked-textfield.pug
 include ./common.blocks/range-slider/range-slider.pug
 include ./common.blocks/subscribe-form/subscribe-form.pug
-
-- var selectOptions = [
--   {
--     val: "adult",
--     label: "Взрослые",
--   },
--   {
--     val: "child",
--     label: "Дети",
--   },
--   {
--     val: "baby",
--     label: "Младенцы",
--   },
-- ];
+include ./common.blocks/dropdown/dropdown.pug
 
 doctype html
 html(lang="en")
@@ -51,7 +36,24 @@ html(lang="en")
             name: "email",
             placeholder: "Email"
           })
-        +selectField("Dropdown")
+        +dropdown({
+          label: "Сколько гостей",
+          buttons: true,
+          list: [
+            {name: "adult", label: "Взрослые"},
+            {name: "child", label: "Дети"},
+            {name: "baby", label: "Младенцы"}
+          ]
+        })(class="uikit-dropdown")
+        +dropdown({
+          label: "Удобства в комнате",
+          buttons: false,
+          list: [
+            {name: "bedroom", label: "Спальни"},
+            {name: "bed", label: "Кровати"},
+            {name: "bathroom", label: "Ванные комнаты"}
+          ]
+        })(class="uikit-dropdown-room")
         +masked-textfield("birthday1")
         +masked-textfield("birthday2")
         +date-dropdown(class="test-date-dropdown")
