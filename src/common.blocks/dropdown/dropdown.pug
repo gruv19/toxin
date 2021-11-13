@@ -1,4 +1,6 @@
-mixin selectField(label="", state="")
+include ../button/button.pug
+
+mixin select-field(label="", state="")
   .form__textfield-block
     label
       span.form__select-field-label Dropdown
@@ -26,6 +28,24 @@ mixin selectField(label="", state="")
               span.form__select-item-minus
               span.form__select-item-count 0
               span.form__select-item-plus
-          .form__select-buttons 
+          .form__select-buttons
               button.form__select-button-clean Очистить
               button.form__select-button-save Применить
+
+
+mixin dropdown(data)
+  .dropdown&attributes(attributes)
+    .dropdown__visually= data.label
+    ul.dropdown__list.visually-hidden(tabindex="1")
+      each val in data.list
+        li.dropdown__item
+          input.dropdown__input.visually-hidden(type="number", name=val.name, min="0", step="1", max="9", value="0")
+          .dropdown__item-label= val.label
+          .dropdown__step.dropdown__step--minus
+          .dropdown__item-value 0
+          .dropdown__step.dropdown__step--plus
+      li.dropdown__buttons(class=data.buttons ? "" : "visually-hidden")
+        .dropdown__reset.visually-hidden
+          +button("Очистить", "link")(class="dropdown__button dropdown__button--reset")
+        .dropdown__apply
+          +button("Применить", "link")(class="dropdown__button dropdown__button--apply")
