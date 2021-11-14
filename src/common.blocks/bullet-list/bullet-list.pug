@@ -1,7 +1,9 @@
-mixin bulletList 
+mixin bullet-list(data)
   .bullet-list
-    .bullet-list__title bullet list
+    //- .bullet-list__title bullet list
     ul.bullet-list__ul
-      li.bullet-list__li Нельзя с питомцами
-      li.bullet-list__li Без вечеринок и мероприятий
-      li.bullet-list__li Время прибытия — после 13:00, а выезд до 12:00
+      each val in data
+        li.bullet-list__li= val
+        //-  Нельзя с питомцами
+        //- li.bullet-list__li Без вечеринок и мероприятий
+        //- li.bullet-list__li Время прибытия — после 13:00, а выезд до 12:00

@@ -1,4 +1,5 @@
 import customDatepicker from "../custom-datepicker/custom-datepicker";
+import "../label/label.js";
 import "./date-dropdown.scss";
 
 function dateDropdown(dateDropdownSelector) {
