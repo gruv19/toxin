@@ -1,4 +1,4 @@
 import "./widgets.scss";
 
 import "../nav/nav.js";
-import "../subscribe-form/subscribe-form.js";
+import "../../library.blocks/subscribe-form/subscribe-form.js";
