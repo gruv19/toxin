@@ -9,6 +9,7 @@ module.exports = {
     "headers-and-footers": "./src/headers-and-footers.js",
     "colors-and-types": "./src/colors-and-types.js",
     "form-elements": "./src/form-elements.js",
+    cards: "./src/cards.js",
   },
   module: {
     rules: [
@@ -71,6 +72,12 @@ module.exports = {
       filename: "form-elements.html",
       template: "./src/form-elements.pug",
       chunks: ["form-elements"],
+      inject: "body",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "cards.html",
+      template: "./src/cards.pug",
+      chunks: ["cards"],
       inject: "body",
     }),
     new webpack.ProvidePlugin({
