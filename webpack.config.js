@@ -25,7 +25,7 @@ module.exports = {
           {
             loader: "sass-resources-loader",
             options: {
-              resources: "./src/common.blocks/global/_vars.scss",
+              resources: "./src/common.blocks/page/vars-and-mixins.scss",
             },
           },
         ],
