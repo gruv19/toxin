@@ -1,0 +1,28 @@
+.label {
+  max-width: 320px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(50%, auto) max-content;
+}
+
+.label__text,
+.label__state {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.label__text {
+  font-weight: bold;
+  color: $dark;
+}
+
+.label__state {
+  position: relative;
+  font-weight: normal;
+  color: rgba($dark, 0.5);
+  text-align: right;
+  // bottom: 3px;
+  grid-column: 2/3;
+}
