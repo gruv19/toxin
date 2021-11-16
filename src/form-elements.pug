@@ -1,6 +1,6 @@
 extends ./layouts/uikit-layout.pug
 
-include ./common.blocks/header/header.pug
+include ./common.blocks/uikit-header/uikit-header.pug
 include ./library.blocks/bullet-list/bullet-list.pug
 include ./library.blocks/info-card/info-card.pug
 include ./library.blocks/review/review.pug
@@ -24,7 +24,7 @@ block page-title
   title UI kit - Forms Elements
 
 block header
-  +header({}, false, true, false, false, false, 62)
+  +uikit-header
 
 block content
   main.main

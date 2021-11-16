@@ -1,79 +1,81 @@
-include ./common.blocks/header/header.pug
-include ./common.blocks/main/main.pug
+extends ./layouts/uikit-layout.pug
 
-- var colorsListData = [
--   {
--     cubeClass: "colors__cube--dr-100",
--     colorLabel: "Dark Shade 100%",
--     colorCode: "#1F2041",
--   },
--   {
--     cubeClass: "colors__cube--dr-75",
--     colorLabel: "Dark Shade 75%",
--     colorCode: "#1F2041",
--   },
--   {
--     cubeClass: "colors__cube--dr-50",
--     colorLabel: "Dark Shade 50%",
--     colorCode: "#1F2041",
--   },
--   {
--     cubeClass: "colors__cube--dr-25",
--     colorLabel: "Dark Shade 25%",
--     colorCode: "#1F2041",
--   },
--   {
--     cubeClass: "colors__cube--dr-5",
--     colorLabel: "Dark Shade 5%",
--     colorCode: "#1F2041",
--   },
--   {
--     cubeClass: "colors__cube--purple",
--     colorLabel: "Purple",
--     colorCode: "#BC9CFF",
--   },
--   {
--     cubeClass: "colors__cube--green",
--     colorLabel: "Green",
--     colorCode: "#6FCF97",
--   },
-- ];
+include ./common.blocks/uikit-header/uikit-header.pug
+include ./common.blocks/colors/colors.pug
+include ./common.blocks/types/types.pug
 
-- var typesListData = [
--   {
--     typesLabelClass: "types__label--h1",
--     typesLabel: "H1",
--     typesTextClass: "types__text--h1",
--     typesText: "This one is the sub-section or widget title",
--   },
--   {
--     typesLabelClass: "types__label--h2",
--     typesLabel: "H2",
--     typesTextClass: "types__text--h2",
--     typesText: "Next one is the item title inside widgets",
--   },
--   {
--     typesLabelClass: "types__label--h3",
--     typesLabel: "H3",
--     typesTextClass: "types__text--h3",
--     typesText: "This is a label or CTA text",
--   },
--   {
--     typesLabelClass: "types__label--body",
--     typesLabel: "Body",
--     typesTextClass: "types__text--body",
--     typesText: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
--   },
-- ];
+block page-title
+  title UI kit - Color And Types
 
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Colors And Types
-  body.body
-    +header({}, false, true, false, false, false, 67)
-    +main(colorsListData, typesListData)
-    
+block header 
+  +uikit-header
+block content
+  main.uikit-content
+    .uikit-content__wrapper
+      +colors(
+        {
+          cubeClass: "colors__cube--dr-100",
+          colorLabel: "Dark Shade 100%",
+          colorCode: "#1F2041",
+        },
+        {
+          cubeClass: "colors__cube--dr-75",
+          colorLabel: "Dark Shade 75%",
+          colorCode: "#1F2041",
+        },
+        {
+          cubeClass: "colors__cube--dr-50",
+          colorLabel: "Dark Shade 50%",
+          colorCode: "#1F2041",
+        },
+        {
+          cubeClass: "colors__cube--dr-25",
+          colorLabel: "Dark Shade 25%",
+          colorCode: "#1F2041",
+        },
+        {
+          cubeClass: "colors__cube--dr-5",
+          colorLabel: "Dark Shade 5%",
+          colorCode: "#1F2041",
+        },
+        {
+          cubeClass: "colors__cube--purple",
+          colorLabel: "Purple",
+          colorCode: "#BC9CFF",
+        },
+        {
+          cubeClass: "colors__cube--green",
+          colorLabel: "Green",
+          colorCode: "#6FCF97",
+        }
+      )
+      +types(
+        {
+          typesLabelClass: "types__label--h1",
+          typesLabel: "H1",
+          typesTextClass: "types__text--h1",
+          typesText: "This one is the sub-section or widget title",
+          modificator: "types__item--h1"
+        },
+        {
+          typesLabelClass: "types__label--h2",
+          typesLabel: "H2",
+          typesTextClass: "types__text--h2",
+          typesText: "Next one is the item title inside widgets",
+          modificator: "types__item--h2"
+        },
+        {
+          typesLabelClass: "types__label--h3",
+          typesLabel: "H3",
+          typesTextClass: "types__text--h3",
+          typesText: "This is a label or CTA text",
+          modificator: "types__item--h3"
+        },
+        {
+          typesLabelClass: "types__label--body",
+          typesLabel: "Body",
+          typesTextClass: "types__text--body",
+          typesText: "This is the body text which is used for most of the design, like paragraphs, lists, etc.",
+          modificator: "types__item--body"
+        }
+      )

@@ -2,8 +2,8 @@
 // import "./common.blocks/global/_global.scss";
 import "./common.blocks/page/page.js";
 import "./common.blocks/main/main.scss";
+import "./common.blocks/uikit-header/uikit-header.js";
 
-import "./common.blocks/header/header.js";
 import "./library.blocks/bullet-list/bullet-list.js";
 import "./library.blocks/info-card/info-card.js";
 import "./library.blocks/review/review.js";

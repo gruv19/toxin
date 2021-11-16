@@ -1,4 +1,6 @@
 import "./common.blocks/page/page.js";
 
-import "./common.blocks/header/header.js";
-import "./common.blocks/main/main.js";
+import "./common.blocks/uikit-header/uikit-header.js";
+import "./common.blocks/uikit-content/uikit-content.js";
+import "./common.blocks/colors/colors.js";
+import "./common.blocks/types/types.js";
