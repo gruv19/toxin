@@ -1,7 +1,7 @@
-mixin types(typesListData)
+mixin types(...data)
   .types 
     ul.types_list 
-      each item in typesListData
-        li.types__item
+      each item in data
+        li.types__item(class=item.modificator)
           p.types__label(class=item.typesLabelClass)= item.typesLabel
           p.types__text(class=item.typesTextClass)= item.typesText

@@ -1,7 +1,7 @@
-mixin colors(colorsListData)
+mixin colors(...data)
   .colors
     ul.colors__list
-      each item in colorsListData
+      each item in data
         li.colors__item
           .colors__cube(class=item.cubeClass)
           .colors__desc
