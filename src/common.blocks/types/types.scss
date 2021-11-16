@@ -1,14 +1,15 @@
-.types {
-}
-.types_list {
-  // width: 436px;
-}
 .types__item {
   display: flex;
   justify-content: start;
   align-items: flex-start;
-  & + & {
-    margin-top: 50px;
+  &--h2 {
+    margin-top: 52px;
+  }
+  &--h3 {
+    margin-top: 52px;
+  }
+  &--body {
+    margin-top: 47px;
   }
 }
 .types__label {
@@ -46,7 +47,7 @@
   }
   &--h2 {
     font-size: 1.9rem;
-    line-height: 2.3rem;
+    line-height: 2.4rem;
     width: 315px;
   }
   &--h3 {
