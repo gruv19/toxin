@@ -6,5 +6,5 @@ mixin review(reviewData)
     .review__header 
       .review__author-name= reviewData.author
       .review__date= reviewData.date
-    +like-button(true, 10)
+    +like-button(true, 10)(class="review__like-button")
     .review__text= reviewData.text

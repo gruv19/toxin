@@ -8,9 +8,9 @@
   position: relative;
   margin-bottom: 23px;
   display: grid;
-  // justify-content: space-between;
   grid-template-columns: repeat(2, 123px);
-  grid-gap: 20px;
+  grid-row-gap: 22px;
+  grid-column-gap: 20px;
 }
 
 .range-slider__label {
@@ -28,6 +28,7 @@
   color: rgba($dark, 0.5);
   text-transform: uppercase;
   text-align: right;
+  letter-spacing: -0.4px;
 }
 
 .range-slider {

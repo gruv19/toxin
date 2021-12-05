@@ -9,13 +9,14 @@
   line-height: 1.5rem;
   text-transform: uppercase;
   cursor: pointer;
-  padding: 9px 20px 10px;
+  padding: 12px 18px 13px;
   border-radius: 22px;
   display: inline-block;
   color: $primary;
   background: linear-gradient(#ffffff, #ffffff) padding-box,
     linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%) border-box;
   border: 2px solid transparent;
+  letter-spacing: -0.3px;
   &:hover {
     background: linear-gradient(#ffffff, #ffffff) padding-box,
       linear-gradient(180deg, rgba(#bc9cff, 0.5) 0%, rgba(#8ba4f9, 0.5) 100%)
@@ -27,6 +28,8 @@
   color: #ffffff;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   border: none;
+  padding: 15px 20px 14px;
+  letter-spacing: -0.3px;
   &:hover {
     background: linear-gradient(
       180deg,
@@ -41,16 +44,19 @@
   background: none;
   border: none;
   color: $primary;
+  letter-spacing: -0.1px;
   &:hover {
     color: rgba($dark, 0.5);
   }
 }
 .button--full {
-  width: 100%;
+  width: 97%;
   color: #ffffff;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   border: none;
   position: relative;
+  padding: 14px 4px 15px;
+  letter-spacing: 0px;
   &:hover {
     background: linear-gradient(
       180deg,

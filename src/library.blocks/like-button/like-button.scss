@@ -11,9 +11,9 @@
   color: rgba($dark, 0.25);
   background-image: url("./favorite.svg");
   background-repeat: no-repeat;
-  background-position: 6px center;
+  background-position: 3px center;
   padding: 0;
-  padding-left: 15px;
+  padding-left: 8px;
   &--active {
     background-image: url("./favorite-active.svg");
     border: 1px solid $primary;

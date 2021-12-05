@@ -61,7 +61,7 @@ block content
         +label("text field", "hover/focus")
         +textfield({
           name: "message",
-          placeholder: "Input message"
+          placeholder: "This is pretty awesome"
         })
       div
         +label("radio buttons") 
@@ -86,7 +86,7 @@ block content
         +button("click me")
         +button("click me", "link")
         +button("click me", "link")
-        +button("click me", "full")
+        +button("Перейти к оплате", "full")
       div
         +label("dropdown")
         +dropdown({
@@ -119,8 +119,8 @@ block content
         +masked-textfield("birthday1")
       div 
         +label("like button")
-        +like-button
-        +like-button(true, 10) 
+        +like-button(false, 2) 
+        +like-button(true, 122) 
       div
       div 
         +date-dropdown(class="test-date-dropdown")

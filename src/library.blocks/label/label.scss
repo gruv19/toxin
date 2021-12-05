@@ -16,6 +16,7 @@
 .label__text {
   font-weight: bold;
   color: $dark;
+  margin-bottom: 5px;
 }
 
 .label__state {
@@ -23,6 +24,6 @@
   font-weight: normal;
   color: rgba($dark, 0.5);
   text-align: right;
-  // bottom: 3px;
+  bottom: 3px;
   grid-column: 2/3;
 }
