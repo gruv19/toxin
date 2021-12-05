@@ -1,40 +1,17 @@
 .uikit-content {
-  background-color: #FFFFFF;
-  @include helpLine(red);
-
-  @media (min-width: $screen-sm) {}
-  
-  @media (min-width: $screen-md) {}
-  
-  @media (min-width: $screen-lg) {}
-  
-  @media (min-width: $screen-xl) {}
+  background-color: #ffffff;
 }
 
 .uikit-content__wrapper {
-  @include helpLine(blue);
   margin: 0 auto;
-  min-width: 320px;
+  min-width: 1440px;
   width: 100%;
-  padding: 0 10px;
-  
-  @media (min-width: $screen-sm) {
-    padding: 0 30px;
+  max-width: 1440px;
+  padding: 0 140px;
+  &--colors-and-types {
+    padding: 2px 157px 0 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 259px;
   }
-  
-  @media (min-width: $screen-md) {
-    padding: 0 70px;
-  }
-  
-  @media (min-width: $screen-lg) {
-    padding: 0 110px;
-  }
-  
-  @media (min-width: $screen-xl) {
-    max-width: 1440px;
-    width: 100%;
-    height: unset;
-    padding: 0 140px;
-  }
-
 }
