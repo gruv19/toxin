@@ -58,23 +58,27 @@ module.exports = {
       chunks: ["index"],
     }),
     new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
       filename: "headers-and-footers.html",
       template: "./src/headers-and-footers.pug",
       chunks: ["headers-and-footers"],
     }),
     new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
       filename: "colors-and-types.html",
       template: "./src/colors-and-types.pug",
       chunks: ["colors-and-types"],
       inject: "body",
     }),
     new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
       filename: "form-elements.html",
       template: "./src/form-elements.pug",
       chunks: ["form-elements"],
       inject: "body",
     }),
     new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
       filename: "cards.html",
       template: "./src/cards.pug",
       chunks: ["cards"],
