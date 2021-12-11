@@ -1,3 +1,11 @@
+.my-pagination.paginationjs {
+  padding-top: 12px;
+}
+
+.my-pagination .paginationjs-pages {
+  margin-bottom: 8px;
+}
+
 .my-pagination .paginationjs-pages li > a,
 .my-pagination .paginationjs-pages li.active > a {
   color: rgba($dark, 0.5);
@@ -65,4 +73,17 @@
   & > a {
     transform: rotateZ(180deg);
   }
+}
+
+.my-pagination .paginationjs-pages li.disabled>a {
+  opacity: 1 ;
+}
+
+.my-pagination .paginationjs-nav {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: rgba($dark, 0.75);
+  margin-left: 5px;
 }
