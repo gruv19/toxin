@@ -51,7 +51,7 @@
 
 .dropdown__item {
   display: grid;
-  grid-template-columns: 190px 30px 9px 30px;
+  grid-template-columns: calc(100% - 69px - 36px) 30px 9px 30px;
   grid-column-gap: 12px;
   align-items: center;
   & + & {

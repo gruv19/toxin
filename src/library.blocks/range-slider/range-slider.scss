@@ -6,12 +6,11 @@
 .range-slider__group {
   width: 100%;
   position: relative;
-  margin-bottom: 23px;
   display: grid;
   grid-template-columns: repeat(2, 123px);
   grid-row-gap: 22px;
   grid-column-gap: 20px;
-  padding-bottom: 25px;
+  padding-bottom: 48px;
 }
 
 .range-slider__label {
