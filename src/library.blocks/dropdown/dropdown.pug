@@ -1,46 +1,13 @@
 include ../button/button.pug
 
-mixin select-field(label="", state="")
-  .form__textfield-block
-    label
-      span.form__select-field-label Dropdown
-      .form__select-field Сколько гостей
-        .form__down-arrow
-        .form__select-list(tabindex="1")
-          .form__select-item
-            input.visually-hidden(type="number", name="adult", min="0", step="1")
-            .form__select-item-left Взрослые
-            .form__select-item-right
-              span.form__select-item-minus
-              span.form__select-item-count 0
-              span.form__select-item-plus
-          .form__select-item
-            input.visually-hidden(type="number", name="child", min="0", step="1")
-            .form__select-item-left Дети
-            .form__select-item-right
-              span.form__select-item-minus
-              span.form__select-item-count 0
-              span.form__select-item-plus
-          .form__select-item
-            input.visually-hidden(type="number", name="baby", min="0", step="1")
-            .form__select-item-left Младенцы
-            .form__select-item-right
-              span.form__select-item-minus
-              span.form__select-item-count 0
-              span.form__select-item-plus
-          .form__select-buttons
-              button.form__select-button-clean Очистить
-              button.form__select-button-save Применить
-
-
 mixin dropdown(data)
   .dropdown&attributes(attributes)
     .dropdown__visually= data.label
     ul.dropdown__list.visually-hidden(tabindex="1")
-      each val in data.list
+      each item in data.list
         li.dropdown__item
-          input.dropdown__input.visually-hidden(type="number", name=val.name, min="0", step="1", max="9", value="0")
-          .dropdown__item-label= val.label
+          input.dropdown__input.visually-hidden(type="number", name=item.name, min="0", step="1", max="9", value=item.value)
+          .dropdown__item-label= item.label
           .dropdown__step.dropdown__step--minus
           .dropdown__item-value 0
           .dropdown__step.dropdown__step--plus
