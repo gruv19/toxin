@@ -1,4 +1,8 @@
 mixin rate-button(data)
   select.rate-button(name=data.name)&attributes(attributes)
     each val in data.values
-      option.rate-button__value(value=val)= val
+      if val == data.start
+        option(selected="selected").rate-button__value(value=val)= val
+      else 
+        option.rate-button__value(value=val)= val
+

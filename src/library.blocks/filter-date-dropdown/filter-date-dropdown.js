@@ -1,7 +1,7 @@
 import customDatepicker from "../custom-datepicker/custom-datepicker";
 import "./filter-date-dropdown.scss";
 
-function filterDateDropdown(filterDateDropdownSelector) {
+function filterDateDropdown(filterDateDropdownSelector, selectedDates = false) {
   const filterDatepicker = document.querySelector(filterDateDropdownSelector);
   const filterOutputField = filterDatepicker.querySelector(
     ".filter-date-dropdown__field"
@@ -13,6 +13,7 @@ function filterDateDropdown(filterDateDropdownSelector) {
     classes: "filter-date-dropdown__datepicker",
     container: "filter-date-dropdown__group",
     dateFormat: "dd MMM",
+    selectedDates: selectedDates,
     locale: {
       monthsShort: [
         "янв",
@@ -52,10 +53,14 @@ function filterDateDropdown(filterDateDropdownSelector) {
       }
     },
   };
-  customDatepicker(
+  const datepicker = customDatepicker(
     filterDateDropdownSelector + " .filter-date-dropdown__input",
     filterDatepickerOptions
   );
+
+  if (selectedDates) {
+    datepicker.selectDate(selectedDates);
+  }
 }
 
 export default filterDateDropdown;

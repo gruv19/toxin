@@ -2,9 +2,11 @@ import customDatepicker from "../custom-datepicker/custom-datepicker";
 import "../label/label.js";
 import "./date-dropdown.scss";
 
-function dateDropdown(dateDropdownSelector) {
+function dateDropdown(dateDropdownSelector, selectedDates = false) {
   const dateDropdown = document.querySelector(dateDropdownSelector);
-  const outputFieldFrom = dateDropdown.querySelector(".date-dropdown__field--from");
+  const outputFieldFrom = dateDropdown.querySelector(
+    ".date-dropdown__field--from"
+  );
   const outputFieldto = dateDropdown.querySelector(".date-dropdown__field--to");
 
   const applyButton = {
@@ -44,10 +46,14 @@ function dateDropdown(dateDropdownSelector) {
     },
   };
 
-  customDatepicker(
+  const datepicker = customDatepicker(
     dateDropdownSelector + " .date-dropdown__input",
     datepickerOptions
   );
+
+  if (selectedDates) {
+    datepicker.selectDate(selectedDates);
+  }
 }
 
 export default dateDropdown;

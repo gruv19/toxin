@@ -7,12 +7,14 @@ function pagination(
   paginateSelector,
   dataSelector,
   dataSource,
-  templateFunction
+  templateFunction,
+  defaultPage = 1,
 ) {
   $(paginateSelector).pagination({
     dataSource: dataSource,
     pageSize: 12,
     pageRange: 1,
+    pageNumber: defaultPage,
     autoHidePrevious: true,
     autoHideNext: true,
     className: "my-pagination",
