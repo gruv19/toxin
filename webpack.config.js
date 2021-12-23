@@ -1,5 +1,5 @@
 const path = require("path");
-const webpack = require('webpack');
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");  // - использовать вместо style-loader для product-mode
 
@@ -13,7 +13,10 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.css$/, use: ["style-loader", /*MiniCssExtractPlugin.loader,*/"css-loader"] },
+      {
+        test: /\.css$/,
+        use: ["style-loader", /*MiniCssExtractPlugin.loader,*/ "css-loader"],
+      },
       { test: /\.(js)$/, use: "babel-loader", exclude: "/node_modules/" },
       {
         test: /\.scss$/,
@@ -48,7 +51,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name][hash].bundle.js",
     clean: true,
-    assetModuleFilename: 'assets/[name][hash][ext]'
+    assetModuleFilename: "assets/[name][hash][ext]",
   },
   plugins: [
     // new MiniCssExtractPlugin(),
@@ -97,5 +100,6 @@ module.exports = {
   devServer: {
     static: "./dist",
     hot: true,
+    watchFiles: ["./src/**/*"],
   },
 };
