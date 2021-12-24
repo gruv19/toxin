@@ -54,6 +54,7 @@ function dateDropdown(dateDropdownSelector, selectedDates = false) {
   if (selectedDates) {
     datepicker.selectDate(selectedDates);
   }
+  return datepicker;
 }
 
 export default dateDropdown;
