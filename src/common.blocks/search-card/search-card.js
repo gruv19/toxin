@@ -5,12 +5,12 @@ import "../../library.blocks/button/button.js";
 
 import "./search-card.scss";
 
-$(window).on("load", () => {
-  const datepicker = dateDropdown(".search-card__date-dropdown");
+function searchCard() {
   dropdown(".search-card__dropdown", [
     { one: "гость", twoToFour: "гостя", moreThanFive: "гостей" },
   ]);
-
+  
+  const datepicker = dateDropdown(".search-card__date-dropdown");
   const searchForm = document.querySelector(".search-card__form");
 
   searchForm.addEventListener("submit", (e) => {
@@ -22,4 +22,6 @@ $(window).on("load", () => {
       console.log(`${key}: ${data.get(key)}`);
     }
   });
-});
+}
+
+export default searchCard;
