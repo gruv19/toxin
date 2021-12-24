@@ -1,0 +1,19 @@
+mixin login-card
+  .login-card
+    form.login-card__form(action="/registration", method="post")
+      fieldset.login-card__fieldset
+        legend.login-card__legend Войти
+        +textfield({
+          name: "email",
+          placeholder: "Email",
+          value: ""
+        })(class="login-card__textfield")
+        +textfield({
+          name: "password",
+          placeholder: "Пароль",
+          value: ""
+        })(class="login-card__textfield")
+      +button("Войти", "full")(class="login-card__button-submit")
+      .login-card__registration
+        span.login-card__text Нет аккаунта на Toxin?
+        +button("войти")(class="login-card__button-registration")
