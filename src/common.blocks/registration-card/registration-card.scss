@@ -1,0 +1,57 @@
+.registration-card {
+  max-width: 380px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px 30px 30px;
+  font-family: $primaryFont;
+}
+// .registration-card__form {}
+.registration-card__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  margin-bottom: 20px;
+}
+.registration-card__legend {
+  font-weight: bold;
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.registration-card__textfield {
+  & + & {
+    margin-top: 10px;
+  }
+}
+.registration-card__radio-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+// .registration-card__radio {}
+.registration-card__masked {
+  margin-bottom: 20px;
+}
+.registration-card__toggle {
+  margin-top: 10px;
+}
+// .registration-card__button-submit {}
+.registration-card__login {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.registration-card__text {
+  color: #000;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+.registration-card__button-login {
+}

@@ -1,0 +1,59 @@
+include ../../library.blocks/textfield/textfield.pug
+include ../../library.blocks/radio-button/radio-button.pug
+include ../../library.blocks/label/label.pug
+include ../../library.blocks/masked-textfield/masked-textfield.pug
+include ../../library.blocks/toggle/toggle.pug
+include ../../library.blocks/button/button.pug
+
+mixin registration-card
+  .registration-card
+    form.registration-card__form(action="/registration", method="post")
+      fieldset.registration-card__fieldset
+        legend.registration-card__legend Регистрация
+        +textfield({
+          name: "firstname",
+          placeholder: "Имя",
+          value: ""
+        })(class="registration-card__textfield")
+        +textfield({
+          name: "lastname",
+          placeholder: "Фамилия",
+          value: ""
+        })(class="registration-card__textfield")
+        .registration-card__radio-buttons
+          +radio-button(
+            {
+              name: "sex",
+              label: "Мужчина",
+              value: "male",
+              state: true,
+            },
+            {
+              name: "sex",
+              label: "Женщина",
+              value: "female",
+              state: false,
+            }
+          )(class="registration-card__radio")
+        +label("дата рождения")
+        +masked-textfield("birthday")(class="registration-card__masked")
+        +label("Данные для входа в сервис")
+        +textfield({
+          name: "email",
+          placeholder: "Email",
+          value: ""
+        })(class="registration-card__textfield")
+        +textfield({
+          name: "password",
+          placeholder: "Пароль",
+          value: ""
+        })(class="registration-card__textfield")
+        +toggle({
+          label: "Получать спецпредложения",
+          name: "special",
+          value: "false"
+        })(class="registration-card__toggle")
+      +button("Подобрать номер", "full")(class="registration-card__button-submit")
+      .registration-card__login
+        span.registration-card__text Уже есть аккаунт на Toxin
+        +button("войти")(class="registration-card__button-login")
