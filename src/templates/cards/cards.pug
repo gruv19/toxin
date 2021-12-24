@@ -3,6 +3,7 @@ extends ../../layouts/uikit-layout.pug
 include ../../common.blocks/uikit-header/uikit-header.pug
 include ../../common.blocks/search-card/search-card.pug
 include ../../common.blocks/registration-card/registration-card.pug
+include ../../common.blocks/login-card/login-card.pug
 
 block page-title
   title UI kit - Cards
@@ -18,7 +19,7 @@ block content
         +registration-card
       .cards__col 
         .booking-card
-        .login-card
+        +login-card
       .cards__col 
         .datepicker-card
         .room-card
