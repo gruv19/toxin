@@ -83,7 +83,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       favicon: "./src/images/favicon.png",
       filename: "cards.html",
-      template: "./src/cards.pug",
+      template: "./src/templates/cards/cards.pug",
       chunks: ["cards"],
       inject: "body",
     }),

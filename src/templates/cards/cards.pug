@@ -1,0 +1,24 @@
+extends ../../layouts/uikit-layout.pug
+
+include ../../common.blocks/uikit-header/uikit-header.pug
+include ../../common.blocks/search-card/search-card.pug
+
+block page-title
+  title UI kit - Cards
+
+block header
+  +uikit-header(class="uikit-header--transp")
+  
+block content
+  main.cards
+    .cards__wrapper
+      .cards__col 
+        +search-card
+        .registration-card
+      .cards__col 
+        .booking-card
+        .login-card
+      .cards__col 
+        .datepicker-card
+        .room-card
+        .room-card
