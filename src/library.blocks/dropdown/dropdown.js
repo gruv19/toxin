@@ -135,6 +135,7 @@ function dropdown(dropdownSelector, genitive) {
     });
     btn.addEventListener("click", function (e) {
       e.stopPropagation();
+      e.preventDefault();
       if (this.classList.contains("dropdown__button--reset")) {
         clearDropdown();
       }
