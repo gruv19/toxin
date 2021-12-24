@@ -1,0 +1,22 @@
+include ../../library.blocks/date-dropdown/date-dropdown.pug
+include ../../library.blocks/label/label.pug
+include ../../library.blocks/dropdown/dropdown.pug
+include ../../library.blocks/button/button.pug
+
+mixin search-card
+  .search-card
+    form(method="post", action="search-room").search-card__form
+      fieldset.search-card__fieldset
+        legend.search-card__legend Найдём номера под ваши пожелания
+        +date-dropdown("прибытие", "выезд")(class="search-card__date-dropdown")
+        +label("гости")
+        +dropdown({
+          label: "Сколько гостей",
+          buttons: true,
+          list: [
+            {name: "adult", label: "Взрослые", value: "0"},
+            {name: "child", label: "Дети", value: "0"},
+            {name: "baby", label: "Младенцы", value: "0"}
+          ]
+        })(class="search-card__dropdown")
+      +button("Подобрать номер", "full")(class="search-card__button-submit")
