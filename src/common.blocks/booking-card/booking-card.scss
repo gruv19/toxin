@@ -1,0 +1,88 @@
+.booking-card {
+  max-width: 380px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px 30px 30px;
+  font-family: $primaryFont;
+}
+// .booking-card__form {}
+.booking-card__info {
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: $dark;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+// .booking-card__room {}
+.booking-card__room-number {
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+}
+.booking-card__room-category {
+  color: $primary;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+.booking-card__cost {
+  color: rgba($dark, 0.5);
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+.booking-card__cost-period {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: normal;
+}
+.booking-card__date-dropdown {
+  margin-bottom: 20px;
+}
+.booking-card__dropdown {
+  margin-bottom: 20px;
+}
+.booking-card__calculation {
+  color: rgba($dark, 0.75);
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+.booking-card__base,
+.booking-card__service,
+.booking-card__additional {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.booking-card__base-data,
+.booking-card__service-data,
+.booking-card__additional-data {
+  max-width: 220px;
+}
+// .booking-card__base-sum {}
+// .booking-card__service {}
+// .booking-card__service-data {}
+// .booking-card__service-sum {}
+// .booking-card__additional {}
+.booking-card__additional-data {
+  line-height: 1.8rem;
+}
+// .booking-card__additional-sum {}
+.booking-card__total {
+  color: $dark;
+  font-size: 1.9rem;
+  line-height: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+// .booking-card__total-label {}
+// .booking-card__total-sum {}
+// .booking-card__button-submit {}
