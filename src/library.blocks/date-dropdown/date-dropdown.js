@@ -13,6 +13,16 @@ function dateDropdown(dateDropdownSelector, selectedDates = false) {
     content: "Применить",
     onClick: (dp) => {
       dp.hide();
+      dp.$datepicker.dispatchEvent(
+        new CustomEvent("changeDate", {
+          bubbles: true,
+          cancelable: true,
+          detail: {
+            dateFrom: dp.selectedDates[0],
+            dateTo: dp.selectedDates[1],
+          },
+        })
+      );
     },
   };
 
@@ -20,7 +30,7 @@ function dateDropdown(dateDropdownSelector, selectedDates = false) {
     buttons: ["clear", applyButton],
     classes: "date-dropdown__datepicker",
     container: "date-dropdown__group",
-    dateFormat: "dd.M.yyyy",
+    dateFormat: "dd.MM.yyyy",
     onSelect({ date, formattedDate, datepicker }) {
       const rangeFrom = datepicker.$content.querySelector(".-range-from-");
       const rangeTo = datepicker.$content.querySelector(".-range-to-");
@@ -29,6 +39,18 @@ function dateDropdown(dateDropdownSelector, selectedDates = false) {
       }
       outputFieldFrom.textContent = date[0] ? formattedDate[0] : "ДД.ММ.ГГГГ";
       outputFieldto.textContent = date[1] ? formattedDate[1] : "ДД.ММ.ГГГГ";
+      if (formattedDate.length === 2) {
+        datepicker.$datepicker.dispatchEvent(
+          new CustomEvent("changeDate", {
+            bubbles: true,
+            cancelable: true,
+            detail: {
+              dateFrom: datepicker.selectedDates[0],
+              dateTo: datepicker.selectedDates[1],
+            },
+          })
+        );
+      }
     },
     onShow(isFinished) {
       outputFieldFrom.classList.add("date-dropdown__field--active");
