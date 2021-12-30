@@ -1,0 +1,15 @@
+// .cards {}
+.cards__wrapper {
+  margin: 0 auto;
+  min-width: 1440px;
+  width: 100%;
+  max-width: 1440px;
+  padding: 10px 140px 140px;
+  display: flex;
+  justify-content: space-between;
+}
+.cards__col {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-row-gap: 40px;
+}
