@@ -6,6 +6,7 @@ import searchCard from "./common.blocks/search-card/search-card.js";
 import registrationCard from "./common.blocks/registration-card/registration-card.js";
 import loginCard from "./common.blocks/login-card/login-card.js";
 import bookingCard from "./common.blocks/booking-card/booking-card.js";
+import roomCard from "./common.blocks/room-card/room-card.js";
 import "./templates/cards/cards.scss";
 
 $(window).on("load", () => {
@@ -13,4 +14,5 @@ $(window).on("load", () => {
   registrationCard();
   loginCard();
   bookingCard({ number: 888, category: "ЛЮКС", cost: 9990, service: 0, additional: 300 }, 2179);
+  roomCard();
 });

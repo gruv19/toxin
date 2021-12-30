@@ -5,6 +5,7 @@ include ../../common.blocks/search-card/search-card.pug
 include ../../common.blocks/registration-card/registration-card.pug
 include ../../common.blocks/login-card/login-card.pug
 include ../../common.blocks/booking-card/booking-card.pug
+include ../../common.blocks/room-card/room-card.pug
 
 block page-title
   title UI kit - Cards
@@ -23,5 +24,19 @@ block content
         +login-card
       .cards__col 
         .datepicker-card
-        .room-card
-        .room-card
+        +room-card({
+          number: 888,
+          category: "ЛЮКС",
+          cost: 9990,
+          rating: 5,
+          reviewCount: 145,
+          img: "image-1.min.jpg"
+        })
+        +room-card({
+          number: 840,
+          category: "",
+          cost: 9900,
+          rating: 4,
+          reviewCount: 65,
+          img: "image-1.min.jpg"
+        })
