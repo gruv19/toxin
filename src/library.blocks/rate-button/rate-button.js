@@ -3,7 +3,7 @@ import StarRating from "star-rating.js";
 
 import "./rate-button.scss";
 
-function rateButton() {
+function rateButton(prebuilt = false) {
   return new StarRating(".rate-button", {
     tooltip: false,
     classNames: {
@@ -12,6 +12,7 @@ function rateButton() {
       selected: "my-gl-selected",
     },
     maxStars: 5,
+    prebuilt: prebuilt,
   });
 }
 

@@ -1,4 +1,5 @@
-.my-gl-star-rating--stars {
+.my-gl-star-rating--stars,
+.gl-star-rating--stars {
   max-width: 120px;
   width: 100%;
   display: flex;
@@ -14,6 +15,12 @@
   }
 }
 
-.my-gl-star-rating--stars > .my-gl-active {
+.my-gl-star-rating--stars > .my-gl-active,
+.gl-star-rating--stars > .gl-active {
   background-image: url("./star-active.svg");
+}
+
+.gl-star-rating--stars > .gl-active,
+.gl-star-rating--stars > span {
+  cursor: default;
 }

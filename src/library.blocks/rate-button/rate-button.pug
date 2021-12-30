@@ -1,4 +1,4 @@
-mixin rate-button(data)
+mixin rate-button-for-feedback(data)
   select.rate-button(name=data.name)&attributes(attributes)
     each val in data.values
       if val == data.start
@@ -6,3 +6,17 @@ mixin rate-button(data)
       else 
         option.rate-button__value(value=val)= val
 
+mixin rate-button(data)
+  span.rate-button
+    select.gl-star-rating.visually-hidden(name=data.name)&attributes(attributes)
+      each val in data.values
+        if val == data.start
+          option(selected="selected", value=val).rate-button__value= val
+        else 
+          option.rate-button__value(value=val)= val
+    span.gl-star-rating--stars
+      each val in data.values
+        if val <= data.start
+          span.gl-active(data-value=val)
+        else 
+          span(data-value=val)
