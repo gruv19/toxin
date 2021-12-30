@@ -15,7 +15,18 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", /*MiniCssExtractPlugin.loader,*/ "css-loader"],
+        use: [
+          "style-loader",
+          /*MiniCssExtractPlugin.loader,*/ "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["postcss-preset-env"]],
+              },
+            },
+          },
+        ],
       },
       { test: /\.(js)$/, use: "babel-loader", exclude: "/node_modules/" },
       {
@@ -24,11 +35,22 @@ module.exports = {
           "style-loader",
           // MiniCssExtractPlugin.loader,
           "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["postcss-preset-env"]],
+              },
+            },
+          },
           "sass-loader",
           {
             loader: "sass-resources-loader",
             options: {
-              resources: "./src/common.blocks/page/vars-and-mixins.scss",
+              resources: [
+                "./node_modules/normalize-scss/sass/_normalize.scss",
+                "./src/common.blocks/page/vars-and-mixins.scss",
+              ],
             },
           },
         ],
