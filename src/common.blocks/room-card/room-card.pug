@@ -1,0 +1,22 @@
+include ../../library.blocks/rate-button/rate-button.pug
+
+mixin room-card(roomInfo)
+  a.room-card(href="/booking-room/" + roomInfo.number) 
+    .room-card__slider 
+      img(src=require("/src/images/rooms/" + roomInfo.number + "/" + roomInfo.img))
+    .room-card__info 
+      .room-card__room-cost
+        span.room-card__room № 
+          span.room-card__room-number #{roomInfo.number} 
+          span.room-card__room-category #{roomInfo.category}
+        span.room-card__cost #{roomInfo.cost}₽ 
+          span.room-card__cost-period в сутки
+      .room-card__room-rating
+        +rate-button({
+          name: "room-rating-" + roomInfo.number,
+          values: [1, 2, 3, 4, 5],
+          start: roomInfo.rating
+        })(class="room-card__rating")
+        .room-card__reviews-counter 
+          span.room-card__reviews #{roomInfo.reviewCount} 
+          | Отзывов
