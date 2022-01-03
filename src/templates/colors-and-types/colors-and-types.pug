@@ -1,17 +1,18 @@
-extends ./layouts/uikit-layout.pug
+extends ../../layouts/uikit-layout.pug
 
-include ./common.blocks/uikit-header/uikit-header.pug
-include ./common.blocks/colors/colors.pug
-include ./common.blocks/types/types.pug
+include ../../common.blocks/uikit-header/uikit-header.pug
+include ../../common.blocks/colors/colors.pug
+include ../../common.blocks/types/types.pug
 
 block page-title
   title UI kit - Color And Types
 
 block header 
   +uikit-header
+
 block content
-  main.uikit-content
-    .uikit-content__wrapper.uikit-content__wrapper--colors-and-types
+  main.colors-and-types
+    .colors-and-types__wrapper
       +colors(
         {
           cubeClass: "colors__cube--dr-100",

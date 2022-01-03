@@ -91,7 +91,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       favicon: "./src/images/favicon.png",
       filename: "colors-and-types.html",
-      template: "./src/colors-and-types.pug",
+      template: "./src/templates/colors-and-types/colors-and-types.pug",
       chunks: ["colors-and-types"],
       inject: "body",
     }),
