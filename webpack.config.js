@@ -98,7 +98,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       favicon: "./src/images/favicon.png",
       filename: "form-elements.html",
-      template: "./src/form-elements.pug",
+      template: "./src/templates/form-elements/form-elements.pug",
       chunks: ["form-elements"],
       inject: "body",
     }),
