@@ -35,6 +35,9 @@ function customDatepicker(inputSelector, options) {
   if (options.locale) {
     airDatepickerOptions.locale = options.locale;
   }
+  if (options.inline) {
+    airDatepickerOptions.inline = options.inline;
+  }
   if (options.onSelect) {
     airDatepickerOptions.onSelect = options.onSelect;
   }
