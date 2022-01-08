@@ -1,5 +1,5 @@
+import "normalize.css";
 import "./common.blocks/page/page.js";
-import "./common.blocks/main/main.scss";
 
 import "./library.blocks/bullet-list/bullet-list.js";
 import "./library.blocks/info-card/info-card.js";

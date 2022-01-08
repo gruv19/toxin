@@ -1,3 +1,4 @@
+import "normalize.css";
 import "./common.blocks/page/page.js";
 
 import "./common.blocks/colors/colors.js";
