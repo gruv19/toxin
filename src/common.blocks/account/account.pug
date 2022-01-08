@@ -1,8 +1,10 @@
-mixin accountBlock(logged=false)
-  if logged
+include ../../library.blocks/button/button.pug
+
+mixin account(account=false)
+  if account
     .account.account--logged
-      a.account__cabinet(href="/cabinet") Юлий цезарь
+      a.account__cabinet(href="/cabinet.html") #{account.firstname} #{account.lastname}
   else
     .account
-      a.account__button.account__button--primary(href="/login") Войти
-      a.account__button.account__button--secondary(href="/register") Зарегистрироваться
+      +button("войти", "", {name: "a", href: "/login.html"})(class="account__button")
+      +button("Зарегистрироваться", "primary", {name: "a", href: "/register.html"})(class="account__button")

@@ -3,27 +3,6 @@
   align-items: center;
   &--logged {
     height: 30px;
-    padding-left: 20px;
-    border-left: 1px solid rgba($dark, 0.1);
-  }
-}
-.account__button {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: $primary;
-  background-color: #fff;
-  border-radius: 22px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  padding: 9px 20px 10px;
-  &--secondary {
-    color: #fff;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  }
-  & + & {
-    margin-left: 20px;
   }
 }
 
@@ -31,4 +10,10 @@
   color: rgba($dark, 0.5);
   font-size: 1.4rem;
   line-height: 1.7rem;
+}
+
+.account__button {
+  & + & {
+    margin-left: 20px;
+  }
 }
