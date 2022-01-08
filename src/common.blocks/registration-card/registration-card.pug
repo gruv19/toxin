@@ -56,4 +56,4 @@ mixin registration-card
       +button("Подобрать номер", "full")(class="registration-card__button-submit")
       .registration-card__login
         span.registration-card__text Уже есть аккаунт на Toxin
-        +button("войти")(class="registration-card__button-login")
+        +button("войти", "", {name: "a", href: "/login.html"})(class="registration-card__button-login")

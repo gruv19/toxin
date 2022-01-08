@@ -16,4 +16,4 @@ mixin login-card
       +button("Войти", "full")(class="login-card__button-submit")
       .login-card__registration
         span.login-card__text Нет аккаунта на Toxin?
-        +button("войти")(class="login-card__button-registration")
+        +button("создать", "", {name: "a", href: "/register.html"})(class="login-card__button-registration")

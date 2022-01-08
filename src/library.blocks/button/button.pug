@@ -1,12 +1,20 @@
-mixin button(text="click me", type="")
+mixin button(text="click me", type="", tag={})
   case type
     when "primary"
-      button.button.button--primary&attributes(attributes)= text
+      if tag.name
+        a.button.button--primary(href=tag.href)&attributes(attributes)= text
+      else
+        button.button.button--primary&attributes(attributes)= text
     when "link"
-      button.button.button--link&attributes(attributes)= text
+      if tag.name
+        a.button.button--link(href=tag.href)&attributes(attributes)= text
+      else 
+        button.button.button--link&attributes(attributes)= text
     when "full"
       button.button.button--full&attributes(attributes)= text
         span.button__arrow
     default
-      button.button&attributes(attributes)= text
-  
+      if tag.name
+        a.button(href=tag.href)&attributes(attributes)= text
+      else 
+        button.button&attributes(attributes)= text
