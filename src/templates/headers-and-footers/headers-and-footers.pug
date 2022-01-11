@@ -1,0 +1,22 @@
+extends ../../layouts/uikit-layout.pug
+
+include ../../common.blocks/uikit-header/uikit-header.pug
+include ../../common.blocks/header/header.pug
+
+block page-title
+  title UI kit - Headers And Footers
+
+block header
+  +uikit-header(class="uikit-header--transp")
+
+block content
+  main.headers-and-footers
+    //- .headers-and-footers__header-logged-out
+    +header(class="headers-and-footers__header-logged-out")
+    //- .headers-and-footers__header-logged-in
+    +header({
+      firstname: "Юлий",
+      lastname: "Цезарь"
+    })(class="headers-and-footers__header-logged-in")
+    .footer-desktop(style={"margin-top": "200px", height: "200px"})
+    .footer-mobile

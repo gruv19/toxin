@@ -48,7 +48,6 @@ module.exports = {
             loader: "sass-resources-loader",
             options: {
               resources: [
-                "./node_modules/normalize-scss/sass/_normalize.scss",
                 "./src/common.blocks/page/vars-and-mixins.scss",
               ],
             },
@@ -85,7 +84,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       favicon: "./src/images/favicon.png",
       filename: "headers-and-footers.html",
-      template: "./src/headers-and-footers.pug",
+      template: "./src/templates/headers-and-footers/headers-and-footers.pug",
       chunks: ["headers-and-footers"],
     }),
     new HtmlWebpackPlugin({
@@ -114,7 +113,6 @@ module.exports = {
       jQuery: "jquery",
       "window.$": "jquery",
       "window.jQuery": "jquery",
-      // pagination: "paginationjs",
     }),
   ],
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
