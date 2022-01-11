@@ -1,4 +1,9 @@
+import nav from "../nav/nav.js";
+
 import "./header.scss";
 
-import "../account/account.js";
-import "../nav/nav.js";
+function header(navSelector) {
+  nav(navSelector);
+}
+
+export default header;
