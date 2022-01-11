@@ -1,10 +1,20 @@
-mixin navList(content, inFooter)
-  .nav
-    if content.title 
-      h3.nav__title= content.title
-    ul.nav__list(class=inFooter ? 'nav__list--footer' : 'nav__list--header')
-      each val in content.items
-        li.nav__item(class=inFooter ? 'nav__item--footer' : 'nav__item--header')
-          a.nav__link(href=val.href)= val.label 
-            if val.expand
-              i.nav__expand 
+include ../account/account.pug
+include ../../library.blocks/main-menu-state/main-menu-state.pug
+
+mixin nav(content, account=false)
+  nav.nav&attributes(attributes)
+    +main-menu-state
+    ul.nav__list.sm
+      each val in content
+        if val.submenu
+          li.nav__item.nav__item--submenu
+            a.nav__link.nav__link--submenu(href=val.href)= val.label
+            ul.nav__submenu
+              each sub in val.submenu
+                li.nav__submenu-item
+                  a.nav__submenu-link(href=sub.href)= sub.label
+        else
+          li.nav__item
+            a.nav__link(href=val.href)= val.label
+      li.nav__item.nav__item--account
+        +account(account)

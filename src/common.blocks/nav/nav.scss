@@ -1,54 +1,169 @@
-// .nav{}
-.nav__list {
-  &--header {
+#main-menu-state:not(:checked) ~ .nav__list {
+  display: none;
+  @media (min-width: $screen-lg) {
     display: flex;
-    justify-content: space-between;
   }
 }
 
-.nav__item {
+#main-menu-state:checked ~ .nav__list {
+  display: flex;
+}
+
+.nav {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 0 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @media (min-width: $screen-lg) {
+    position: relative;
+    width: unset;
+    left: unset;
+    padding: 0;
+    background-color: transparent;
+    display: block;
+  }
+}
+
+.nav .nav__list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  &--active {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (min-width: $screen-lg) {
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0;
+    // width: 447px;
+  }
+}
+
+.nav__list .nav__item {
   color: rgba($dark, 0.5);
   font-size: 1.4rem;
   line-height: 1.7rem;
-  display: flex;
-  align-items: center;
+  order: 2;
+  width: 100%;
+  text-align: center;
+  @media (min-width: $screen-lg) {
+    padding: 0;
+    order: 1;
+    margin-right: 20px;
+    width: unset;
+  }
   &--active {
+    color: rgba($color: $dark, $alpha: 0.75);
+    font-weight: bold;
+  }
+  // &--submenu {}
+  &--account {
+    order: 1;
+    @media (min-width: $screen-lg) {
+      padding: 0;
+    }
+  }
+}
+
+.nav__item .nav__link {
+  padding: 10px 0;
+  @media (min-width: $screen-lg) {
+    padding: 0;
+  }
+}
+
+.nav__item .nav__link:hover {
+  @media (min-width: $screen-lg) {
     color: rgba($color: $dark, $alpha: 0.75);
     font-weight: bold;
   }
 }
 
-.nav__item--header {
-  & + & {
-    margin-left: 20px;
-  }
-}
-
-.nav__item--footer {
-  & + & {
-    margin-top: 20px;
-  }
-}
-
-.nav__link {
-  color: inherit;
+.nav__item .nav__link--submenu {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.nav__expand {
+.nav__link--submenu .sub-arrow {
+  position: relative;
   height: 21px;
   width: 24px;
   display: inline-block;
-  background-image: url(/src/images/expand_more.svg);
+  background-image: url(./expand_more.svg);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
+  transition: transform 0.5s;
 }
 
-.nav__title {
-  padding: 0;
-  margin: 0 0 20px;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  text-transform: uppercase;
+.nav__link--submenu.highlighted {
+  color: rgba($color: $dark, $alpha: 0.75);
+  font-weight: bold;
+}
+
+.nav__link--submenu.highlighted .sub-arrow {
+  transform: rotateZ(180deg);
+}
+
+/* из документации smartmenus */
+@media (min-width: $screen-lg) {
+  .nav__list ul {
+    position: absolute;
+    width: 12em;
+  }
+  .nav__list li {
+    float: left;
+  }
+  .nav__list.sm-rtl li {
+    float: right;
+  }
+  .nav__list ul li,
+  .nav__list.sm-rtl ul li,
+  .nav__list.sm-vertical li {
+    float: none;
+  }
+  .nav__list a {
+    white-space: nowrap;
+  }
+  .nav__list ul a,
+  .nav__list.sm-vertical a {
+    white-space: normal;
+  }
+  .nav__list .sm-nowrap > li > a,
+  .nav__list .sm-nowrap > li > :not(ul) a {
+    white-space: nowrap;
+  }
+}
+/* конец отрывка из документации */
+.nav__submenu {
+  box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  background-color: #f4f4f4;
+  @media (min-width: $screen-lg) {
+    box-shadow: 0px 5px 8px -1px rgba(34, 60, 80, 0.2);
+    background-color: #fff;
+  }
+}
+
+.nav__submenu .nav__submenu-item {
+  text-align: center;
+  @media (min-width: $screen-lg) {
+    text-align: left;
+  }
+}
+
+.nav__submenu-item .nav__submenu-link {
+  padding: 5px 0 5px 10px;
+}
+
+.nav__submenu-item .nav__submenu-link:hover {
+  @media (min-width: $screen-lg) {
+    background-color: #f4f4f6;
+  }
 }
