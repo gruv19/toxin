@@ -2,6 +2,7 @@ extends ../../layouts/uikit-layout.pug
 
 include ../../common.blocks/uikit-header/uikit-header.pug
 include ../../common.blocks/header/header.pug
+include ../../common.blocks/footer/footer.pug
 
 block page-title
   title UI kit - Headers And Footers
@@ -18,5 +19,7 @@ block content
       firstname: "Юлий",
       lastname: "Цезарь"
     })(class="headers-and-footers__header-logged-in")
-    .footer-desktop(style={"margin-top": "200px", height: "200px"})
-    .footer-mobile
+    +footer(class="footer-desktop")
+    +footer(class="footer-mobile")
+    //- .footer-desktop(style={"margin-top": "200px", height: "200px"})
+    //- .footer-mobile
