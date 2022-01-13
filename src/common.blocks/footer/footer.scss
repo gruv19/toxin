@@ -1,10 +1,123 @@
 .footer {
-  // @include helpLine(red);
   background-color: #ffffff;
-  &--shadow {
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  }
-  &--margin {
-    margin-bottom: 40px;
+}
+
+.footer__navigation {
+  padding: 120px 0 0;
+  @media (min-width: $screen-lg) {
+    padding: 100px 0;
+    box-shadow: 0px 1px 0px rgba($dark, 0.1);
   }
 }
+
+.footer__wrapper {
+  margin: 0 auto;
+  padding: 0 10px;
+  min-width: $screen-sm;
+  &--navigation {
+    display: flex;
+    justify-content: center;
+  }
+  &--copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (min-width: $screen-lg) {
+    max-width: 1240px;
+    padding: 0 40px;
+    &--navigation {
+      justify-content: space-between;
+      align-self: flex-start;
+    }
+    &--copyright {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+.footer__logo {
+  @media (min-width: $screen-lg) {
+    width: 260px;
+    margin-right: 40px;
+  }
+  &--mobile {
+    width: unset;
+  }
+}
+// .footer__link {}
+// .footer__img {}
+.footer__info {
+  display: none;
+  @media (min-width: $screen-lg) {
+    display: block;
+    margin: 20px 0;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: rgba($dark, 0.75);
+    font-weight: normal;
+  }
+  &--mobile {
+    display: none;
+  }
+}
+
+.footer__widgets {
+  display: none;
+  @media (min-width: $screen-lg) {
+    display: block;
+    width: 555px;
+    margin-right: 45px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.footer__subcribe {
+  display: none;
+  @media (min-width: $screen-lg) {
+    display: block;
+    width: 260px;
+  }
+}
+
+.footer__subcribe-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  color: $dark;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 21px;
+}
+
+.footer__subcribe-info {
+  @media (min-width: $screen-lg) {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: rgba($dark, 0.75);
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+}
+
+.footer__copyright {
+  padding: 20px 0 120px;
+  @media (min-width: $screen-lg) {
+    padding: 23px 0;
+  }
+}
+
+.footer__copyright-info {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: rgba($dark, 0.75);
+  margin-bottom: 25px;
+  @media (min-width: $screen-lg) {
+    margin: 0;
+  }
+}
+// .footer__socials {}
