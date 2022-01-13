@@ -1,3 +1,32 @@
+.wedget {
+  width: 150px;
+}
+
+.widget__title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  color: $dark;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 21px;
+}
+
+// .widget__list {}
+
+.widget__item {
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  & + & {
+    margin-top: 20px;
+  }
+}
+.widget__link {
+  color: rgba($dark, 0.5);
+}
+
 .widgets__wrapper {
   margin: 0 auto;
   max-width: 768px;

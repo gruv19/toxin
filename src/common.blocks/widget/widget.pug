@@ -1,0 +1,9 @@
+include ../../library.blocks/subscribe-form/subscribe-form.pug
+
+mixin widget(data)
+  .wedget&attributes(attributes)
+    h3.widget__title= data.title
+    ul.widget__list
+      each val in data.list
+        li.widget__item
+          a.widget__link(href=val.href)= val.label
