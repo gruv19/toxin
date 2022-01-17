@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   border: none;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 .registration-card__legend {
   font-weight: bold;
@@ -20,7 +20,7 @@
   line-height: 2.9rem;
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 }
 .registration-card__textfield {
   & + & {
@@ -30,15 +30,16 @@
 .registration-card__radio-buttons {
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 11px 0px 24px;
 }
-// .registration-card__radio {}
+.registration-card__radio + .registration-card__radio {
+  margin-left: 14px;
+}
 .registration-card__masked {
   margin-bottom: 20px;
 }
 .registration-card__toggle {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 // .registration-card__button-submit {}
 .registration-card__login {
@@ -53,5 +54,4 @@
   font-size: 1.4rem;
   line-height: 1.8rem;
 }
-.registration-card__button-login {
-}
+// .registration-card__button-login {}

@@ -9,7 +9,7 @@ mixin registration-card
   .registration-card
     form.registration-card__form(action="/registration", method="post")
       fieldset.registration-card__fieldset
-        legend.registration-card__legend Регистрация
+        legend.registration-card__legend Регистрация аккаунта
         +textfield({
           name: "firstname",
           placeholder: "Имя",
@@ -53,7 +53,7 @@ mixin registration-card
           name: "special",
           value: "false"
         })(class="registration-card__toggle")
-      +button("Подобрать номер", "full")(class="registration-card__button-submit")
+      +button("Перейти к оплате", "full")(class="registration-card__button-submit")
       .registration-card__login
         span.registration-card__text Уже есть аккаунт на Toxin
         +button("войти", "", {name: "a", href: "/login.html"})(class="registration-card__button-login")
