@@ -4,7 +4,7 @@
   background-color: #fff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 40px 30px 30px;
+  padding: 40px 30px 31px;
   font-family: $primaryFont;
 }
 // .booking-card__form {}
@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 }
 // .booking-card__room {}
 .booking-card__room-number {
@@ -28,6 +28,7 @@
   font-size: 1.2rem;
   line-height: 1.5rem;
   text-transform: uppercase;
+  margin-left: 2px;
 }
 .booking-card__cost {
   color: rgba($dark, 0.5);
@@ -40,17 +41,17 @@
   font-weight: normal;
 }
 .booking-card__date-dropdown {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 }
 .booking-card__dropdown {
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 }
 .booking-card__calculation {
   color: rgba($dark, 0.75);
   font-size: 1.4rem;
   line-height: 2.8rem;
   font-weight: normal;
-  margin-bottom: 30px;
+  margin-bottom: 31px;
 }
 .booking-card__base,
 .booking-card__service,
@@ -58,6 +59,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-bottom: 5px;
 }
 .booking-card__base-data,
 .booking-card__service-data,
@@ -78,7 +80,7 @@
   font-size: 1.9rem;
   line-height: 2.3rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
