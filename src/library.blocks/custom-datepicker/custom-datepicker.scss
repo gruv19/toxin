@@ -1,22 +1,22 @@
 .air-datepicker {
   width: 320px;
-  padding: 20px;
+  padding: 14px 20px 11px;
   box-sizing: border-box;
 }
 
 .air-datepicker-nav,
 .air-datepicker--buttons {
   border: none;
+  padding: 0;
 }
 
 .air-datepicker--content {
   padding: 0;
-  margin-top: 30px;
+  margin-top: 26px;
 }
 
 .air-datepicker--buttons {
-  padding: 0;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .air-datepicker--pointer {
