@@ -53,10 +53,11 @@
   order: 2;
   width: 100%;
   text-align: center;
+  letter-spacing: 0.1px;
   @media (min-width: $screen-lg) {
     padding: 0;
     order: 1;
-    margin-right: 20px;
+    // margin-right: 20px;
     width: unset;
   }
   &--active {
@@ -68,6 +69,11 @@
     order: 1;
     @media (min-width: $screen-lg) {
       padding: 0;
+    }
+  }
+  & + .nav__item {
+    @media (min-width: $screen-lg) {
+      margin-left: 20px;
     }
   }
 }

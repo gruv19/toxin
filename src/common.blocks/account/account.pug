@@ -6,5 +6,5 @@ mixin account(account=false)
       a.account__cabinet(href="/cabinet.html") #{account.firstname} #{account.lastname}
   else
     .account
-      +button("войти", "", {name: "a", href: "/login.html"})(class="account__button")
-      +button("Зарегистрироваться", "primary", {name: "a", href: "/register.html"})(class="account__button")
+      +button("войти", "", {name: "a", href: "/login.html"})(class="account__button account__button--login")
+      +button("Зарегистрироваться", "primary", {name: "a", href: "/register.html"})(class="account__button account__button--register")

@@ -1,5 +1,4 @@
 .header {
-  // @include helpLine(blue);
   background-color: #ffffff;
 }
 
@@ -8,13 +7,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  // padding: 0 10px;
+  padding: 15px 10px 13px;
   min-width: $screen-sm;
   position: relative;
-  height: 70px;
+  // height: 70px;
   @media (min-width: $screen-lg) {
     max-width: 1240px;
-    padding: 0 40px;
+    // padding: 0 40px;
+    padding: 15px 40px 13px 40px;
   }
 }
 .header__logo {
@@ -27,18 +28,8 @@
   top: 21px;
   @media (min-width: $screen-lg) {
     top: unset;
-    // display: flex;
-    // justify-content: flex-end;
-    // align-items: center;
   }
 }
 .header__nav {
   padding-right: 20px;
 }
-// .header__account {
-// padding-left: 20px;
-// border-left: 1px solid rgba($dark, 0.1);
-// height: 30px;
-// display: flex;
-// align-items: center;
-// }

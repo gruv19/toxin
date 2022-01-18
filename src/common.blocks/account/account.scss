@@ -7,6 +7,10 @@
   }
   &--logged {
     height: 30px;
+    @media (min-width: $screen-lg) {
+      border-left: 1px solid rgba($dark, 0.1);
+      padding-left: 19px;
+    }
   }
 }
 
@@ -16,14 +20,18 @@
   line-height: 1.7rem;
   border-bottom: 1px solid rgba($dark, 0.1);
   @media (min-width: $screen-lg) {
-    padding-left: 20px;
     border: none;
-    border-left: 1px solid rgba($dark, 0.1);
   }
 }
 
 .account__button {
-  & + & {
+  &--login {
+    padding: 7px 19px 8px;
+    min-width: 87px;
+  }
+  &--register {
+    padding: 8px 21px 10px;
     margin-left: 20px;
+    letter-spacing: -0.1px;
   }
 }

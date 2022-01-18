@@ -5,7 +5,7 @@
 .footer__navigation {
   padding: 120px 0 0;
   @media (min-width: $screen-lg) {
-    padding: 100px 0;
+    padding: 100px 0 98px;
     box-shadow: 0px 1px 0px rgba($dark, 0.1);
   }
 }
@@ -52,7 +52,7 @@
   display: none;
   @media (min-width: $screen-lg) {
     display: block;
-    margin: 20px 0;
+    margin: 15px 0;
     font-size: 1.4rem;
     line-height: 2.4rem;
     color: rgba($dark, 0.75);
@@ -68,9 +68,10 @@
   @media (min-width: $screen-lg) {
     display: block;
     width: 555px;
-    margin-right: 45px;
+    margin-right: 50px;
     display: flex;
     justify-content: space-between;
+    padding-top: 3px;
   }
 }
 
@@ -79,6 +80,7 @@
   @media (min-width: $screen-lg) {
     display: block;
     width: 260px;
+    padding-top: 3px;
   }
 }
 
@@ -90,7 +92,7 @@
   color: $dark;
   margin: 0;
   padding: 0;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
 }
 
 .footer__subcribe-info {
@@ -100,7 +102,7 @@
     line-height: 2.4rem;
     color: rgba($dark, 0.75);
     font-weight: normal;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
 }
 
@@ -115,7 +117,7 @@
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: rgba($dark, 0.75);
-  margin-bottom: 25px;
+  margin-bottom: 24px;
   @media (min-width: $screen-lg) {
     margin: 0;
   }

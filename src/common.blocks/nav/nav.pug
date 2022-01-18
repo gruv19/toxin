@@ -7,14 +7,14 @@ mixin nav(content, account=false)
     ul.nav__list.sm
       each val in content
         if val.submenu
-          li.nav__item.nav__item--submenu
+          li.nav__item.nav__item--submenu(class=val.active ? "nav__item--active" : "")
             a.nav__link.nav__link--submenu(href=val.href)= val.label
             ul.nav__submenu
               each sub in val.submenu
                 li.nav__submenu-item
                   a.nav__submenu-link(href=sub.href)= sub.label
         else
-          li.nav__item
+          li.nav__item(class=val.active ? "nav__item--active" : "")
             a.nav__link(href=val.href)= val.label
       li.nav__item.nav__item--account
         +account(account)
