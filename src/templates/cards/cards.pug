@@ -12,32 +12,31 @@ block page-title
 
 block header
   +uikit-header(class="uikit-header--transp")
-  
+
 block content
   main.cards
     .cards__wrapper
-      .cards__col 
+      .cards__col
         +search-card
         +registration-card
-      .cards__col 
+      .cards__col
         +booking-card
         +login-card
-      .cards__col 
-        //- .datepicker-card(style={width: '320px', height: '369px', 'background-color': '#fff', 'box-shadow': '0px 10px 20px rgba(31, 32, 65, 0.05)', 'border-radius': '4px'})
+      .cards__col
         input.cards__input.visually-hidden
         +room-card({
           number: 888,
           category: "ЛЮКС",
-          cost: 9990,
+          cost: "9 990",
           rating: 5,
           reviewCount: 145,
-          img: "image-1.min.jpg"
+          images: ["image-1.min.jpg", "image-2.min.jpg", "image-3.min.jpg"]
         })
         +room-card({
           number: 840,
           category: "",
-          cost: 9900,
+          cost: "9 900",
           rating: 4,
           reviewCount: 65,
-          img: "image-1.min.jpg"
+          images: ["image-1.min.jpg", "image-2.min.jpg"]
         })
