@@ -12,6 +12,7 @@
   width: 100%;
 }
 .room-card__info {
+  // padding: 20px 17px 19px 20px;
   padding: 20px 17px 19px 20px;
 }
 .room-card__room-cost {
@@ -27,14 +28,17 @@
 }
 // .room-card__room {}
 .room-card__room-number {
-  font-size: 2.4rem;
-  line-height: 2.9rem;
+  font-size: 2.2rem;
+  line-height: 2.4rem;
+  margin-left: 3px;
+  letter-spacing: -2px;
 }
 .room-card__room-category {
   color: $primary;
   font-size: 1.2rem;
   line-height: 1.5rem;
   text-transform: uppercase;
+  margin-left: 3px;
 }
 .room-card__cost {
   color: rgba($dark, 0.5);
@@ -45,6 +49,7 @@
   font-size: 1.2rem;
   line-height: 1.8rem;
   font-weight: normal;
+  margin-left: 4px;
 }
 .room-card__room-rating {
   padding-top: 8px;
@@ -58,7 +63,10 @@
   font-size: 1.4rem;
   line-height: 1.8rem;
   font-weight: normal;
+  margin-right: 3px;
+  margin-top: 1px;
 }
 .room-card__reviews {
   font-weight: bold;
+  margin-right: 3px;
 }

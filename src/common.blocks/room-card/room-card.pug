@@ -1,15 +1,15 @@
 include ../../library.blocks/rate-button/rate-button.pug
+include ../../library.blocks/glide/glide.pug
 
 mixin room-card(roomInfo)
-  a.room-card(href="/booking-room/" + roomInfo.number) 
-    .room-card__slider 
-      img(src=require("/src/images/rooms/" + roomInfo.number + "/" + roomInfo.img))
-    .room-card__info 
+  .room-card&attributes(attributes)
+    +glide(roomInfo.number, roomInfo.images)(class="room-card__slider")
+    .room-card__info
       .room-card__room-cost
-        span.room-card__room № 
-          span.room-card__room-number #{roomInfo.number} 
+        span.room-card__room №
+          span.room-card__room-number #{roomInfo.number}
           span.room-card__room-category #{roomInfo.category}
-        span.room-card__cost #{roomInfo.cost}₽ 
+        span.room-card__cost #{roomInfo.cost}₽
           span.room-card__cost-period в сутки
       .room-card__room-rating
         +rate-button({
@@ -17,6 +17,6 @@ mixin room-card(roomInfo)
           values: [1, 2, 3, 4, 5],
           start: roomInfo.rating
         })(class="room-card__rating")
-        .room-card__reviews-counter 
-          span.room-card__reviews #{roomInfo.reviewCount} 
+        .room-card__reviews-counter
+          span.room-card__reviews #{roomInfo.reviewCount}
           | Отзывов
