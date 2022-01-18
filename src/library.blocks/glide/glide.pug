@@ -1,0 +1,17 @@
+
+mixin glide(number, images)
+  .glide(id=number)&attributes(attributes)
+    .glide__track(data-glide-el="track")
+      ul.glide__slides
+        each image in images
+          li.glide__slide
+            a.glide__link(href="/booking-room/" + number)
+              img.glide__img(src=require("/src/images/rooms/" + number + "/" + image))
+    .glide__arrows(data-glide-el="controls")
+      button.glide__arrow.glide__arrow--left(data-glide-dir="<")
+        img.glide__arrow-icon(src=require("/src/library.blocks/glide/arrow.svg"))
+      button.glide__arrow.glide__arrow--right(data-glide-dir=">")
+        img.glide__arrow-icon(src=require("/src/library.blocks/glide/arrow.svg"))
+    .glide__bullets(data-glide-el="controls[nav]")
+      each val, index in images
+        .glide__bullet(data-glide-dir="=" + index)
