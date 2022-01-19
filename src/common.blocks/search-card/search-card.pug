@@ -4,7 +4,7 @@ include ../../library.blocks/dropdown/dropdown.pug
 include ../../library.blocks/button/button.pug
 
 mixin search-card
-  .search-card
+  .search-card&attributes(attributes)
     form(method="post", action="search-room").search-card__form
       fieldset.search-card__fieldset
         legend.search-card__legend Найдём номера под ваши пожелания
