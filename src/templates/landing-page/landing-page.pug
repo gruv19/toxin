@@ -1,0 +1,23 @@
+extends ../../layouts/page-layout.pug
+
+include ../../common.blocks/header/header.pug
+include ../../common.blocks/footer/footer.pug
+include ../../common.blocks/search-card/search-card.pug
+include ../../library.blocks/overlay-glide/overlay-glide.pug
+
+block page-title
+  title Landing Page
+
+block header
+  +header
+
+block content
+  main.landing-page
+    .landing-page__overlay
+      //- img.landing-page__image(src=require("/src/images/slides/image-1.jpg"))
+      +overlay-glide(["image-1.jpg", "image-2.jpg", "image-3.jpg"])(class="landing-page__image")
+    .landing-page__wrapper
+      +search-card(class="landing-page__search-card")
+      p.landing-page__tagline Лучшие номера для вашей работы, отдыха и просто вдохновения
+block footer
+  +footer

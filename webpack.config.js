@@ -5,11 +5,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    index: "./src/index.js",
     "headers-and-footers": "./src/headers-and-footers.js",
     "colors-and-types": "./src/colors-and-types.js",
     "form-elements": "./src/form-elements.js",
     cards: "./src/cards.js",
+    "landing-page": "./src/landing-page.js",
   },
   module: {
     rules: [
@@ -47,9 +47,7 @@ module.exports = {
           {
             loader: "sass-resources-loader",
             options: {
-              resources: [
-                "./src/common.blocks/page/vars-and-mixins.scss",
-              ],
+              resources: ["./src/common.blocks/page/vars-and-mixins.scss"],
             },
           },
         ],
@@ -75,12 +73,6 @@ module.exports = {
     assetModuleFilename: "assets/[name][hash][ext]",
   },
   plugins: [
-    // new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "./src/index.pug",
-      chunks: ["index"],
-    }),
     new HtmlWebpackPlugin({
       favicon: "./src/images/favicon.png",
       filename: "headers-and-footers.html",
@@ -106,6 +98,13 @@ module.exports = {
       filename: "cards.html",
       template: "./src/templates/cards/cards.pug",
       chunks: ["cards"],
+      inject: "body",
+    }),
+    new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
+      filename: "index.html",
+      template: "./src/templates/landing-page/landing-page.pug",
+      chunks: ["landing-page"],
       inject: "body",
     }),
     new webpack.ProvidePlugin({
