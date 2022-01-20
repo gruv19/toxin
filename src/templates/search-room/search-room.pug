@@ -1,0 +1,155 @@
+extends ../../layouts/page-layout.pug
+
+include ../../common.blocks/header/header.pug
+include ../../common.blocks/footer/footer.pug
+include ../../library.blocks/label/label.pug
+include ../../library.blocks/filter-date-dropdown/filter-date-dropdown.pug
+include ../../library.blocks/dropdown/dropdown.pug
+include ../../library.blocks/range-slider/range-slider.pug
+include ../../library.blocks/checkbox-button/checkbox-button.pug
+include ../../library.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
+include ../../common.blocks/room-card/room-card.pug
+
+block page-title
+  title Search Room
+
+block header
+  +header
+
+block footer
+  +footer
+  template#template
+    +room-card({
+      number: "",
+      category: "",
+      cost: "",
+      rating: "",
+      reviewCount: "",
+      images: []
+    })
+
+
+block content
+  section.search-room
+    .search-room__wrapper
+      aside.search-room__filters
+        .search-room__filter
+          +label("Даты пребывания в отеле")
+          +filter-date-dropdown(class="search-room__filter-date-dropdown")
+        .search-room__filter
+          +label("гости")
+          +dropdown({
+            label: "Сколько гостей",
+            buttons: true,
+            list: [
+              {name: "adult", label: "Взрослые", value: "2"},
+              {name: "child", label: "Дети", value: "0"},
+              {name: "baby", label: "Младенцы", value: "1"}
+            ]
+          })(class="search-room__dropdown search-room__dropdown--guests")
+        .search-room__filter
+          +range-slider("диапозон цены")(class="search-room__range-slider")
+          p.search-room__text Стоимость за сутки пребывания в номере
+        .search-room__filter.search-room__filter--checkbox
+          +label("правила дома")
+          +checkbox-button({
+            state: false,
+            value: "true",
+            name: "smoke",
+            label: "Можно курить"
+          })
+          +checkbox-button({
+            state: true,
+            value: "true",
+            name: "pet",
+            label: "Можно с питомцами"
+          })
+          +checkbox-button({
+            state: true,
+            value: "true",
+            name: "guests",
+            label: "Можно пригласить гостей (до 10 человек)"
+          })
+        .search-room__filter.search-room__filter--rich-checkbox
+          +label("доступность")
+          +checkbox-button({
+            state: false,
+            value: "wide",
+            name: "corridor",
+            label: "Широкий коридор",
+            rich: "Ширина коридоров в номере не менее 91 см."
+          })
+          +checkbox-button({
+            state: false,
+            value: "helper",
+            name: "disabled-person",
+            label: "Помощник для инвалидов",
+            rich: "На 1 этаже вас встретит специалист  и проводит до номера."
+          })
+        .search-room__filter
+          +label("удобства в номере")
+          +dropdown({
+            label: "Удобства в комнате",
+            buttons: false,
+            list: [
+              {name: "bedroom", label: "Спальни", value: "2"},
+              {name: "bed", label: "Кровати", value: "2"},
+              {name: "bathroom", label: "Ванные комнаты", value: "0"}
+            ]
+          })(class="search-room__dropdown search-room__dropdown--room")
+        .search-room__filter
+          +expandable-checkbox-list(
+            "дополнительные удобства",
+            {
+              label: "Завтрак",
+              name: "breakfast",
+              val: "true",
+              state: false,
+            },
+            {
+              label: "Письменный стол",
+              name: "desk",
+              val: "true",
+              state: true,
+            },
+            {
+              label: "Стул для кормления",
+              name: "feedong-chair",
+              val: "true",
+              state: true,
+            },
+            {
+              label: "Кроватка",
+              name: "cot",
+              val: "true",
+              state: true,
+            },
+            {
+              label: "Телевизор",
+              name: "tv",
+              val: "true",
+              state: false,
+            },
+            {
+              label: "Шампунь",
+              name: "shampoo",
+              val: "true",
+              state: false,
+            },
+            {
+              label: "Телевизор",
+              name: "tv",
+              val: "true",
+              state: false,
+            },
+            {
+              label: "Шампунь",
+              name: "shampoo",
+              val: "true",
+              state: false,
+            }
+          )
+      main.search-room__rooms
+        h1.search-room__title Номера, которые мы для вас подобрали
+        .search-room__room-cards
+        .search-room__room-paginate

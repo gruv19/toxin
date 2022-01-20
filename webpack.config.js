@@ -10,6 +10,7 @@ module.exports = {
     "form-elements": "./src/form-elements.js",
     cards: "./src/cards.js",
     "landing-page": "./src/landing-page.js",
+    "search-room": "./src/search-room.js",
   },
   module: {
     rules: [
@@ -78,6 +79,7 @@ module.exports = {
       filename: "headers-and-footers.html",
       template: "./src/templates/headers-and-footers/headers-and-footers.pug",
       chunks: ["headers-and-footers"],
+      inject: "body",
     }),
     new HtmlWebpackPlugin({
       favicon: "./src/images/favicon.png",
@@ -105,6 +107,13 @@ module.exports = {
       filename: "index.html",
       template: "./src/templates/landing-page/landing-page.pug",
       chunks: ["landing-page"],
+      inject: "body",
+    }),
+    new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
+      filename: "search-room.html",
+      template: "./src/templates/search-room/search-room.pug",
+      chunks: ["search-room"],
       inject: "body",
     }),
     new webpack.ProvidePlugin({
