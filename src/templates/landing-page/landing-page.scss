@@ -3,7 +3,6 @@
 }
 
 .landing-page__overlay {
-  @include helpLine(red);
   width: 100%;
   height: 520px;
   position: absolute;
