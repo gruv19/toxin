@@ -8,6 +8,7 @@ function pagination(
   dataSelector,
   dataSource,
   templateFunction,
+  afterPagingHandler = null,
   defaultPage = 1,
 ) {
   $(paginateSelector).pagination({
@@ -32,6 +33,11 @@ function pagination(
       const html = templateFunction(data);
       $(dataSelector).html(html);
     },
+    afterPaging: function() {
+      if (afterPagingHandler) {
+        afterPagingHandler();
+      }
+    }
   });
 }
 

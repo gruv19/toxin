@@ -46,6 +46,7 @@ $(window).on("load", () => {
     ".form-elements__paginate-container",
     Array(180).fill(""),
     paginateTestTemplate,
+    null,
     3
   );
   rangeSlider(".form-elements__range-slider");
