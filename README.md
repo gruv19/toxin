@@ -9,6 +9,14 @@
 - Количество картинок должно быть минимальным;
 - Все страницы (кроме UI-Kit) должны быть по максимуму responsive, Можно максимальной ширину сделать 1920, а минимальной 320, а между этими значениями подстраиваться под ширину страницы;
 - Не использовать фреймворки для создания раскладки страницы, такие как, например, bootstrap;
-- Компонентность, рекомендуется руководствоваться [методологией БЭМ];(https://ru.bem.info/)
+- Компонентность, рекомендуется руководствоваться [методологией БЭМ](https://ru.bem.info/)
 - Использовать в макетах препроцессоры по максимуму (PUG, SCSS);
 - Подключить [Webpack](https://webpack.js.org/) и настроить сборку проекта.
+
+## Используемые зависимости
+- [Air Datepicker v3](https://air-datepicker.com/ru)
+- [jQuery v3](https://jquery.com/)
+- [noUiSlider v15](https://refreshless.com/nouislider/)
+- [Pagination.js v2](https://pagination.js.org/)
+- [Glide.js v3](https://glidejs.com/)
+- [Normalize.css v8](https://necolas.github.io/normalize.css/)
