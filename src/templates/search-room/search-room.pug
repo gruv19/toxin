@@ -9,6 +9,7 @@ include ../../library.blocks/range-slider/range-slider.pug
 include ../../library.blocks/checkbox-button/checkbox-button.pug
 include ../../library.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
 include ../../common.blocks/room-card/room-card.pug
+include ../../library.blocks/button/button.pug
 
 block page-title
   title Search Room
@@ -31,8 +32,12 @@ block footer
 
 block content
   section.search-room
+    .search-room__overlay
     .search-room__wrapper
       aside.search-room__filters
+        .search-room__title-group
+          h2.search-room__filters-title Фильтры
+          button.search-room__filters-close
         .search-room__filter
           +label("Даты пребывания в отеле")
           +filter-date-dropdown(class="search-room__filter-date-dropdown")
@@ -150,6 +155,8 @@ block content
             }
           )
       main.search-room__rooms
-        h1.search-room__title Номера, которые мы для вас подобрали
+        .search-room__title-group
+          h1.search-room__title Номера, которые мы для вас подобрали
+          +button("Фильтры", "link")(class="search-room__filters-toggler")
         .search-room__room-cards
         .search-room__room-paginate

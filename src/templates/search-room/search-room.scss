@@ -1,10 +1,30 @@
-.search-room {
+// .search-room {}
+
+.search-room__overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  display: none;
+  &--active {
+    display: block;
+  }
+  @media (min-width: $screen-lg) {
+    display: none;
+    &--active {
+      display: none;
+    }
+  }
 }
 
 .search-room__wrapper {
   margin: 0 auto;
   min-width: $screen-sm;
   padding: 30px 10px;
+  position: relative;
   @media (min-width: $screen-lg) {
     max-width: 1240px;
     padding: 30px 40px 70px 40px;
@@ -15,6 +35,34 @@
 }
 
 .search-room__filters {
+  width: 300px;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: -72px;
+  background-color: #ffffff;
+  z-index: 100;
+  padding: 20px 17px;
+  &--active {
+    display: block;
+    overflow-y: scroll;
+    height: 100vh;
+    box-shadow: -5px 0px 4px -2px rgba($dark, 0.2);
+  }
+  @media (min-width: $screen-lg) {
+    width: 266px;
+    display: block;
+    position: relative;
+    left: unset;
+    top: unset;
+    padding: 0;
+    overflow-y: auto;
+    &--active {
+      overflow-y: auto;
+      height: unset;
+      box-shadow: none;
+    }
+  }
 }
 
 .search-room__filter {
@@ -38,11 +86,56 @@
   }
 }
 
-.search-room__filter-date-dropdown {
+.search-room__filters-title {
+  font-weight: bold;
+  font-size: 1.9rem;
+  line-height: 2.3rem;
+  color: $dark;
+  @media (min-width: $screen-lg) {
+    display: none;
+  }
 }
 
-.search-room__dropdown {
+.search-room__filters-close {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 28px;
+    background-color: $primary;
+    left: -2px;
+    top: 11px;
+    border-radius: 3px;
+    transform: rotateZ(-45deg);
+    border-radius: 3px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 28px;
+    background-color: $primary;
+    left: -2px;
+    top: 11px;
+    transform: rotateZ(45deg);
+    border-radius: 3px;
+  }
+  @media (min-width: $screen-lg) {
+    display: none;
+  }
 }
+
+// .search-room__filter-date-dropdown {}
+
+// .search-room__dropdown {}
 
 .search-room__text {
   font-weight: normal;
@@ -53,18 +146,40 @@
 }
 
 .search-room__rooms {
+  position: relative;
 }
 
 .search-room__title {
-  margin-bottom: 20px;
   font-weight: bold;
   font-size: 2.4rem;
   line-height: 2.9rem;
   color: $dark;
+  width: 70%;
+  @media (min-width: $screen-lg) {
+    width: 100%;
+    float: unset;
+  }
+}
+
+.search-room__title-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-room__filters-toggler {
+  @media (min-width: $screen-lg) {
+    display: none;
+  }
 }
 
 .search-room__room-cards {
+  margin-top: 20px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-around;
+  clear: both;
+  @media (min-width: $screen-lg) {
+    justify-content: space-between;
+  }
 }

@@ -11,6 +11,7 @@ import "./library.blocks/checkbox-button/checkbox-button.js";
 import checkboxList from "./library.blocks/expandable-checkbox-list/expandable-checkbox-list.js";
 import roomCard from "./common.blocks/room-card/room-card.js";
 import pagination from "./library.blocks/pagination/pagination.js";
+import "./library.blocks/button/button.js";
 
 import "./templates/search-room/search-room.scss";
 
@@ -121,6 +122,12 @@ $(window).on("load", () => {
       images: ["image-1.min.jpg", "image-2.min.jpg", "image-3.min.jpg", "image-4.min.jpg"]
     }
   ];
+  const filterBtn = document.querySelector(".search-room__filters-toggler");
+  const pageOverlay = document.querySelector(".search-room__overlay");
+  const filtersBlock = document.querySelector(".search-room__filters");
+  const pageBody = document.querySelector(".page__body");
+  const expCheckboxList = filtersBlock.querySelector(".expandable-checkbox-list");
+  const filtersCloseBtn = document.querySelector(".search-room__filters-close");
 
   function paginateTemplate(data) {
     const template = document.querySelector("#template");
@@ -160,6 +167,25 @@ $(window).on("load", () => {
     });
     return html.innerHTML;
   }
+
+  function filterBtnHandler(event) {
+    event.preventDefault();
+    pageOverlay.classList.add("search-room__overlay--active");
+    filtersBlock.classList.add("search-room__filters--active");
+    pageBody.style.overflow = "hidden";
+    filtersBlock.style.width = filtersBlock.offsetWidth + (filtersBlock.offsetWidth - filtersBlock.clientWidth) + "px";
+    expCheckboxList.classList.add("expandable-checkbox-list--focus");
+  }
+
+  function filtersCloseBtnHandler(event) {
+    event.preventDefault();
+    pageOverlay.classList.remove("search-room__overlay--active");
+    filtersBlock.classList.remove("search-room__filters--active");
+    pageBody.style.overflow = "auto";
+    filtersBlock.style.width = "";
+    expCheckboxList.classList.remove("expandable-checkbox-list--focus");
+  }
+
   pagination(
     ".search-room__room-paginate",
     ".search-room__room-cards",
@@ -188,5 +214,7 @@ $(window).on("load", () => {
     },
   ]);
   checkboxList();
-  // roomCard();
+  filterBtn.addEventListener("click", filterBtnHandler);
+  filtersCloseBtn.addEventListener("click", filtersCloseBtnHandler);
+  pageOverlay.addEventListener("click", filtersCloseBtnHandler);
 });
