@@ -140,7 +140,7 @@ $(window).on("load", () => {
       card.querySelector(".room-card__rating").setAttribute("name", `room-rating-${item.number}`);
       card.querySelector(`.rate-button__value[value='${item.rating}']`).setAttribute("selected", "selected");
       card.querySelector(".gl-star-rating--stars").childNodes.forEach((node, idx) => {
-        if (idx !== item.rating) {
+        if (idx < item.rating) {
           node.classList.add("gl-active");
         }
       });
@@ -150,7 +150,7 @@ $(window).on("load", () => {
         slide.classList.add("glide__slide");
         const link = document.createElement("a");
         link.classList.add("glide__link");
-        link.setAttribute("href", `/booking-room/${item.number}`);
+        link.setAttribute("href", `/room-details.html?number=${item.number}`);
         const image = new Image();
         image.src = require(`/src/images/rooms/${item.number}/${img}`);
         image.classList.add("glide__img");

@@ -5,7 +5,7 @@ mixin glide(number, images)
       ul.glide__slides
         each image in images
           li.glide__slide
-            a.glide__link(href="/booking-room/" + number)
+            a.glide__link(href="/room-details.html?number=" + number)
               img.glide__img(src=require("/src/images/rooms/" + number + "/" + image))
     .glide__arrows(data-glide-el="controls")
       button.glide__arrow.glide__arrow--left(data-glide-dir="<")
