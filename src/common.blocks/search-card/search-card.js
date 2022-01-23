@@ -9,7 +9,7 @@ function searchCard() {
   dropdown(".search-card__dropdown", [
     { one: "гость", twoToFour: "гостя", moreThanFive: "гостей" },
   ]);
-  
+
   const datepicker = dateDropdown(".search-card__date-dropdown");
   const searchForm = document.querySelector(".search-card__form");
 
@@ -18,9 +18,11 @@ function searchCard() {
     const data = new FormData(e.target);
     data.append("date-from", datepicker.selectedDates[0]);
     data.append("date-to", datepicker.selectedDates[1]);
+    const url = new URL("/search-room.html", window.location.origin);
     for (let key of data.keys()) {
-      console.log(`${key}: ${data.get(key)}`);
+      url.searchParams.set(key, data.get(key))
     }
+    window.location.href = url.href;
   });
 }
 
