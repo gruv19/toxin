@@ -1,14 +1,14 @@
-import "normalize.css";
-import "./common.blocks/page/page.js";
+import 'normalize.css';
+import './common.blocks/page/page';
 
-import "./common.blocks/uikit-header/uikit-header.js";
+import './common.blocks/uikit-header/uikit-header';
 
-import header from "./common.blocks/header/header.js";
-import footer from "./common.blocks/footer/footer.js";
+import header from './common.blocks/header/header';
+import footer from './common.blocks/footer/footer';
 
-import "./templates/headers-and-footers/headers-and-footers.scss";
+import './templates/headers-and-footers/headers-and-footers.scss';
 
-$(window).on("load", () => {
-  header(".header__menu");
+$(window).on('load', () => {
+  header('.header__menu');
   footer();
 });

@@ -1,7 +1,7 @@
-import "normalize.css";
-import "./common.blocks/page/page.js";
+import 'normalize.css';
+import './common.blocks/page/page';
 
-import "./common.blocks/colors/colors.js";
-import "./common.blocks/types/types.js";
-import "./common.blocks/uikit-header/uikit-header.js";
-import "./templates/colors-and-types/colors-and-types.scss";
+import './common.blocks/colors/colors';
+import './common.blocks/types/types';
+import './common.blocks/uikit-header/uikit-header';
+import './templates/colors-and-types/colors-and-types.scss';
