@@ -13,5 +13,4 @@ $(window).on("load", () => {
   searchCard();
   overlayGlide();
   footer();
-  console.log("all works");
 });

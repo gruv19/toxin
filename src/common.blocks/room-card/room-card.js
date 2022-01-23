@@ -5,7 +5,6 @@ import "./room-card.scss";
 function roomCard(glideSelector = "") {
   rateButton(true);
   glide(".room-card__slider");
-  console.log("roomCard work!");
 }
 
 export default roomCard;
