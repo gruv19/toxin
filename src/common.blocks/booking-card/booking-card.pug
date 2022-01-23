@@ -4,15 +4,12 @@ include ../../library.blocks/dropdown/dropdown.pug
 include ../../library.blocks/button/button.pug
 
 mixin booking-card
-  .booking-card
+  .booking-card&attributes(attributes)
     form.booking-card__form(action="/booking", method="post")
-      .booking-card__info 
-        span.booking-card__room № 
-          //- span.booking-card__room-number 888 
+      .booking-card__info
+        span.booking-card__room №
           span.booking-card__room-number
-          //- span.booking-card__room-category люкс
           span.booking-card__room-category
-        //- span.booking-card__cost 9 990₽ 
         span.booking-card__cost
           span.booking-card__cost-period в сутки
       +date-dropdown("прибытие", "выезд")(class="booking-card__date-dropdown")
@@ -28,13 +25,10 @@ mixin booking-card
       })(class="booking-card__dropdown")
       .booking-card__calculation
         .booking-card__base
-          //- span.booking-card__base-data 9 990₽ х 4 суток
           span.booking-card__base-data
-          //- span.booking-card__base-sum 39 960₽
-          span.booking-card__base-sum 
+          span.booking-card__base-sum
         .booking-card__service
-          span.booking-card__service-data Сбор за услуги: 
-            //- span.booking-card__service-discount скидка 2 179₽
+          span.booking-card__service-data Сбор за услуги:
             span.booking-card__service-discount
           span.booking-card__service-sum 0₽
         .booking-card__additional
