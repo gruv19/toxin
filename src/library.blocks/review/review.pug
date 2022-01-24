@@ -1,9 +1,9 @@
 include ../like-button/like-button.pug
 
 mixin review(reviewData)
-  .review
+  .review&attributes(attributes)
     img(src=require("/src/images/users/" + reviewData.img), alt="Фото пользователя " + reviewData.author ).review__author-photo
-    .review__header 
+    .review__header
       .review__author-name= reviewData.author
       .review__date= reviewData.date
     +like-button(reviewData.likeActive, reviewData.like)(class="review__like-button")
