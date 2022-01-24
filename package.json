@@ -46,6 +46,7 @@
   ],
   "dependencies": {
     "@glidejs/glide": "^3.5.2",
+    "chart.js": "^3.7.0",
     "normalize.css": "^8.0.1"
   }
 }
