@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -11,6 +12,7 @@ module.exports = {
     cards: "./src/cards.js",
     "landing-page": "./src/landing-page.js",
     "search-room": "./src/search-room.js",
+    "room-details": "./src/room-details.js",
   },
   module: {
     rules: [
@@ -114,6 +116,13 @@ module.exports = {
       filename: "search-room.html",
       template: "./src/templates/search-room/search-room.pug",
       chunks: ["search-room"],
+      inject: "body",
+    }),
+    new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
+      filename: "room-details.html",
+      template: "./src/templates/room-details/room-details.pug",
+      chunks: ["room-details"],
       inject: "body",
     }),
     new webpack.ProvidePlugin({

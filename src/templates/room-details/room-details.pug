@@ -1,0 +1,79 @@
+extends ../../layouts/page-layout.pug
+
+include ../../common.blocks/header/header.pug
+include ../../common.blocks/footer/footer.pug
+include ../../common.blocks/booking-card/booking-card.pug
+include ../../library.blocks/info-card/info-card.pug
+include ../../library.blocks/review/review.pug
+include ../../library.blocks/bullet-list/bullet-list.pug
+include ../../library.blocks/doughnut-chart/doughnut-chart.pug
+
+block page-title
+  title Room Details
+
+block header
+  +header
+
+block content
+  main.room-details
+    section.room-details__images
+      img.room-details__image(src=require("/src/images/rooms/888/image-1.full.jpg"), alt="")
+      img.room-details__image.room-details__image--small(src=require("/src/images/rooms/888/image-2.min.jpg"), alt="")
+      img.room-details__image.room-details__image--small(src=require("/src/images/rooms/888/image-3.min.jpg"), alt="")
+    .room-details__wrapper
+      section.room-details__info
+        .room-details__info-cards
+          h2.room-details__title Сведения о номере
+          +info-card("smile", "Комфорт", "Шумопоглощающие стены")
+          +info-card("location", "Удобство", "Окно в каждой из спален")
+          +info-card("fire", "Уют", "Номер оснащен камином")
+        .room-details__impressions
+          h2.room-details__title Впечатления от номера
+          +doughnut-chart
+          //- .room-details__chart
+            canvas.room-details__doughnut(style={position: 'relative', width: '120px', height: '120px'})
+            ul.room-details__chart-legend#room-details__chart-legend
+              li.room-details__chart-legend-item
+                span.room-details__chart-legend-point
+                span.room-details__chart-legend-label Великолепно
+              li.room-details__chart-legend-item
+                span.room-details__chart-legend-point
+                span.room-details__chart-legend-label Хорошо
+              li.room-details__chart-legend-item
+                span.room-details__chart-legend-point
+                span.room-details__chart-legend-label Удовлетворительно
+              li.room-details__chart-legend-item
+                span.room-details__chart-legend-point
+                span.room-details__chart-legend-label Разочарован
+        .room-details__reviews
+          h2.room-details__title Отзывы посетителей
+          +review({
+            author: "Мурад Сарафанов",
+            img: 'guest1.jpg',
+            date: "5 дней назад",
+            likeActive: true,
+            like: 12,
+            text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+          })(class="room-details__review")
+          +review({
+            author: "Патрисия Стёклышкова",
+            img: 'guest2.jpg',
+            date: "Неделю назад",
+            likeActive: false,
+            like: 2,
+            text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+          })(class="room-details__review")
+        .room-details__rules
+          h2.room-details__title Правила
+          +bullet-list([
+            "Нельзя с питомцами",
+            "Без вечеринок и мероприятий",
+            "Время прибытия — после 13:00, а выезд до 12:00"
+          ])
+        .room-details__cancel
+          h2.room-details__title Отмена
+          p.room-detail__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      +booking-card(class="room-details__booking-card")
+
+block footer
+  +footer
