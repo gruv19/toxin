@@ -1,15 +1,8 @@
 .bullet-list {
   max-width: 300px;
-  width: 100%;
-}
-.bullet-list__title {
-  width: 100%;
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  color: $dark;
-  text-transform: uppercase;
-  margin-bottom: 17px;
+  min-width: 300px;
+  width: 300px;
+  font-family: "Montserrat", sans-serif;
 }
 .bullet-list__ul {
   width: 100%;
@@ -18,13 +11,11 @@
   line-height: 2.4rem;
   display: grid;
   margin-left: 11px;
+  grid-row-gap: 10px;
 }
 .bullet-list__li {
   padding-left: 10px;
   &::marker {
     content: url(./ellipse.svg);
-  }
-  & + & {
-    margin-top: 10px;
   }
 }

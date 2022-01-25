@@ -1,9 +1,5 @@
-mixin bullet-list(data)
-  .bullet-list
-    //- .bullet-list__title bullet list
+mixin bullet-list(data=["Lorem ipsum dolor", "Eius quo pariatur commodi ex ipsa saepe, sequi."])
+  .bullet-list&attributes(attributes)
     ul.bullet-list__ul
       each val in data
         li.bullet-list__li= val
-        //-  Нельзя с питомцами
-        //- li.bullet-list__li Без вечеринок и мероприятий
-        //- li.bullet-list__li Время прибытия — после 13:00, а выезд до 12:00
