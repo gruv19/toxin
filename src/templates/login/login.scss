@@ -1,0 +1,25 @@
+.login-page {
+  position: relative;
+}
+
+.login-page__overlay {
+  width: 100%;
+  height: 558px;
+  position: absolute;
+  z-index: -1;
+  @media (min-width: $screen-lg) {
+    height: 684px;
+  }
+}
+
+.login-page__wrapper {
+  margin: 0 auto;
+  min-width: $screen-sm;
+  padding: 100px 10px 100px;
+  display: flex;
+  justify-content: center;
+  @media (min-width: $screen-lg) {
+    max-width: 1240px;
+    padding: 163px 40px 162px;
+  }
+}

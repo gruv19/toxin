@@ -1,0 +1,25 @@
+.register-page {
+  position: relative;
+}
+
+.register-page__overlay {
+  width: 100%;
+  height: 684px;
+  position: absolute;
+  z-index: -1;
+  @media (min-width: $screen-lg) {
+    height: 684px;
+  }
+}
+
+.register-page__wrapper {
+  margin: 0 auto;
+  min-width: $screen-sm;
+  padding: 19px 10px 19px;
+  display: flex;
+  justify-content: center;
+  @media (min-width: $screen-lg) {
+    max-width: 1240px;
+    padding: 19px 40px 19px;
+  }
+}

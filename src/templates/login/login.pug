@@ -1,0 +1,23 @@
+extends ../../layouts/page-layout.pug
+
+include ../../common.blocks/header/header.pug
+include ../../common.blocks/footer/footer.pug
+include ../../library.blocks/overlay-glide/overlay-glide.pug
+include ../../common.blocks/login-card/login-card.pug
+include ../../common.blocks/registration-card/registration-card.pug
+
+block page-title
+  title Login
+
+block header
+  +header
+
+block content
+  main.login-page
+    .login-page__overlay
+      +overlay-glide(["image-4.jpg", "image-5.jpg"])(class="login-page__image")
+    .login-page__wrapper
+      +login-card
+
+block footer
+  +footer

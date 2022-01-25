@@ -1,0 +1,22 @@
+extends ../../layouts/page-layout.pug
+
+include ../../common.blocks/header/header.pug
+include ../../common.blocks/footer/footer.pug
+include ../../library.blocks/overlay-glide/overlay-glide.pug
+include ../../common.blocks/registration-card/registration-card.pug
+
+block page-title
+  title Register
+
+block header
+  +header
+
+block content
+  main.register-page
+    .register-page__overlay
+      +overlay-glide(["image-4.jpg", "image-5.jpg"])(class="register-page__image")
+    .register-page__wrapper
+      +registration-card
+
+block footer
+  +footer

@@ -13,6 +13,8 @@ module.exports = {
     "landing-page": "./src/landing-page.js",
     "search-room": "./src/search-room.js",
     "room-details": "./src/room-details.js",
+    "login": "./src/login.js",
+    "register": "./src/register.js",
   },
   module: {
     rules: [
@@ -123,6 +125,20 @@ module.exports = {
       filename: "room-details.html",
       template: "./src/templates/room-details/room-details.pug",
       chunks: ["room-details"],
+      inject: "body",
+    }),
+    new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
+      filename: "login.html",
+      template: "./src/templates/login/login.pug",
+      chunks: ["login"],
+      inject: "body",
+    }),
+    new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.png",
+      filename: "register.html",
+      template: "./src/templates/register/register.pug",
+      chunks: ["register"],
       inject: "body",
     }),
     new webpack.ProvidePlugin({
