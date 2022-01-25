@@ -1,7 +1,7 @@
 mixin overlay-glide(images)
   .overlay-glide.glide&attributes(attributes)
-    .glide__track(data-glide-el="track")
-      ul.glide__slides
+    .overlay-glide__track.glide__track(data-glide-el="track")
+      ul.overlay-glide__slides.glide__slides
         each image in images
-          li.glide__slide
-            img.glide__img(src=require("/src/images/slides/" + image))
+          li.overlay-glide__slide.glide__slide
+            img.overlay-glide__img.glide__img(src=require("/src/images/slides/" + image))
