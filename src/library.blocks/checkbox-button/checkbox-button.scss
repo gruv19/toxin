@@ -2,8 +2,10 @@
   font-family: $primaryFont;
   max-width: 227px;
   width: 100%;
+  min-width: 227px;
   &--rich {
     max-width: 266px;
+    min-width: 266px;
   }
 }
 
@@ -11,7 +13,7 @@
   width: 100%;
   display: grid;
   grid-column-gap: 10px;
-  grid-row-gap: 5px;
+  grid-row-gap: 4px;
   grid-template-columns: 20px 195px;
   &--rich {
     grid-template-columns: 20px 230px;
@@ -35,6 +37,8 @@
   border: 1px solid rgba($dark, 0.25);
   border-radius: 4px;
   background-color: #ffffff;
+  position: relative;
+  top: -1px;
 }
 
 .checkbox-button__label {

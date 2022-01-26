@@ -1,11 +1,11 @@
-mixin checkbox-button(data)
-  .checkbox-button(class=data.rich ? "checkbox-button--rich" : "")&attributes(attributes)
-    label.checkbox-button__group(class=data.rich ? "checkbox-button__group--rich" : "")
+mixin checkbox-button(data={name: 'checkbox', value: 'checkbox', label: 'Checkbox', state: false, rich: ''})
+  .checkbox-button(class=data.rich ? 'checkbox-button--rich' : '')&attributes(attributes)
+    label.checkbox-button__group(class=data.rich ? 'checkbox-button__group--rich' : '')
       if data.state
-        input.checkbox-button__input.visually-hidden(type="checkbox", value=data.value, name=data.name, checked)
+        input.checkbox-button__input.visually-hidden(type='checkbox', value=data.value, name=data.name, checked)
       else
-        input.checkbox-button__input.visually-hidden(type="checkbox", value=data.value, name=data.name)
+        input.checkbox-button__input.visually-hidden(type='checkbox', value=data.value, name=data.name)
       span.checkbox-button__field
-      span.checkbox-button__label(class=data.rich ? "checkbox-button__label--rich" : "")= data.label
+      span.checkbox-button__label(class=data.rich ? 'checkbox-button__label--rich' : '')= data.label
       if data.rich
         span.checkbox-button__rich-text= data.rich
