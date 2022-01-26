@@ -1,20 +1,11 @@
-mixin button(text="click me", type="", tag={})
-  case type
-    when "primary"
-      if tag.name
-        a.button.button--primary(href=tag.href)&attributes(attributes)= text
-      else
-        button.button.button--primary&attributes(attributes)= text
-    when "link"
-      if tag.name
-        a.button.button--link(href=tag.href)&attributes(attributes)= text
-      else 
-        button.button.button--link&attributes(attributes)= text
-    when "full"
-      button.button.button--full&attributes(attributes)= text
-        span.button__arrow
-    default
-      if tag.name
-        a.button(href=tag.href)&attributes(attributes)= text
-      else 
-        button.button&attributes(attributes)= text
+mixin button(text='click me', modificators=[], href='')
+  -
+    var classes = [];
+    if (modificators.length)
+      for (var i = 0; i < modificators.length; i++)
+        classes[i] = 'button--' + modificators[i];
+
+  if href
+    a.button(class=classes, href=href)= text
+  else
+    button.button(class=classes)= text

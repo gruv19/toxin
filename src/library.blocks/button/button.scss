@@ -22,6 +22,8 @@
       linear-gradient(180deg, rgba(#bc9cff, 0.5) 0%, rgba(#8ba4f9, 0.5) 100%)
         border-box;
   }
+  min-width: 99px;
+  text-align: center;
 }
 
 .button--primary {
@@ -38,6 +40,7 @@
     );
   }
 }
+
 .button--link {
   padding: 0;
   background-color: transparent;
@@ -48,9 +51,12 @@
   &:hover {
     color: rgba($dark, 0.5);
   }
+  min-width: unset;
 }
+
 .button--full {
-  // width: 97%;
+  max-width: 240px;
+  min-width: 240px;
   width: 100%;
   color: #ffffff;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -58,6 +64,9 @@
   position: relative;
   padding: 14px 4px 14px;
   letter-spacing: 0px;
+  @media (min-width: $screen-sm) {
+    max-width: 320px;
+  }
   &:hover {
     background: linear-gradient(
       180deg,
@@ -65,14 +74,25 @@
       rgba(#8ba4f9, 0.5) 100%
     );
   }
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-image: url(./arrow_forward-white.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 100%;
+  }
 }
-.button__arrow {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-image: url(./arrow_forward-white.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 44px;
-  height: 100%;
+
+.button--login {
+  padding: 7px 19px 8px;
+  min-width: 87px;
+}
+
+.button--register {
+  padding: 9px 21px 9px 19px;
+  letter-spacing: 0.1px;
 }
