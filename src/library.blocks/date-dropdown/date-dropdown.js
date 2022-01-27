@@ -2,7 +2,7 @@ import customDatepicker from '../custom-datepicker/custom-datepicker';
 import '../label/label';
 import './date-dropdown.scss';
 
-function dateDropdown(dateDropdownSelector, selectedDates = false) {
+function dateDropdown(dateDropdownSelector = '.date-dropdown', selectedDates = false) {
   const dateDropdownElement = document.querySelector(dateDropdownSelector);
   const outputFieldFrom = dateDropdownElement.querySelector('.date-dropdown__field--from');
   const outputFieldto = dateDropdownElement.querySelector('.date-dropdown__field--to');
