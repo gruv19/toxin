@@ -1,23 +1,30 @@
-import "air-datepicker/air-datepicker.css";
-import AirDatepicker from "air-datepicker";
-import "./custom-datepicker.scss";
+import 'air-datepicker/air-datepicker.css';
+import AirDatepicker from 'air-datepicker';
 
-function customDatepicker(inputSelector, options) {
+import './custom-datepicker.scss';
 
+function customDatepicker(inputSelector = 'input[type=text]', options = {}) {
   const airDatepickerOptions = {
     minDate: new Date(),
     moveToOtherMonthsOnSelect: false,
     multipleDates: true,
     range: true,
-    multipleDatesSeparator: " - ",
+    multipleDatesSeparator: ' - ',
     keyboardNav: true,
     navTitles: {
-      days: "MMMM yyyy",
+      days: 'MMMM yyyy',
     },
-    prevHtml: "<span class='back'></span>",
-    nextHtml: "<span class='forward'></span>",
-    position: "bottom left",
+    prevHtml: '<span class="air-datepicker-nav__toggle-month air-datepicker-nav__toggle-month--back"></span>',
+    nextHtml: '<span class="air-datepicker-nav__toggle-month air-datepicker-nav__toggle-month--forward"></span>',
+    position: 'bottom left',
     offset: 40,
+    onSelect({ datepicker }) {
+      const rangeFrom = datepicker.$content.querySelector('.-range-from-');
+      const rangeTo = datepicker.$content.querySelector('.-range-to-');
+      if (!rangeTo && rangeFrom) {
+        rangeFrom.classList.add('-range-to-');
+      }
+    },
   };
 
   if (options.buttons) {
