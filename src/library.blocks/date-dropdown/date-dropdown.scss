@@ -1,6 +1,10 @@
 .date-dropdown {
-  max-width: 320px;
-  width: 100%;
+  min-width: 260px;
+  max-width: 260px;
+  @media (min-width: $screen-sm) {
+    max-width: 320px;
+    width: 100%;
+  }
 }
 
 .date-dropdown__group {
@@ -11,8 +15,12 @@
 }
 
 .date-dropdown__visually {
-  max-width: 150px;
-  width: 100%;
+  min-width: 120px;
+  max-width: 120px;
+  @media (min-width: $screen-sm) {
+    max-width: 150px;
+    width: 100%;
+  }
 }
 
 .date-dropdown__label {
@@ -27,14 +35,19 @@
 
 .date-dropdown__field {
   width: 100%;
-  height: 44px;
-  padding: 11px 15px 10px 14px;
   color: rgba($dark, 0.75);
-  font-size: 1.4rem;
-  line-height: 1.8rem;
+  height: 44px;
   border: 1px solid rgba($dark, 0.25);
   border-radius: 4px;
   position: relative;
+  padding: 13px 15px 10px 9px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  @media (min-width: $screen-sm) {
+    padding: 11px 15px 10px 14px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -44,8 +57,11 @@
     background-image: url(./expand_more.svg);
     background-repeat: no-repeat;
     background-position: center;
-    right: 15px;
     top: 0;
+    right: 10px;
+    @media (min-width: $screen-sm) {
+      right: 15px;
+    }
   }
   &:hover {
     border: 1px solid rgba($dark, 0.75);
@@ -61,9 +77,3 @@
 .date-dropdown__input:focus ~ .date-dropdown__visually > .date-dropdown__field {
   border: 1px solid rgba($dark, 0.75);
 }
-
-// .date-dropdown__datepicker {
-//   width: 320px !important;
-//   padding: 20px !important;
-//   box-sizing: border-box !important;
-// }
