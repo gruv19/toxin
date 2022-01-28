@@ -1,6 +1,6 @@
 mixin doughnut-chart
-  .doughnut-chart&attributes(attributes)
-    .doughnut-chart__title #[span.doughnut-chart__count] голосов
+  .doughnut-chart.js-doughnut-chart&attributes(attributes)
+    .doughnut-chart__title #[span.doughnut-chart__count.js-doughnut-chart__count] голосов
     .doughnut-chart__container
-      canvas.doughnut-chart__canvas(style={position: 'relative', width: '120px', height: '120px'})
-    ul.doughnut-chart__legend#room-details__chart-legend
+      canvas.doughnut-chart__canvas.js-doughnut-chart__canvas(style={position: 'relative', width: '120px', height: '120px'})
+    ul.doughnut-chart__legend.js-doughnut-chart__legend#room-details__chart-legend

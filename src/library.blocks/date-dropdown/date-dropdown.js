@@ -2,10 +2,10 @@ import customDatepicker from '../custom-datepicker/custom-datepicker';
 import '../label/label';
 import './date-dropdown.scss';
 
-function dateDropdown(dateDropdownSelector = '.date-dropdown', selectedDates = false) {
+function dateDropdown(dateDropdownSelector = '.js-date-dropdown', selectedDates = false) {
   const dateDropdownElement = document.querySelector(dateDropdownSelector);
-  const outputFieldFrom = dateDropdownElement.querySelector('.date-dropdown__field--from');
-  const outputFieldto = dateDropdownElement.querySelector('.date-dropdown__field--to');
+  const outputFieldFrom = dateDropdownElement.querySelector('.js-date-dropdown__field--from');
+  const outputFieldto = dateDropdownElement.querySelector('.js-date-dropdown__field--to');
 
   const applyButton = {
     content: 'Применить',
@@ -66,7 +66,7 @@ function dateDropdown(dateDropdownSelector = '.date-dropdown', selectedDates = f
     },
   };
 
-  const datepicker = customDatepicker(`${dateDropdownSelector} .date-dropdown__input`, datepickerOptions);
+  const datepicker = customDatepicker(`${dateDropdownSelector} .js-date-dropdown__input`, datepickerOptions);
 
   if (selectedDates) {
     datepicker.selectDate(selectedDates);

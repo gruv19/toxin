@@ -1,14 +1,14 @@
 import '../button/button';
 import './dropdown.scss';
 
-function dropdown(dropdownSelector = '.dropdown', genitive = [{ one: 'гость', twoToFour: 'гостя', moreThanFive: 'гостей' }]) {
+function dropdown(dropdownSelector = '.js-dropdown', genitive = [{ one: 'гость', twoToFour: 'гостя', moreThanFive: 'гостей' }]) {
   const dropdownEl = document.querySelector(dropdownSelector);
-  const output = dropdownEl.querySelector('.dropdown__visually');
-  const dropdownList = dropdownEl.querySelector('.dropdown__list');
-  const inputs = dropdownEl.querySelectorAll('.dropdown__input');
-  const buttons = dropdownEl.querySelectorAll('.button');
-  const steps = dropdownEl.querySelectorAll('.dropdown__step');
-  const values = dropdownEl.querySelectorAll('.dropdown__item-value');
+  const output = dropdownEl.querySelector('.js-dropdown__visually');
+  const dropdownList = dropdownEl.querySelector('.js-dropdown__list');
+  const inputs = dropdownEl.querySelectorAll('.js-dropdown__input');
+  const buttons = dropdownEl.querySelectorAll('.js-dropdown__button');
+  const steps = dropdownEl.querySelectorAll('.js-dropdown__step');
+  const values = dropdownEl.querySelectorAll('.js-dropdown__item-value');
   const defaultText = output.innerText;
 
   const state = new Proxy(

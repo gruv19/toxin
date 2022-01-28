@@ -1,18 +1,18 @@
 include ../button/button.pug
 
 mixin dropdown(data={ label: 'dropdown label', buttons: false, list: [{name: 'adult', label: 'Взрослые', value: '0'}] })
-  .dropdown&attributes(attributes)
-    .dropdown__visually= data.label
-    ul.dropdown__list.visually-hidden(tabindex='1')
+  .dropdown.js-dropdown&attributes(attributes)
+    .dropdown__visually.js-dropdown__visually= data.label
+    ul.dropdown__list.js-dropdown__list.visually-hidden(tabindex='1')
       each item in data.list
         li.dropdown__item
-          input.dropdown__input.visually-hidden(type='number', name=item.name, min='0', step='1', max='9', value=item.value)
+          input.dropdown__input.js-dropdown__input.visually-hidden(type='number', name=item.name, min='0', step='1', max='9', value=item.value)
           .dropdown__item-label= item.label
-          .dropdown__step.dropdown__step--minus -
-          .dropdown__item-value 0
-          .dropdown__step.dropdown__step--plus +
+          .dropdown__step.js-dropdown__step.dropdown__step--minus -
+          .dropdown__item-value.js-dropdown__item-value 0
+          .dropdown__step.js-dropdown__step.dropdown__step--plus +
       li.dropdown__buttons(class=data.buttons ? '' : 'visually-hidden')
         .dropdown__reset.visually-hidden
-          +button('Очистить', ['link'])(class='dropdown__button dropdown__button--reset')
+          +button('Очистить', ['link'])(class='dropdown__button js-dropdown__button dropdown__button--reset')
         .dropdown__apply
-          +button('Применить', ['link'])(class='dropdown__button dropdown__button--apply')
+          +button('Применить', ['link'])(class='dropdown__button js-dropdown__button dropdown__button--apply')

@@ -2,14 +2,14 @@ import Chart from 'chart.js/auto';
 
 import './doughnut-chart.scss';
 
-function doughnutChart(chartSelector = '.doughnut-chart', chartData = [
+function doughnutChart(chartSelector = '.js-doughnut-chart', chartData = [
   { label: 'red', data: 30, color: '#FF0000' },
   { label: 'green', data: 30, color: '#00FF00' },
   { label: 'blue', data: 30, color: '#0000FF' },
 ]) {
   const chartElement = document.querySelector(chartSelector);
-  const ctx = chartElement.querySelector('.doughnut-chart__canvas').getContext('2d');
-  const charCount = chartElement.querySelector('.doughnut-chart__count');
+  const ctx = chartElement.querySelector('.js-doughnut-chart__canvas').getContext('2d');
+  const charCount = chartElement.querySelector('.js-doughnut-chart__count');
   const count = chartData.reduce((prev, curr) => prev + curr.data, 0);
   charCount.textContent = count;
 
@@ -29,7 +29,7 @@ function doughnutChart(chartSelector = '.doughnut-chart', chartData = [
 
   const htmlLegendPlugin = {
     afterUpdate(chart) {
-      const ul = chartElement.querySelector('.doughnut-chart__legend');
+      const ul = chartElement.querySelector('.js-doughnut-chart__legend');
       ul.innerHTML = '';
 
       const items = chart.options.plugins.legend.labels.generateLabels(chart);
@@ -37,7 +37,7 @@ function doughnutChart(chartSelector = '.doughnut-chart', chartData = [
         const itemColor = chartData[idx].color.start
           ? `background: linear-gradient(180deg, ${chartData[idx].color.start}, ${chartData[idx].color.end} 100%);`
           : `background-color: ${chartData[idx].color}`;
-        const legendItemTemplate = `<li class="doughnut-chart__legend-item">
+        const legendItemTemplate = `<li class="doughnut-chart__legend-item js-doughnut-chart__legend-item">
           <span
             class="doughnut-chart__legend-point"
             style="${itemColor}"
@@ -47,7 +47,7 @@ function doughnutChart(chartSelector = '.doughnut-chart', chartData = [
         ul.insertAdjacentHTML('beforeend', legendItemTemplate);
       });
 
-      const legendItems = chartElement.querySelectorAll('.doughnut-chart__legend-item');
+      const legendItems = chartElement.querySelectorAll('.js-doughnut-chart__legend-item');
       legendItems.forEach((item, idx) => {
         item.addEventListener('click', () => {
           chart.toggleDataVisibility(idx);
