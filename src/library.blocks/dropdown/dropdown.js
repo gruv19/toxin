@@ -1,14 +1,14 @@
-import "../button/button.js";
-import "./dropdown.scss";
+import '../button/button';
+import './dropdown.scss';
 
-function dropdown(dropdownSelector, genitive) {
-  const dropdown = document.querySelector(dropdownSelector);
-  const output = dropdown.querySelector(".dropdown__visually");
-  const dropdownList = dropdown.querySelector(".dropdown__list");
-  const inputs = dropdown.querySelectorAll(".dropdown__input");
-  const buttons = dropdown.querySelectorAll(".button");
-  const steps = dropdown.querySelectorAll(".dropdown__step");
-  const values = dropdown.querySelectorAll(".dropdown__item-value");
+function dropdown(dropdownSelector = '.dropdown', genitive = [{ one: 'гость', twoToFour: 'гостя', moreThanFive: 'гостей' }]) {
+  const dropdownEl = document.querySelector(dropdownSelector);
+  const output = dropdownEl.querySelector('.dropdown__visually');
+  const dropdownList = dropdownEl.querySelector('.dropdown__list');
+  const inputs = dropdownEl.querySelectorAll('.dropdown__input');
+  const buttons = dropdownEl.querySelectorAll('.button');
+  const steps = dropdownEl.querySelectorAll('.dropdown__step');
+  const values = dropdownEl.querySelectorAll('.dropdown__item-value');
   const defaultText = output.innerText;
 
   const state = new Proxy(
@@ -16,43 +16,34 @@ function dropdown(dropdownSelector, genitive) {
     {
       set(target, property, value) {
         if (value) {
-          if (dropdownList.classList.contains("visually-hidden")) {
-            dropdownList.classList.remove("visually-hidden");
+          if (dropdownList.classList.contains('visually-hidden')) {
+            dropdownList.classList.remove('visually-hidden');
           }
-          if (!output.classList.contains("dropdown__visually--active")) {
-            output.classList.add("dropdown__visually--active");
+          if (!output.classList.contains('dropdown__visually--active')) {
+            output.classList.add('dropdown__visually--active');
           }
         } else {
-          if (!dropdownList.classList.contains("visually-hidden")) {
-            dropdownList.classList.add("visually-hidden");
+          if (!dropdownList.classList.contains('visually-hidden')) {
+            dropdownList.classList.add('visually-hidden');
           }
-          if (output.classList.contains("dropdown__visually--active")) {
-            output.classList.remove("dropdown__visually--active");
+          if (output.classList.contains('dropdown__visually--active')) {
+            output.classList.remove('dropdown__visually--active');
           }
         }
-        target[property] = value;
+        target[property] = value; // eslint-disable-line
         return true;
       },
-    }
+    },
   );
 
-  function getGenitive(count, genitive) {
+  function getGenitive(count, genitiveObject) {
+    let result = `${count} ${genitiveObject.moreThanFive}`;
     if (count === 0) {
-      return `${count} ${genitive.moreThanFive}`;
+      result = `${count} ${genitiveObject.moreThanFive}`;
+    } else if (count % 100 < 5 || count % 100 > 20) {
+      result = count % 10 === 1 ? `${count} ${genitiveObject.one}` : `${count} ${genitiveObject.twoToFour}`;
     }
-    if (count % 100 >= 5 && count % 100 <= 20) {
-      return `${count} ${genitive.moreThanFive}`;
-    } else {
-      if (count % 10 === 1) {
-        return `${count} ${genitive.one}`;
-      }
-      if (count % 10 >= 2 && count % 10 <= 4) {
-        return `${count} ${genitive.twoToFour}`;
-      }
-      if (count % 10 >= 5 || count % 10 === 0) {
-        return `${count} ${genitive.moreThanFive}`;
-      }
-    }
+    return result;
   }
 
   function commonSum() {
@@ -63,12 +54,23 @@ function dropdown(dropdownSelector, genitive) {
     return count;
   }
 
-  function changeValue(field, value, genitive) {
+  function clearDropdown() {
+    inputs.forEach((input) => {
+      input.value = '0'; // eslint-disable-line
+    });
+    values.forEach((value) => {
+      value.innerText = '0'; // eslint-disable-line
+    });
+    output.innerText = defaultText;
+    buttons[0].parentNode.classList.add('visually-hidden');
+  }
+
+  function changeValue(field, value, genitiveObject) {
     let counts = [];
-    let res = "";
+    let res = '';
     let stringLength = 20;
-    buttons[0].parentNode.classList.remove("visually-hidden");
-    if (genitive.length === 1) {
+    buttons[0].parentNode.classList.remove('visually-hidden');
+    if (genitiveObject.length === 1) {
       counts.push(commonSum());
     } else {
       counts = [...inputs].map((input) => +input.value);
@@ -76,98 +78,85 @@ function dropdown(dropdownSelector, genitive) {
     if (counts.every((item) => item === 0)) {
       clearDropdown();
     } else {
-      counts = counts.map((item, idx) => {
-        return getGenitive(item, genitive[idx]);
-      });
-      res = counts.join(", ");
+      counts = counts.map((item, idx) => getGenitive(item, genitiveObject[idx]));
+      res = counts.join(', ');
       if (output.clientWidth > 266) {
         stringLength = 30;
       }
-      res = res.length > stringLength ? res.slice(0, stringLength) + "..." : res;
+      res = res.length > stringLength ? `${res.slice(0, stringLength)}...` : res;
       output.innerText = res;
     }
-    field.innerText = String(value);
+    field.innerText = `${value}`; // eslint-disable-line
   }
 
   inputs.forEach((input) => {
-
-    let loadedValue = input.nextSibling.nextSibling.nextElementSibling;
+    const loadedValue = input.nextSibling.nextSibling.nextElementSibling;
     changeValue(loadedValue, input.value, genitive);
 
-    input.addEventListener("focus", function (e) {
+    input.addEventListener('focus', () => {
       state.active = true;
     });
 
-    input.addEventListener("blur", function (e) {
+    input.addEventListener('blur', () => {
       state.active = false;
     });
 
-    input.addEventListener("input", function (e) {
-      let value = this.nextSibling.nextSibling.nextElementSibling;
-      changeValue(value, this.value, genitive);
+    input.addEventListener('input', (e) => {
+      const target = e.target.nextSibling.nextSibling.nextElementSibling;
+      e.target.setAttribute('value', `${e.target.value}`);
+      changeValue(target, e.target.value, genitive);
     });
   });
 
   steps.forEach((step) => {
-    step.addEventListener("click", function (e) {
+    step.addEventListener('click', (e) => {
       e.stopPropagation();
-      let input = this.parentNode.firstChild;
-      let value = input.nextSibling.nextSibling.nextElementSibling;
+      const input = e.target.parentNode.firstChild;
+      const value = input.nextSibling.nextSibling.nextElementSibling;
       let count = +input.value;
-      if (this.classList.contains("dropdown__step--minus")) {
+      if (e.target.classList.contains('dropdown__step--minus')) {
         count = count === 0 ? 0 : count - 1;
       }
-      if (this.classList.contains("dropdown__step--plus")) {
+      if (e.target.classList.contains('dropdown__step--plus')) {
         count = count === 9 ? 9 : count + 1;
       }
-      input.value = String(count);
+      input.value = `${count}`;
+      input.setAttribute('value', `${count}`);
       changeValue(value, count, genitive);
-      input.focus();
     });
   });
 
   buttons.forEach((btn) => {
-    btn.addEventListener("focus", function (e) {
+    btn.addEventListener('focus', () => {
       state.active = true;
     });
-    btn.addEventListener("blur", function (e) {
+    btn.addEventListener('blur', () => {
       state.active = false;
     });
-    btn.addEventListener("click", function (e) {
+    btn.addEventListener('click', (e) => {
       e.stopPropagation();
       e.preventDefault();
-      if (this.classList.contains("dropdown__button--reset")) {
+      if (e.target.classList.contains('dropdown__button--reset')) {
         clearDropdown();
       }
-      if (this.classList.contains("dropdown__button--apply")) {
+      if (e.target.classList.contains('dropdown__button--apply')) {
         state.active = false;
       }
     });
   });
 
-  output.addEventListener("click", function (e) {
+  output.addEventListener('click', (e) => {
     e.stopPropagation();
     inputs[0].focus();
   });
 
-  dropdownList.addEventListener("focus", function (e) {
+  dropdownList.addEventListener('focus', () => {
     state.active = true;
   });
 
-  dropdownList.addEventListener("blur", function (e) {
+  dropdownList.addEventListener('blur', () => {
     state.active = false;
   });
-
-  function clearDropdown() {
-    inputs.forEach((input) => {
-      input.value = "0";
-    });
-    values.forEach((value) => {
-      value.innerText = "0";
-    });
-    output.innerText = defaultText;
-    buttons[0].parentNode.classList.add("visually-hidden");
-  }
 }
 
 export default dropdown;

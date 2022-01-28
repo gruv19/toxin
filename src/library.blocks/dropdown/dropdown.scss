@@ -1,19 +1,28 @@
 .dropdown {
-  max-width: 320px;
+  max-width: 260px;
+  min-width: 260px;
   width: 100%;
   position: relative;
+  @media (min-width: $screen-sm) {
+    max-width: 320px;
+  }
 }
 
 .dropdown__visually {
   width: 100%;
-  padding: 8px 15px 10px 15px;
+  padding: 12px 15px 12px 15px;
   color: rgba($dark, 0.75);
-  font-size: 1.4rem;
-  line-height: 2.4rem;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
   border: 1px solid rgba($dark, 0.25);
   border-radius: 4px;
   user-select: none;
   position: relative;
+  @media (min-width: $screen-sm) {
+    padding: 8px 15px 10px 15px;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -64,23 +73,35 @@
   color: $dark;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.4rem;
+  @media (min-width: $screen-sm) {
+    font-size: 1.2rem;
+  }
+}
+
+.dropdown__input[value='0'] ~ .dropdown__step--minus {
+  border: 1px solid rgba($dark, 0.1);
+}
+
+.dropdown__input[value='9'] ~ .dropdown__step--plus {
+  border: 1px solid rgba($dark, 0.1);
 }
 
 .dropdown__step {
   width: 30px;
   height: 30px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  &--minus {
-    background-image: url(./minus.svg);
-  }
-  &--plus {
-    background-image: url(./plus.svg);
-  }
+  color: rgba($dark, 0.5);
+  border: 1px solid rgba($dark, 0.25);
+  border-radius: 50%;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .dropdown__buttons {
