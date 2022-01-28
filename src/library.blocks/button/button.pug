@@ -6,6 +6,6 @@ mixin button(text='click me', modificators=[], href='')
         classes[i] = 'button--' + modificators[i];
 
   if href
-    a.button(class=classes, href=href)= text
+    a.button(class=classes, href=href)&attributes(attributes)= text
   else
-    button.button(class=classes)= text
+    button.button(class=classes)&attributes(attributes)= text
