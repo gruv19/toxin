@@ -2,58 +2,57 @@ import Chart from 'chart.js/auto';
 
 import './doughnut-chart.scss';
 
-function doughnutChart(chartData) {
-  const ctx = document.querySelector('.doughnut-chart__canvas').getContext('2d');
-  const charCount = document.querySelector('.doughnut-chart__count');
+function doughnutChart(chartSelector = '.doughnut-chart', chartData = [
+  { label: 'red', data: 30, color: '#FF0000' },
+  { label: 'green', data: 30, color: '#00FF00' },
+  { label: 'blue', data: 30, color: '#0000FF' },
+]) {
+  const chartElement = document.querySelector(chartSelector);
+  const ctx = chartElement.querySelector('.doughnut-chart__canvas').getContext('2d');
+  const charCount = chartElement.querySelector('.doughnut-chart__count');
   const count = chartData.reduce((prev, curr) => prev + curr.data, 0);
   charCount.textContent = count;
 
   function colorsGenerate(context, data) {
     return data.map((item) => {
-      let gradient = '';
+      let color = '';
       if (item.color.start) {
-        gradient = context.createLinearGradient(0, 0, 0, 124);
-        gradient.addColorStop(0, item.color.start);
-        gradient.addColorStop(1, item.color.end);
+        color = context.createLinearGradient(0, 0, 0, 124);
+        color.addColorStop(0, item.color.start);
+        color.addColorStop(1, item.color.end);
       } else {
-        gradient = item.color;
+        color = item.color;
       }
-      return gradient;
+      return color;
     });
   }
 
   const htmlLegendPlugin = {
     afterUpdate(chart) {
-      const ul = document.querySelector('.doughnut-chart__legend');
-
-      while (ul.firstChild) {
-        ul.firstChild.remove();
-      }
+      const ul = chartElement.querySelector('.doughnut-chart__legend');
+      ul.innerHTML = '';
 
       const items = chart.options.plugins.legend.labels.generateLabels(chart);
-
       items.forEach((item, idx) => {
-        const li = document.createElement('li');
-        li.classList.add('doughnut-chart__legend-item');
+        const itemColor = chartData[idx].color.start
+          ? `background: linear-gradient(180deg, ${chartData[idx].color.start}, ${chartData[idx].color.end} 100%);`
+          : `background-color: ${chartData[idx].color}`;
+        const legendItemTemplate = `<li class="doughnut-chart__legend-item">
+          <span
+            class="doughnut-chart__legend-point"
+            style="${itemColor}"
+          ></span>
+          <p class="doughnut-chart__legend-label">${item.text}</p>
+        </li>`;
+        ul.insertAdjacentHTML('beforeend', legendItemTemplate);
+      });
 
-        const point = document.createElement('span');
-        point.classList.add('doughnut-chart__legend-point');
-        if (chartData[idx].color.start) {
-          point.style.background = `linear-gradient(180deg, ${chartData[idx].color.start}, ${chartData[idx].color.end} 100%)`;
-        }
-
-        const label = document.createElement('p');
-        label.textContent = item.text;
-        label.classList.add('doughnut-chart__legend-label');
-
-        li.appendChild(point);
-        li.appendChild(label);
-        ul.appendChild(li);
-
-        li.onclick = () => {
-          chart.toggleDataVisibility(item.index);
+      const legendItems = chartElement.querySelectorAll('.doughnut-chart__legend-item');
+      legendItems.forEach((item, idx) => {
+        item.addEventListener('click', () => {
+          chart.toggleDataVisibility(idx);
           chart.update();
-        };
+        });
       });
     },
   };
@@ -77,6 +76,9 @@ function doughnutChart(chartData) {
         },
         htmlLegend: {
           containerID: 'room-details__chart-legend',
+        },
+        tooltip: {
+          enabled: false,
         },
       },
       cutout: 55,

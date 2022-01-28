@@ -1,17 +1,17 @@
 .doughnut-chart {
   display: flex;
   flex-direction: column;
-  width: 124px;
   position: relative;
   @media (min-width: $screen-lg) {
     flex-direction: row;
     align-items: end;
   }
 }
+
 .doughnut-chart__title {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 60px;
+  left: 62px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,15 +22,22 @@
   color: $primary;
   text-transform: uppercase;
 }
+
 .doughnut-chart__count {
   font-size: 2.4rem;
   line-height: 2.9rem;
 }
+
+.doughnut-chart__container {
+  width: 124px;
+}
+
 .doughnut-chart__canvas {
   width: 100%;
   height: 125px;
   transform: rotateX(180deg) rotateZ(180deg);
 }
+
 .doughnut-chart__legend {
   width: 161px;
   margin: 20px 0 0;
@@ -38,17 +45,19 @@
     margin: 0 0 0 27px;
   }
 }
+
 .doughnut-chart__legend-item {
   width: 100%;
   display: flex;
   align-items: center;
 }
+
 .doughnut-chart__legend-point {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #ffe39c, #ffba9c 100%);
 }
+
 .doughnut-chart__legend-label {
   font-weight: normal;
   font-size: 1.4rem;
