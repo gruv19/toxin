@@ -1,1 +1,1 @@
-import "./main-menu-state.scss";
+import './main-menu-state.scss';
