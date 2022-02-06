@@ -1,6 +1,6 @@
-mixin radio-button(...data) 
+mixin radio-button(...data)
   each val in data
-    .radio-button&attributes(attributes)
+    .radio-button
       label.radio-button__group
         if val.state
           input.radio-button__input.visually-hidden(type="radio", value=val.value, name=val.name, checked)
