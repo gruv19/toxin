@@ -1,7 +1,7 @@
-import "paginationjs/dist/pagination.css";
-import "paginationjs/dist/pagination.js";
+import 'paginationjs/dist/pagination.css';
+import 'paginationjs/dist/pagination';
 
-import "./pagination.scss";
+import './pagination.scss';
 
 function pagination(
   paginateSelector,
@@ -12,32 +12,32 @@ function pagination(
   defaultPage = 1,
 ) {
   $(paginateSelector).pagination({
-    dataSource: dataSource,
+    dataSource,
     pageSize: 12,
     pageRange: 1,
     pageNumber: defaultPage,
     autoHidePrevious: true,
     autoHideNext: true,
-    className: "my-pagination",
-    prevText: "",
-    nextText: "",
+    className: 'my-pagination',
+    prevText: '',
+    nextText: '',
     showNavigator: true,
-    formatNavigator: function(currentPage, totalPage, totalNumber) {
+    formatNavigator(currentPage, totalPage, totalNumber) {
       let resTotal = totalNumber;
       if (totalNumber > 100) {
-        resTotal = "100+";
+        resTotal = '100+';
       }
-      return `<span>${currentPage} - ${totalPage} из ${resTotal} вариантов аренды</span>`
+      return `<span>${currentPage} - ${totalPage} из ${resTotal} вариантов аренды</span>`;
     },
-    callback: function (data) {
+    callback(data) {
       const html = templateFunction(data);
       $(dataSelector).html(html);
     },
-    afterPaging: function() {
+    afterPaging() {
       if (afterPagingHandler) {
         afterPagingHandler();
       }
-    }
+    },
   });
 }
 
