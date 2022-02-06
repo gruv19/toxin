@@ -1,12 +1,13 @@
-import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss";
-import Glide from "@glidejs/glide";
-import "./glide.scss";
+import '@glidejs/glide/src/assets/sass/glide.core.scss';
+import Glide from '@glidejs/glide';
 
-function glide(glideSelector = ".glide") {
-  const glides = document.querySelectorAll(glideSelector);
-  glides.forEach(glide => {
-    new Glide(glide, {
-      type: "carousel",
+import './glide.scss';
+
+function glide() {
+  const glides = document.querySelectorAll('.js-glide');
+  glides.forEach((glideEl) => {
+    new Glide(glideEl, {
+      type: 'carousel',
       startAt: 0,
       perView: 1,
     }).mount();

@@ -1,6 +1,6 @@
 
-mixin glide(number, images)
-  .glide(id=number)&attributes(attributes)
+mixin glide(number='888', images=['image-1.min.jpg', 'image-2.min.jpg', 'image-3.min.jpg'])
+  .glide.js-glide
     .glide__track(data-glide-el="track")
       ul.glide__slides
         each image in images

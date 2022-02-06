@@ -2,13 +2,13 @@
   opacity: 1;
   transition: opacity 0.3s;
 }
+
 .glide__img {
-  // width: 100%;
-  // height: auto;
   width: 271px;
   height: 151px;
   object-fit: cover;
 }
+
 .glide__arrows {
   position: absolute;
   top: 0;
@@ -19,6 +19,7 @@
   opacity: 0;
   pointer-events: none;
 }
+
 .glide__arrow {
   border: none;
   pointer-events: auto;
@@ -40,15 +41,18 @@
     transform: matrix(-1, 0, 0, 1, 0, 0);
   }
 }
+
 .glide__link {
   width: 270px;
   height: 151px;
   display: block;
 }
+
 .glide__arrow-icon {
   margin-top: 2px;
   margin-left: 12px;
 }
+
 .glide__bullets {
   display: flex;
   justify-content: flex-end;
@@ -57,6 +61,7 @@
   bottom: 15px;
   right: 15px;
 }
+
 .glide__bullet {
   width: 7.5px;
   height: 7.5px;
