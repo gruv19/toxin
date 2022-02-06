@@ -1,14 +1,14 @@
-import "./like-button.scss";
+import './like-button.scss';
 
 function likeButtons() {
-  $(".like-button").on("click", function (e) {
-    let likes = +$(this).text();
-    if ($(this).hasClass("like-button--active")) {
-      $(this).text(`${likes - 1}`);
+  $('.js-like-button').on('click', (e) => {
+    const likes = +$(e.target).text();
+    if ($(e.target).hasClass('like-button--active')) {
+      $(e.target).text(`${likes - 1}`);
     } else {
-      $(this).text(`${likes + 1}`);
+      $(e.target).text(`${likes + 1}`);
     }
-    $(this).toggleClass("like-button--active");
+    $(e.target).toggleClass('like-button--active');
   });
 }
 
