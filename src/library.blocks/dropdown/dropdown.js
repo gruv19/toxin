@@ -11,30 +11,25 @@ function dropdown(dropdownSelector = '.js-dropdown', genitive = [{ one: 'гос�
   const values = dropdownEl.querySelectorAll('.js-dropdown__item-value');
   const defaultText = output.innerText;
 
-  const state = new Proxy(
-    { active: false },
-    {
-      set(target, property, value) {
-        if (value) {
-          if (dropdownList.classList.contains('visually-hidden')) {
-            dropdownList.classList.remove('visually-hidden');
-          }
-          if (!output.classList.contains('dropdown__visually--active')) {
-            output.classList.add('dropdown__visually--active');
-          }
-        } else {
-          if (!dropdownList.classList.contains('visually-hidden')) {
-            dropdownList.classList.add('visually-hidden');
-          }
-          if (output.classList.contains('dropdown__visually--active')) {
-            output.classList.remove('dropdown__visually--active');
-          }
+  const state = {
+    set active(value) {
+      if (value) {
+        if (dropdownList.classList.contains('visually-hidden')) {
+          dropdownList.classList.remove('visually-hidden');
         }
-        target[property] = value; // eslint-disable-line
-        return true;
-      },
+        if (!output.classList.contains('dropdown__visually--active')) {
+          output.classList.add('dropdown__visually--active');
+        }
+      } else {
+        if (!dropdownList.classList.contains('visually-hidden')) {
+          dropdownList.classList.add('visually-hidden');
+        }
+        if (output.classList.contains('dropdown__visually--active')) {
+          output.classList.remove('dropdown__visually--active');
+        }
+      }
     },
-  );
+  };
 
   function getGenitive(count, genitiveObject) {
     let result = `${count} ${genitiveObject.moreThanFive}`;
