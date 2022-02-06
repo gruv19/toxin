@@ -1,15 +1,19 @@
+include ../label/label.pug
 include ../checkbox-button/checkbox-button.pug
 
-mixin expandable-checkbox-list(label, ...checkboxData)
-  .expandable-checkbox-list(tabindex="0")&attributes(attributes)
+mixin expandable-checkbox-list(label='expandable checkbox list', ...checkboxData)
+  .expandable-checkbox-list.js-expandable-checkbox-list
     .expandable-checkbox-list__title-group
-      .expandable-checkbox-list__label= label
+      +label(label)
       .expandable-checkbox-list__down-arrow
     .expandable-checkbox-list__checkbox-buttons
-      each val in checkboxData
-        +checkbox-button({
-          state: val.state, 
-          value: val.value, 
-          name: val.name, 
-          label: val.label
-        })
+      if checkboxData.length
+        each val in checkboxData
+          +checkbox-button({
+            state: val.state,
+            value: val.value,
+            name: val.name,
+            label: val.label
+          })
+      else
+        +checkbox-button

@@ -1,10 +1,16 @@
-import "../checkbox-button/checkbox-button";
-import "./expandable-checkbox-list.scss";
+import '../label/label';
+import '../checkbox-button/checkbox-button';
+
+import './expandable-checkbox-list.scss';
 
 function checkboxList() {
-  const checkboxListLabel = $(".expandable-checkbox-list__title-group");
-  checkboxListLabel.on("click", function () {
-    $(this).parent().toggleClass("expandable-checkbox-list--focus");
+  const checkboxListLabels = document.querySelectorAll('.js-expandable-checkbox-list');
+  checkboxListLabels.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      const target = e.target.closest('.expandable-checkbox-list');
+      e.stopPropagation();
+      target.classList.toggle('expandable-checkbox-list--focused');
+    });
   });
 }
 

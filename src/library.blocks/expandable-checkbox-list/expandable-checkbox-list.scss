@@ -2,12 +2,14 @@
   font-family: $primaryFont;
   max-width: 266px;
   width: 100%;
-  cursor: pointer;
+  min-width: 260px;
   user-select: none;
-  &--focus .expandable-checkbox-list__checkbox-buttons {
+  &--focused .expandable-checkbox-list__checkbox-buttons {
     max-height: 1000px;
+    padding-top: 2px;
+    transition: padding-top 0.1s;
   }
-  &--focus .expandable-checkbox-list__down-arrow {
+  &--focused .expandable-checkbox-list__down-arrow {
     transform: rotateZ(180deg);
     transition: transform 0.5s;
   }
@@ -15,13 +17,14 @@
 
 .expandable-checkbox-list__down-arrow {
   position: absolute;
-  height: 8px;
+  height: 12px;
   width: 12px;
   display: inline-block;
   background-image: url(./expand_more.svg);
   background-repeat: no-repeat;
   background-position: center;
   right: 16px;
+  bottom: 7px;
   transition: transform 1s;
 }
 
@@ -30,15 +33,10 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 17px;
-}
-
-.expandable-checkbox-list__label {
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  color: $dark;
-  text-transform: uppercase;
+  margin-bottom: 11px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .expandable-checkbox-list__checkbox-buttons {
@@ -47,4 +45,6 @@
   transition: max-height 0.5s;
   display: grid;
   grid-row-gap: 10px;
+  padding-top: 0;
+  transition: padding-top 0.1s;
 }
