@@ -1,1 +1,1 @@
-import "./info-card.scss";
+import './info-card.scss';
