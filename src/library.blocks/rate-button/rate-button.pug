@@ -1,22 +1,16 @@
-mixin rate-button-for-feedback(data)
-  select.rate-button(name=data.name)&attributes(attributes)
-    each val in data.values
-      if val == data.start
-        option(selected="selected").rate-button__value(value=val)= val
-      else 
-        option.rate-button__value(value=val)= val
-
 mixin rate-button(data)
-  span.rate-button
-    select.gl-star-rating.visually-hidden(name=data.name)&attributes(attributes)
-      each val in data.values
-        if val == data.start
-          option(selected="selected", value=val).rate-button__value= val
-        else 
+  - var {startValue, isForFeedback, name} = data
+  span.rate-button(class=isForFeedback ? '' : 'js-rate-button')
+    select.rate-button__select.rate-button__star-rating(class=isForFeedback ? 'js-rate-button__select' : 'visually-hidden', name=data.name)
+      each val in [1, 2, 3, 4, 5]
+        if val == startValue
+          option(selected='selected', value=val).rate-button__value= val
+        else
           option.rate-button__value(value=val)= val
-    span.gl-star-rating--stars
-      each val in data.values
-        if val <= data.start
-          span.gl-active(data-value=val)
-        else 
-          span(data-value=val)
+    if !isForFeedback
+      span.rate-button__star-rating--stars
+        each val in [1, 2, 3, 4, 5]
+          if val <= startValue
+            span.rate-button__star--active(data-value=val)
+          else
+            span(data-value=val)

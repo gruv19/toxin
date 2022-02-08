@@ -1,5 +1,4 @@
-.my-gl-star-rating--stars,
-.gl-star-rating--stars {
+.rate-button__star-rating--stars {
   max-width: 120px;
   width: 100%;
   display: flex;
@@ -9,18 +8,16 @@
     background-color: #FFFFFF;
     width: 24px;
     height: 24px;
-    background-image: url("./star.svg");
+    background-image: url('./star.svg');
     background-repeat: no-repeat;
     background-position: center;
   }
 }
 
-.my-gl-star-rating--stars > .my-gl-active,
-.gl-star-rating--stars > .gl-active {
-  background-image: url("./star-active.svg");
+.rate-button__star-rating--stars > .rate-button__star--active {
+  background-image: url('./star-active.svg');
 }
 
-.gl-star-rating--stars > .gl-active,
-.gl-star-rating--stars > span {
+.rate-button__star-rating--stars > .rate-button__star--active {
   cursor: default;
 }
