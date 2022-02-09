@@ -1,15 +1,11 @@
 .textfield {
   max-width: 320px;
+  min-width: 260px;
   width: 100%;
-}
-
-.textfield__input {
-  width: 100%;
-  height: 44px;
-  padding: 8px 15px 10px 15px;
+  padding: 11px 15px 9px 15px;
   color: rgba($dark, 0.75);
   font-size: 1.4rem;
-  line-height: 2.4rem;
+  line-height: 2.2rem;
   border: 1px solid rgba($dark, 0.25);
   border-radius: 4px;
   outline: none;
@@ -22,6 +18,9 @@
     color: rgba($dark, 0.25);
     font-size: 1.4rem;
     line-height: 2.4rem;
+  }
+  &--subscribe {
+    padding: 10px 59px 10px 15px;
   }
 }
 

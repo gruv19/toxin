@@ -1,3 +1,6 @@
 mixin textfield(data)
-  .textfield&attributes(attributes)
-    input.textfield__input(type="text", name=data.name, placeholder=data.placeholder, value=data.value)
+  -var {type='text', name, placeholder, value="", isSubscribe=false, jsModifier=''} = data;
+  -var classes=[]
+  -if (isSubscribe) classes.push('textfield--subscribe')
+  -if (jsModifier) classes.push('js-textfield')
+  input.textfield(type=type, name=name, placeholder=placeholder, value=value, class=classes)
