@@ -1,28 +1,7 @@
 .subscribe-form {
-  max-width: 266px;
+  max-width: 260px;
   width: 100%;
   position: relative;
-}
-
-.subscribe-form__input {
-  width: 100%;
-  padding: 10px 59px 10px 15px;
-  color: rgba($dark, 0.75);
-  font-size: 1.4rem;
-  line-height: 2.2rem;
-  border: 1px solid rgba($dark, 0.25);
-  border-radius: 4px;
-  outline: none;
-  &:hover,
-  &:focus {
-    border: 1px solid rgba($dark, 0.75);
-  }
-  &::placeholder {
-    font-family: "Montserrat", sans-serif;
-    color: rgba($dark, 0.25);
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-  }
 }
 
 .subscribe-form__button {

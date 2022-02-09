@@ -1,4 +1,10 @@
+include ../textfield/textfield.pug
+
 mixin subscribe-form(action="/")
-  form.subscribe-form(action=action, method="post")&attributes(attributes)
-    input.subscribe-form__input(type="email" placeholder="Email" name="email")
+  form.subscribe-form.js-subscribe-form(action=action, method="post")
+    +textfield({
+        name: 'email',
+        placeholder: 'Email',
+        isSubscribe: true
+      })
     button.subscribe-form__button(type="submit")
