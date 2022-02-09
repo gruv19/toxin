@@ -1,3 +1,9 @@
-import "../like-button/like-button.js";
+import likeButtons from '../like-button/like-button';
 
-import "./review.scss";
+import './review.scss';
+
+function review() {
+  likeButtons();
+}
+
+export default review;
