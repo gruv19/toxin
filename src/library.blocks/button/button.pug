@@ -1,11 +1,5 @@
-mixin button(text='click me', modificators=[], href='')
-  -
-    var classes = [];
-    if (modificators.length)
-      for (var i = 0; i < modificators.length; i++)
-        classes[i] = 'button--' + modificators[i];
-
+mixin button(text='click me', classes=[], href='')
   if href
-    a.button(class=classes, href=href)&attributes(attributes)= text
+    a.button(class=classes, href=href)= text
   else
-    button.button(class=classes)&attributes(attributes)= text
+    button.button(class=classes)= text
