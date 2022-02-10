@@ -3,6 +3,7 @@
   max-width: 260px;
   width: 100%;
 }
+
 .toggle__group {
   width: 100%;
   display: grid;
@@ -10,6 +11,7 @@
   grid-gap: 10px;
   align-items: center;
 }
+
 .toggle__input:checked ~ .toggle__field {
   border: 1px solid $primary;
 }
@@ -29,7 +31,7 @@
   position: relative;
   &::after {
     transition: left 0.3s;
-    content: "";
+    content: '';
     position: absolute;
     width: 12px;
     height: 12px;
@@ -40,6 +42,7 @@
     transform: translate(0, -50%)
   }
 }
+
 .toggle__label {
   color: rgba($dark, 0.75);
   font-weight: normal;
