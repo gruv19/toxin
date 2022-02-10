@@ -24,14 +24,6 @@
   }
 }
 
-.account__button {
-  &--login {
-    padding: 7px 19px 8px;
-    min-width: 87px;
-  }
-  &--register {
-    padding: 8px 21px 10px;
-    margin-left: 20px;
-    letter-spacing: -0.1px;
-  }
+.account__button + .account__button {
+  margin-left: 20px;
 }

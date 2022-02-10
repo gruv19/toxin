@@ -1,2 +1,2 @@
-import "../../library.blocks/button/button.js";
-import "./account.scss";
+import '../../library.blocks/button/button';
+import './account.scss';
