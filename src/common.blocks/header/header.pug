@@ -1,22 +1,23 @@
 include ../nav/nav.pug
 
 mixin header(account=false)
-  header.header&attributes(attributes)
+  header.header
     .header__wrapper
-      a.header__logo(href="/")
-        img.header__logo-img(src=require("/src/common.blocks/header/logo.svg"), alt="Logo")
-      +nav([
-        {href: '/about-us', label: 'О нас', active: true},
-        {href: '/services', label: 'Услуги', submenu: [
-          {href: '/service-1', label: 'Услуга 1'},
-          {href: '/service-2', label: 'Услуга 2'},
-          {href: '/service-3', label: 'Услуга 3'}
-        ]},
-        {href: '/vacancies', label: 'Вакансии'},
-        {href: '/news', label: 'Новости'},
-        {href: '/agreements', label: 'Соглашения', submenu: [
-          {href: '/agreement-1', label: 'Соглашение 1'},
-          {href: '/agreement-2', label: 'Соглашение 2'},
-          {href: '/agreement-3', label: 'Соглашение 3'}
-        ]},
-      ], account)(class="header__menu")
+      a.header__logo(href='/')
+        img.header__logo-img(src=require('/src/common.blocks/header/logo.svg'), alt='Logo')
+      .header__menu
+        +nav([
+          {href: '/about-us', label: 'О нас', active: true},
+          {href: '/services', label: 'Услуги', submenu: [
+            {href: '/service-1', label: 'Услуга 1'},
+            {href: '/service-2', label: 'Услуга 2'},
+            {href: '/service-3', label: 'Услуга 3'}
+          ]},
+          {href: '/vacancies', label: 'Вакансии'},
+          {href: '/news', label: 'Новости'},
+          {href: '/agreements', label: 'Соглашения', submenu: [
+            {href: '/agreement-1', label: 'Соглашение 1'},
+            {href: '/agreement-2', label: 'Соглашение 2'},
+            {href: '/agreement-3', label: 'Соглашение 3'}
+          ]},
+        ], account)

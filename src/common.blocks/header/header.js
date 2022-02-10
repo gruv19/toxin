@@ -1,8 +1,8 @@
-import nav from "../nav/nav.js";
+import nav from '../nav/nav';
 
-import "./header.scss";
+import './header.scss';
 
-function header(navSelector) {
+function header(navSelector = '.js-nav') {
   nav(navSelector);
 }
 
