@@ -1,5 +1,5 @@
 mixin toggle(data)
-  -var { label, name, isChecked } = data
+  -var { label='Toogle', name, isChecked=false } = data
   .toggle
     label.toggle__group
       if isChecked
