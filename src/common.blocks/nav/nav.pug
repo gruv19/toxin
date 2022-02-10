@@ -2,7 +2,7 @@ include ../account/account.pug
 include ../../library.blocks/main-menu-state/main-menu-state.pug
 
 mixin nav(content, account=false)
-  nav.nav&attributes(attributes)
+  nav.nav.js-nav
     +main-menu-state
     ul.nav__list.sm
       each val in content

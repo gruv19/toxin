@@ -7,22 +7,27 @@
 
 #main-menu-state:checked ~ .nav__list {
   display: flex;
+  @media (min-width: $screen-lg) {
+    display: flex;
+  }
 }
 
 .nav {
   position: absolute;
   width: 100%;
   left: 0;
-  padding: 0 10px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  box-shadow: 0px 10px 20px rgba($dark, 0.05);
+  padding-bottom: 2px;
   @media (min-width: $screen-lg) {
     position: relative;
     width: unset;
     left: unset;
     padding: 0;
+    box-shadow: none;
     background-color: transparent;
     display: block;
   }
@@ -43,7 +48,6 @@
     justify-content: space-between;
     flex-direction: row;
     margin: 0;
-    // width: 447px;
   }
 }
 
@@ -58,18 +62,18 @@
   @media (min-width: $screen-lg) {
     padding: 0;
     order: 1;
-    // margin-right: 20px;
     width: unset;
+    margin-bottom: 1px;
   }
   &--active {
     color: rgba($color: $dark, $alpha: 0.75);
     font-weight: bold;
   }
-  // &--submenu {}
   &--account {
     order: 1;
     @media (min-width: $screen-lg) {
       padding: 0;
+      margin-left: 19px;
     }
   }
   & + .nav__item {
@@ -88,7 +92,7 @@
 
 .nav__item .nav__link:hover {
   @media (min-width: $screen-lg) {
-    color: rgba($color: $dark, $alpha: 0.75);
+    color: rgba($dark, 0.75);
     font-weight: bold;
   }
 }
@@ -149,6 +153,7 @@
   }
 }
 /* конец отрывка из документации */
+
 .nav__submenu {
   box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
   background-color: #f4f4f4;
