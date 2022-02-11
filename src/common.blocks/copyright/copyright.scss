@@ -22,11 +22,13 @@
     }
   }
 }
+
 .copyright__info {
   font-size: 1.4rem;
   line-height: 1.7rem;
   color: rgba($dark, 0.75);
   margin-bottom: 25px;
+  text-align: center;
   @media (min-width: 1440px) {
     margin: 0;
     &--mobile {
@@ -34,4 +36,3 @@
     }
   }
 }
-// .copyright__socials {}

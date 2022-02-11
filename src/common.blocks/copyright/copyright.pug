@@ -1,8 +1,21 @@
 include ../socials/socials.pug
 
-mixin copyright-bar(onlyMoblie=flase)
+mixin copyright(onlyMoblie=flase)
   .copyright
     .copyright__wrapper(class=onlyMoblie ? 'copyright__wrapper--mobile' : '')
       .copyright__info(class=onlyMoblie ? 'copyright__info--mobile' : '') Copyright © 2018 Toxin отель. Все права защищены.
       .copyright__socials
-        +socials
+        +socials(
+          {
+            href: 'https://twitter.com/',
+            icon: 'twitter.svg'
+          },
+          {
+            href: 'https://facebook.com/',
+            icon: 'facebook.svg'
+          },
+          {
+            href: 'https://www.instagram.com/',
+            icon: 'instagram.svg'
+          }
+        )

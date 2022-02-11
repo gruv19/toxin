@@ -1,3 +1,3 @@
-import "./copyright.scss";
+import '../socials/socials';
 
-import "../socials/socials.js";
+import './copyright.scss';
