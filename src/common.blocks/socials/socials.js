@@ -1,1 +1,1 @@
-import "./socials.scss";
+import './socials.scss';

@@ -1,8 +1,5 @@
-mixin socials
-  .socials&attributes(attributes)
-    a.socials__link(href="https://twitter.com/")
-      img.socials__img(src=require("/src/common.blocks/socials/twitter.svg"))
-    a.socials__link(href="https://facebook.com/")
-      img.socials__img(src=require("/src/common.blocks/socials/facebook.svg"))
-    a.socials__link(href="https://www.instagram.com/")
-      img.socials__img(src=require("/src/common.blocks/socials/instagram.svg"))
+mixin socials(...socialItems)
+  .socials
+    each item in socialItems
+      a.socials__link(href=item.href)
+        img.socials__img(src=require('/src/common.blocks/socials/' + item.icon))
