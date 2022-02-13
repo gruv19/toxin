@@ -1,7 +1,7 @@
 include ../../library.blocks/subscribe-form/subscribe-form.pug
 
 mixin widget(data)
-  .wedget&attributes(attributes)
+  .wedget
     h3.widget__title= data.title
     ul.widget__list
       each val in data.list
