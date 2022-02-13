@@ -1,81 +1,78 @@
 include ../widget/widget.pug
 include ../../library.blocks/subscribe-form/subscribe-form.pug
-include ../socials/socials.pug
+include ../copyright/copyright.pug
 
 mixin footer
-  footer.footer&attributes(attributes)
+  footer.footer
     .footer__navigation
-      .footer__wrapper.footer__wrapper--navigation
+      .footer__wrapper
         .footer__logo
           a.footer__link(href="/")
             img.footer__img(src=require('/src/common.blocks/footer/logo.svg'), alt="logo")
           p.footer__info Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
         .footer__widgets
           +widget({
-            title: "навигация",
+            title: 'навигация',
             list: [
               {
-                label: "О нас",
-                href: "/about"
+                label: 'О нас',
+                href: '/about'
               },
               {
-                label: "Новости",
-                href: "/news"
+                label: 'Новости',
+                href: '/news'
               },
               {
-                label: "Служба поддержки",
-                href: "/support"
+                label: 'Служба поддержки',
+                href: '/support'
               },
               {
-                label: "Услуги",
-                href: "/services"
+                label: 'Услуги',
+                href: '/services'
               }
             ]
-          })(class="footer__widget")
+          })
           +widget({
-            title: "о нас",
+            title: 'о нас',
             list: [
               {
-                label: "О сервис",
-                href: "/about"
+                label: 'О сервис',
+                href: '/about'
               },
               {
-                label: "Наша команда",
-                href: "/news"
+                label: 'Наша команда',
+                href: '/news'
               },
               {
-                label: "Вакансии",
-                href: "/support"
+                label: 'Вакансии',
+                href: '/support'
               },
               {
-                label: "Инвесторы",
-                href: "/services"
+                label: 'Инвесторы',
+                href: '/services'
               }
             ]
-          })(class="footer__widget")
+          })
           +widget({
-            title: "служба поддержки",
+            title: 'служба поддержки',
             list: [
               {
-                label: "Соглашения",
-                href: "/about"
+                label: 'Соглашения',
+                href: '/about'
               },
               {
-                label: "Сообщества",
-                href: "/news"
+                label: 'Сообщества',
+                href: '/news'
               },
               {
-                label: "Связь с нами",
-                href: "/support"
+                label: 'Связь с нами',
+                href: '/support'
               }
             ]
-          })(class="footer__widget")
+          })
         .footer__subcribe
           h3.footer__subcribe-title подписка
           .footer__subcribe-info Получайте специальные предложения и новости сервиса
-          +subscribe-form("/subscribe")(class="footer__subcribe-form")
+          +subscribe-form('/subscribe')
     .footer__copyright
-      .footer__wrapper.footer__wrapper--copyright
-        span.footer__copyright-info Copyright © 2018 Toxin отель. Все права защищены.
-        +socials(class="footer__socials")
-
+      +copyright

@@ -1,8 +1,8 @@
-import "../widget/widget.js";
-import subscribe from "../../library.blocks/subscribe-form/subscribe-form.js";
-import "../socials/socials.js"
+import '../widget/widget';
+import subscribe from '../../library.blocks/subscribe-form/subscribe-form';
+import '../copyright/copyright';
 
-import "./footer.scss";
+import './footer.scss';
 
 function footer() {
   subscribe();
