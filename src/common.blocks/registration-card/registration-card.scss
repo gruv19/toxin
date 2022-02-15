@@ -1,19 +1,25 @@
 .registration-card {
-  max-width: 380px;
-  width: 380px;
+  min-width: 300px;
+  width: 300px;
   background-color: #fff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 40px 30px 30px;
+  padding: 40px 20px 30px;
   font-family: $primaryFont;
+  @media (min-width: $screen-sm) {
+    max-width: 380px;
+    width: 380px;
+    padding: 40px 30px 30px;
+  }
 }
-// .registration-card__form {}
+
 .registration-card__fieldset {
   margin: 0;
   padding: 0;
   border: none;
   margin-bottom: 22px;
 }
+
 .registration-card__legend {
   font-weight: bold;
   font-size: 2.4rem;
@@ -22,36 +28,44 @@
   padding: 0;
   margin-bottom: 21px;
 }
-.registration-card__textfield {
-  & + & {
-    margin-top: 10px;
+
+.registration-card__textfield + .registration-card__textfield {
+  margin-top: 10px;
+}
+
+.registration-card__radio-buttons {
+  display: grid;
+  margin: 11px 0px 23px;
+  grid-row-gap: 10px;
+  @media (min-width: $screen-sm) {
+    grid-template-columns: repeat(2, max-content);
+    grid-column-gap: 13px;
+    grid-row-gap: 0;
   }
 }
-.registration-card__radio-buttons {
-  display: flex;
-  align-items: center;
-  margin: 11px 0px 24px;
-}
+
 .registration-card__radio + .registration-card__radio {
   margin-left: 14px;
 }
+
 .registration-card__masked {
   margin-bottom: 20px;
 }
+
 .registration-card__toggle {
   margin-top: 8px;
 }
-// .registration-card__button-submit {}
+
 .registration-card__login {
-  margin-top: 30px;
+  margin-top: 31px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .registration-card__text {
   color: #000;
   font-weight: normal;
   font-size: 1.4rem;
   line-height: 1.8rem;
 }
-// .registration-card__button-login {}
