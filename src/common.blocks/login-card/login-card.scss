@@ -1,19 +1,25 @@
 .login-card {
-  max-width: 380px;
-  width: 380px;
+  min-width: 300px;
+  width: 300px;
   background-color: #fff;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 40px 30px 32px;
+  padding: 40px 20px 32px;
   font-family: $primaryFont;
+  @media (min-width: $screen-sm) {
+    max-width: 380px;
+    width: 380px;
+    padding: 40px 30px 32px;
+  }
 }
-// .login-card__form{}
+
 .login-card__fieldset {
   margin: 0;
   padding: 0;
   border: none;
   margin-bottom: 21px;
 }
+
 .login-card__legend {
   font-weight: bold;
   font-size: 2.4rem;
@@ -22,22 +28,21 @@
   padding: 0;
   margin-bottom: 21px;
 }
-.login-card__textfield {
-  & + & {
-    margin-top: 10px;
-  }
+
+.login-card__textfield + .login-card__textfield {
+  margin-top: 10px;
 }
+
 .login-card__registration {
   margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .login-card__text {
   color: #000;
   font-weight: normal;
   font-size: 1.4rem;
   line-height: 1.8rem;
 }
-// .login-card__button-submit{}
-// .login-card__button-registration{}

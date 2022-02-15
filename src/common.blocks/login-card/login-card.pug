@@ -3,20 +3,24 @@ include ../../library.blocks/button/button.pug
 
 mixin login-card
   .login-card
-    form.login-card__form(action="/registration", method="post")
+    form.login-card__form.js-login-card__form(action='/registration', method='post')
       fieldset.login-card__fieldset
         legend.login-card__legend Войти
-        +textfield({
-          name: "email",
-          placeholder: "Email",
-          value: ""
-        })(class="login-card__textfield")
-        +textfield({
-          name: "password",
-          placeholder: "Пароль",
-          value: ""
-        })(class="login-card__textfield")
-      +button("Войти", "full")(class="login-card__button-submit")
+        .login-card__textfield
+          +textfield({
+            type: 'email',
+            name: 'email',
+            placeholder: 'Email'
+          })
+        .login-card__textfield
+          +textfield({
+            type: 'password',
+            name: 'password',
+            placeholder: 'Пароль'
+          })
+      .login-card__button-submit
+        +button('Войти', ['button--full'])
       .login-card__registration
         span.login-card__text Нет аккаунта на Toxin?
-        +button("создать", "", {name: "a", href: "/register.html"})(class="login-card__button-registration")
+        .login-card__button-registration
+          +button('создать', [], '/register.html')
