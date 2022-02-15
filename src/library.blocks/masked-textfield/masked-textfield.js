@@ -1,7 +1,7 @@
 import './masked-textfield.scss';
 
-function maskedTextfield() {
-  const $maskedTextField = $('.js-masked-textfield__input');
+function maskedTextfield(maskedInputSelector = '.js-masked-textfield__input') {
+  const $maskedTextField = $(maskedInputSelector);
   const regArray = [
     {
       regexp: /^([0-3])$/,
