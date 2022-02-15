@@ -52,6 +52,7 @@ function dropdown(dropdownSelector = '.js-dropdown', genitive = [{ one: 'гос�
   function clearDropdown() {
     inputs.forEach((input) => {
       input.value = '0'; // eslint-disable-line
+      input.setAttribute('value', '0');
     });
     values.forEach((value) => {
       value.innerText = '0'; // eslint-disable-line
