@@ -3,8 +3,8 @@ import Glide from '@glidejs/glide';
 
 import './glide.scss';
 
-function glide() {
-  const glides = document.querySelectorAll('.js-glide');
+function glide(glideSelector = '.js-glide') {
+  const glides = document.querySelectorAll(glideSelector);
   glides.forEach((glideEl) => {
     new Glide(glideEl, {
       type: 'carousel',
