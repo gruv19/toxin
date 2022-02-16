@@ -2,21 +2,23 @@ include ../../library.blocks/rate-button/rate-button.pug
 include ../../library.blocks/glide/glide.pug
 
 mixin room-card(roomInfo)
-  .room-card&attributes(attributes)
-    +glide(roomInfo.number, roomInfo.images)(class="room-card__slider")
+  -var {number, images, rating=0, category='', cost, reviewCount=0} = roomInfo
+  .room-card
+    .room-card__slider
+      +glide(number, images)
     .room-card__info
       .room-card__room-cost
         span.room-card__room №
-          span.room-card__room-number #{roomInfo.number}
-          span.room-card__room-category #{roomInfo.category}
-        span.room-card__cost #{roomInfo.cost}₽
+          span.room-card__room-number #{number}
+          span.room-card__room-category #{category}
+        span.room-card__cost #{cost}₽
           span.room-card__cost-period в сутки
       .room-card__room-rating
         +rate-button({
-          name: "room-rating-" + roomInfo.number,
-          values: [1, 2, 3, 4, 5],
-          start: roomInfo.rating
-        })(class="room-card__rating")
+          name: 'room-rating-' + number,
+          isForFeedback: false,
+          startValue: rating
+        })
         .room-card__reviews-counter
-          span.room-card__reviews #{roomInfo.reviewCount}
+          span.room-card__reviews #{reviewCount}
           | Отзывов

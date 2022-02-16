@@ -8,13 +8,15 @@
   display: block;
   text-decoration: none;
 }
+
 .room-card__slider {
   width: 100%;
 }
+
 .room-card__info {
-  // padding: 20px 17px 19px 20px;
   padding: 20px 17px 19px 20px;
 }
+
 .room-card__room-cost {
   font-weight: bold;
   font-size: 1.4rem;
@@ -26,13 +28,14 @@
   padding-bottom: 10px;
   border-bottom: 1px solid rgba($dark, 0.1);
 }
-// .room-card__room {}
+
 .room-card__room-number {
   font-size: 2.2rem;
   line-height: 2.4rem;
   margin-left: 3px;
   letter-spacing: -2px;
 }
+
 .room-card__room-category {
   color: $primary;
   font-size: 1.2rem;
@@ -40,24 +43,27 @@
   text-transform: uppercase;
   margin-left: 3px;
 }
+
 .room-card__cost {
   color: rgba($dark, 0.5);
   font-size: 1.4rem;
   line-height: 1.8rem;
 }
+
 .room-card__cost-period {
   font-size: 1.2rem;
   line-height: 1.8rem;
   font-weight: normal;
   margin-left: 4px;
 }
+
 .room-card__room-rating {
   padding-top: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-// .room-card__rating {}
+
 .room-card__reviews-counter {
   color: rgba($dark, 0.5);
   font-size: 1.4rem;
@@ -66,6 +72,7 @@
   margin-right: 3px;
   margin-top: 1px;
 }
+
 .room-card__reviews {
   font-weight: bold;
   margin-right: 3px;

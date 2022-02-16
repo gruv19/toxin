@@ -1,10 +1,11 @@
-import rateButton from "../../library.blocks/rate-button/rate-button.js";
-import glide from "../../library.blocks/glide/glide.js"
-import "./room-card.scss";
+import glide from '../../library.blocks/glide/glide';
+import rateButton from '../../library.blocks/rate-button/rate-button';
 
-function roomCard(glideSelector = "") {
+import './room-card.scss';
+
+function roomCard() {
   rateButton(true);
-  glide(".room-card__slider");
+  glide();
 }
 
 export default roomCard;
