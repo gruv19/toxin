@@ -1,92 +1,87 @@
-import dateDropdown from "../../library.blocks/date-dropdown/date-dropdown.js";
-import dropdown from "../../library.blocks/dropdown/dropdown.js";
-import "../../library.blocks/label/label.js";
-import "../../library.blocks/button/button.js";
+import '../../library.blocks/button/button';
+import dateDropdown from '../../library.blocks/date-dropdown/date-dropdown';
+import dropdown from '../../library.blocks/dropdown/dropdown';
+import '../../library.blocks/label/label';
 
-import "./booking-card.scss";
+import './booking-card.scss';
 
 function costFormat(cost) {
-  cost = new Intl.NumberFormat("ru-RU", {
+  return new Intl.NumberFormat('ru-RU', {
     maximumFractionDigits: 0,
-    style: "currency",
-    currency: "RUB",
-  }).format(cost);
-  return cost.replace(/\s₽/,"₽");;
+    style: 'currency',
+    currency: 'RUB',
+  }).format(cost).replace(/\s₽/, '₽');
 }
 
-function getGenitive(count, genitive) {
+function getGenitive(count, genitiveObject) {
+  let result = `${count} ${genitiveObject.moreThanFive}`;
   if (count === 0) {
-    return `${count} ${genitive.moreThanFive}`;
+    result = `${count} ${genitiveObject.moreThanFive}`;
+  } else if (count % 100 < 5 || count % 100 > 20) {
+    result = count % 10 === 1 ? `${count} ${genitiveObject.one}` : `${count} ${genitiveObject.twoToFour}`;
   }
-  if (count % 100 >= 5 && count % 100 <= 20) {
-    return `${count} ${genitive.moreThanFive}`;
-  } else {
-    if (count % 10 === 1) {
-      return `${count} ${genitive.one}`;
-    }
-    if (count % 10 >= 2 && count % 10 <= 4) {
-      return `${count} ${genitive.twoToFour}`;
-    }
-    if (count % 10 >= 5 || count % 10 === 0) {
-      return `${count} ${genitive.moreThanFive}`;
-    }
-  }
+  return result;
 }
 
-/**
- *
- * @param {Object} roomData
- */
+function bookingCard(roomData, bookingCardSelector = '.js-booking-card') {
+  const {
+    cost,
+    number,
+    category = '',
+    service = 0,
+    additional = 0,
+    discount = 0,
+  } = roomData;
+  const bookingCardElem = document.querySelector(bookingCardSelector);
+  const roomNumber = bookingCardElem.querySelector('.js-booking-card__room-number');
+  const roomCategory = bookingCardElem.querySelector('.js-booking-card__room-category');
+  const roomCost = bookingCardElem.querySelector('.js-booking-card__cost');
+  const baseDataElem = bookingCardElem.querySelector('.js-booking-card__base-data');
+  const baseSumElem = bookingCardElem.querySelector('.js-booking-card__base-sum');
+  const discountElem = bookingCardElem.querySelector('.js-booking-card__service-discount');
+  const serviceSumElem = bookingCardElem.querySelector('.js-booking-card__service-sum');
+  const additionalSumElem = bookingCardElem.querySelector('.js-booking-card__additional-sum');
+  const totalSumElem = bookingCardElem.querySelector('.js-booking-card__total-sum');
+  const bookingForm = bookingCardElem.querySelector('.js-booking-card__form');
 
-function bookingCard(roomData, discount = false) {
-  const roomNumber = document.querySelector(".booking-card__room-number");
-  const roomCategory = document.querySelector(".booking-card__room-category");
-  const roomCost = document.querySelector(".booking-card__cost");
-  const baseSumElem = document.querySelector(".booking-card__base-sum");
-  const baseDataElem = document.querySelector(".booking-card__base-data");
-  const discountElem = document.querySelector(".booking-card__service-discount");
-  const serviceSumElem = document.querySelector(".booking-card__service-sum");
-  const additionalSumElem = document.querySelector(".booking-card__additional-sum");
-  const totalSumElem = document.querySelector(".booking-card__total-sum");
-  
-  const datepicker = dateDropdown(".booking-card__date-dropdown", [
-    "2022-01-19",
-    "2022-01-23",
-  ]);
-  dropdown(".booking-card__dropdown", [
-    { one: "гость", twoToFour: "гостя", moreThanFive: "гостей" },
+  const datepicker = dateDropdown(`${bookingCardSelector} .js-date-dropdown`, [
+    '2022-01-19',
+    '2022-01-23',
   ]);
 
-  let cost = costFormat(roomData.cost);
+  dropdown(`${bookingCardSelector} .js-dropdown`, [
+    { one: 'гость', twoToFour: 'гостя', moreThanFive: 'гостей' },
+  ]);
+
   let days = (datepicker.selectedDates[1] - datepicker.selectedDates[0]) / 1000 / 60 / 60 / 24;
-  let baseSum = days * roomData.cost;
-  let totalSum = baseSum - discount + roomData.service + roomData.additional;
+  let baseSum = days * cost;
+  let totalSum = baseSum - discount + service + additional;
 
-  roomNumber.textContent = `${roomData.number} `;
-  roomCategory.textContent = `${roomData.category}`;
-  roomCost.prepend(`${cost} `);
+  roomNumber.textContent = ` ${number} `;
+  roomCategory.textContent = `${category}`;
+  roomCost.prepend(`${costFormat(cost)} `);
   baseSumElem.textContent = costFormat(baseSum);
-  baseDataElem.textContent = `${cost} х ${getGenitive(days, { one: "сутки", twoToFour: "суток", moreThanFive: "суток" })}`;
+  baseDataElem.textContent = `${costFormat(cost)} х ${getGenitive(days, { one: 'сутки', twoToFour: 'суток', moreThanFive: 'суток' })}`;
   if (discount) {
-    discountElem.textContent = `скидка ${costFormat(discount)}`;
+    discountElem.textContent = ` скидка ${costFormat(discount)}`;
   }
-  serviceSumElem.textContent = `${costFormat(roomData.service)}`;
-  additionalSumElem.textContent = `${costFormat(roomData.additional)}`;
+  serviceSumElem.textContent = `${costFormat(service)}`;
+  additionalSumElem.textContent = `${costFormat(additional)}`;
   totalSumElem.textContent = `${costFormat(totalSum)}`;
 
-
-  datepicker.$datepicker.addEventListener("changeDate", (e) => {
+  datepicker.$datepicker.addEventListener('changeDate', (e) => {
     e.stopPropagation();
-    // console.log();
-    // days = (datepicker.selectedDates[1] - datepicker.selectedDates[0]) / 1000 / 60 / 60 / 24;
     days = (e.detail.dateTo - e.detail.dateFrom) / 1000 / 60 / 60 / 24;
-    baseSum = days * roomData.cost;
-    totalSum = baseSum - discount + roomData.service + roomData.additional;
+    baseSum = days * cost;
+    totalSum = baseSum - discount + service + additional;
     baseSumElem.textContent = costFormat(baseSum);
-    baseDataElem.textContent = `${cost} х ${getGenitive(days, { one: "сутки", twoToFour: "суток", moreThanFive: "суток" })}`;
+    baseDataElem.textContent = `${costFormat(cost)} х ${getGenitive(days, { one: 'сутки', twoToFour: 'суток', moreThanFive: 'суток' })}`;
     totalSumElem.textContent = `${costFormat(totalSum)}`;
   });
 
+  bookingForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
 }
 
 export default bookingCard;

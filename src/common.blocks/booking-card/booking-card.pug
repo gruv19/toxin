@@ -4,37 +4,40 @@ include ../../library.blocks/dropdown/dropdown.pug
 include ../../library.blocks/button/button.pug
 
 mixin booking-card
-  .booking-card&attributes(attributes)
-    form.booking-card__form(action="/booking", method="post")
+  .booking-card.js-booking-card
+    form.booking-card__form.js-booking-card__form(action="/booking", method="post")
       .booking-card__info
         span.booking-card__room №
-          span.booking-card__room-number
-          span.booking-card__room-category
-        span.booking-card__cost
+          span.booking-card__room-number.js-booking-card__room-number
+          span.booking-card__room-category.js-booking-card__room-category
+        span.booking-card__cost.js-booking-card__cost
           span.booking-card__cost-period в сутки
-      +date-dropdown("прибытие", "выезд")(class="booking-card__date-dropdown")
+      .booking-card__date-dropdown
+        +date-dropdown("прибытие", "выезд")
       +label("гости")
-      +dropdown({
-        label: "Сколько гостей",
-        buttons: true,
-        list: [
-          {name: "adult", label: "Взрослые", value: "2"},
-          {name: "child", label: "Дети", value: "1"},
-          {name: "baby", label: "Младенцы", value: "0"}
-        ]
-      })(class="booking-card__dropdown")
+      .booking-card__dropdown
+        +dropdown({
+          label: "Сколько гостей",
+          buttons: true,
+          list: [
+            {name: "adult", label: "Взрослые", value: "2"},
+            {name: "child", label: "Дети", value: "1"},
+            {name: "baby", label: "Младенцы", value: "0"}
+          ]
+        })
       .booking-card__calculation
         .booking-card__base
-          span.booking-card__base-data
-          span.booking-card__base-sum
+          span.booking-card__base-data.js-booking-card__base-data
+          span.booking-card__base-sum.js-booking-card__base-sum
         .booking-card__service
           span.booking-card__service-data Сбор за услуги:
-            span.booking-card__service-discount
-          span.booking-card__service-sum 0₽
+            span.booking-card__service-discount.js-booking-card__service-discount
+          span.booking-card__service-sum.js-booking-card__service-sum
         .booking-card__additional
           span.booking-card__additional-data Сбор за дополнительные услуги
-          span.booking-card__additional-sum 0₽
+          span.booking-card__additional-sum.js-booking-card__additional-sum
       .booking-card__total
         span.booking-card__total-label Итого
-        span.booking-card__total-sum 38 081₽
-      +button("Забронировать", "full")(class="booking-card__button-submit")
+        span.booking-card__total-sum.js-booking-card__total-sum
+      .booking-card__button-submit
+        +button("Забронировать", ["button--full"])
