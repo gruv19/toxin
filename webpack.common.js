@@ -14,7 +14,6 @@ module.exports = {
     'room-details': './src/room-details.js',
     'login': './src/login.js',
     'register': './src/register.js',
-    'temporary': './src/temporary.js',
   },
   module: {
     rules: [
@@ -95,13 +94,6 @@ module.exports = {
       filename: 'register.html',
       template: './src/templates/register/register.pug',
       chunks: ['register'],
-      inject: 'body',
-    }),
-    new HtmlWebpackPlugin({
-      favicon: './src/images/favicon.png',
-      filename: 'temporary.html',
-      template: './src/templates/temporary/temporary.pug',
-      chunks: ['temporary'],
       inject: 'body',
     }),
     new webpack.ProvidePlugin({
