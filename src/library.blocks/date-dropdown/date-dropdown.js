@@ -30,8 +30,8 @@ function dateDropdown(dateDropdownSelector = '.js-date-dropdown', selectedDates 
     container: 'date-dropdown__group',
     dateFormat: 'dd.MM.yyyy',
     onSelect({ date, formattedDate, datepicker }) {
-      const rangeFrom = datepicker.$content.querySelector('.-range-from-');
-      const rangeTo = datepicker.$content.querySelector('.-range-to-');
+      const rangeFrom = datepicker.$content?.querySelector('.-range-from-');
+      const rangeTo = datepicker.$content?.querySelector('.-range-to-');
       if (!rangeTo && rangeFrom) {
         rangeFrom.classList.add('-range-to-');
       }
