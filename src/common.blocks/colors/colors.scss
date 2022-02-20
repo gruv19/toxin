@@ -1,7 +1,3 @@
-.colors {
-}
-.colors__list {
-}
 .colors__item {
   display: flex;
   align-items: center;
@@ -9,6 +5,7 @@
     margin-top: 20px;
   }
 }
+
 .colors__cube {
   width: 70px;
   height: 70px;
@@ -36,15 +33,18 @@
     background-color: $secondary;
   }
 }
+
 .colors__desc {
   font-size: 1.9rem;
   line-height: 2.7rem;
 }
+
 .colors__label {
   margin: 0;
   font-weight: bold;
   padding-top: 1px;
 }
+
 .colors__code {
   margin: 0;
   font-weight: normal;
