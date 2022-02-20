@@ -1,5 +1,5 @@
 import 'normalize.css';
-import './common.blocks/page/page';
+import './layouts/layout/layout';
 
 // import Chart from 'chart.js/auto';
 import header from './common.blocks/header/header';
@@ -26,7 +26,7 @@ $(window).on('load', () => {
     2179,
   );
 
-  doughnutChart([
+  doughnutChart('.js-doughnut-chart', [
     {
       label: 'Великолепно',
       data: 130,

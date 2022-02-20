@@ -1,5 +1,5 @@
 import 'normalize.css';
-import './common.blocks/page/page';
+import './layouts/layout/layout';
 
 import './common.blocks/uikit-header/uikit-header';
 import searchCard from './common.blocks/search-card/search-card';

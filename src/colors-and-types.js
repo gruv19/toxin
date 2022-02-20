@@ -1,5 +1,5 @@
 import 'normalize.css';
-import './common.blocks/page/page';
+import './layouts/layout/layout';
 
 import './common.blocks/colors/colors';
 import './common.blocks/types/types';

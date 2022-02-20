@@ -1,5 +1,5 @@
 import 'normalize.css';
-import './common.blocks/page/page';
+import './layouts/layout/layout';
 
 import header from './common.blocks/header/header';
 import footer from './common.blocks/footer/footer';
