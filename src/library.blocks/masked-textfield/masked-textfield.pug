@@ -1,3 +1,10 @@
+include ../textfield/textfield.pug
+
 mixin masked-textfield(name='masked', value='')
   .masked-textfield
-    input.masked-textfield__input.js-masked-textfield__input(type='text', autocomplete='off', name=name, placeholder='ДД.ММ.ГГГГ', value=value)
+    +textfield({
+      name: name,
+      placeholder: 'ДД.ММ.ГГГГ',
+      value: value,
+      jsModifier: 'js-masked-textfield__input'
+    })

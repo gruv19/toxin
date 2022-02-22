@@ -1,3 +1,5 @@
+import '../textfield/textfield';
+
 import './masked-textfield.scss';
 
 function maskedTextfield(maskedInputSelector = '.js-masked-textfield__input') {
