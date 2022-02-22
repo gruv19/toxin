@@ -3,7 +3,7 @@ import '../textfield/textfield';
 import './subscribe-form.scss';
 
 function subscribe() {
-  const forms = document.querySelectorAll('.subscribe-form');
+  const forms = document.querySelectorAll('.js-subscribe-form');
   forms.forEach((form) => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
