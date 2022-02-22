@@ -1,6 +1,6 @@
 mixin textfield(data)
-  -var {type='text', name, placeholder, value="", isSubscribe=false, jsModifier=''} = data;
+  -var {type='text', name, placeholder, value='', isSubscribe=false, jsModifier='', autocomplete='off'} = data;
   -var classes=[]
   -if (isSubscribe) classes.push('textfield--subscribe')
-  -if (jsModifier) classes.push('js-textfield')
-  input.textfield(type=type, name=name, placeholder=placeholder, value=value, class=classes)
+  -if (jsModifier) classes.push(jsModifier)
+  input.textfield(type=type, name=name, placeholder=placeholder, autocomplete=autocomplete, value=value, class=classes)
