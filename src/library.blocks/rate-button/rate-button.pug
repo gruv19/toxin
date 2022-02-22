@@ -1,5 +1,5 @@
 mixin rate-button(data)
-  - var {startValue, isForFeedback, name} = data
+  - var {startValue=0, isForFeedback=false, name} = data
   span.rate-button(class=isForFeedback ? '' : 'js-rate-button')
     select.rate-button__select.rate-button__star-rating(class=isForFeedback ? 'js-rate-button__select' : 'visually-hidden', name=data.name)
       each val in [1, 2, 3, 4, 5]
