@@ -1,61 +1,58 @@
-import customDatepicker from "../custom-datepicker/custom-datepicker";
-import "./filter-date-dropdown.scss";
+import customDatepicker from '../custom-datepicker/custom-datepicker';
 
-function filterDateDropdown(filterDateDropdownSelector, selectedDates = false) {
+import './filter-date-dropdown.scss';
+
+function filterDateDropdown(filterDateDropdownSelector = '.js-filter-date-dropdown', selectedDates = false) {
   const filterDatepicker = document.querySelector(filterDateDropdownSelector);
-  const filterOutputField = filterDatepicker.querySelector(
-    ".filter-date-dropdown__field"
-  );
-  const filterInputElement = filterDatepicker.querySelector(
-    ".filter-date-dropdown__input"
-  );
+  const filterOutputField = filterDatepicker.querySelector('.js-filter-date-dropdown__field');
+  const filterInputElement = filterDatepicker.querySelector('.js-filter-date-dropdown__input');
   const filterDatepickerOptions = {
-    classes: "filter-date-dropdown__datepicker",
-    container: "filter-date-dropdown__group",
-    dateFormat: "dd MMM",
-    selectedDates: selectedDates,
+    classes: 'filter-date-dropdown__datepicker',
+    container: 'filter-date-dropdown__group',
+    dateFormat: 'dd MMM',
+    selectedDates,
     locale: {
       monthsShort: [
-        "янв",
-        "фев",
-        "мар",
-        "апр",
-        "май",
-        "июн",
-        "июл",
-        "авг",
-        "сен",
-        "окт",
-        "ноя",
-        "дек",
+        'янв',
+        'фев',
+        'мар',
+        'апр',
+        'май',
+        'июн',
+        'июл',
+        'авг',
+        'сен',
+        'окт',
+        'ноя',
+        'дек',
       ],
     },
-    onSelect({ date: date, datepicker: datepicker }) {
-      const rangeFrom = datepicker.$content.querySelector(".-range-from-");
-      const rangeTo = datepicker.$content.querySelector(".-range-to-");
+    onSelect({ date, datepicker }) {
+      const rangeFrom = datepicker.$content?.querySelector('.-range-from-');
+      const rangeTo = datepicker.$content?.querySelector('.-range-to-');
       if (!rangeTo && rangeFrom) {
-        rangeFrom.classList.add("-range-to-");
+        rangeFrom.classList.add('-range-to-');
       }
       filterOutputField.textContent = date[0]
         ? filterInputElement.value
-        : "Выберите даты";
+        : 'Выберите даты';
     },
     onShow(isFinished) {
-      filterOutputField.classList.add("filter-date-dropdown__field--active");
+      filterOutputField.classList.add('filter-date-dropdown__field--active');
       if (isFinished) {
-        return;
+        return; // eslint-disable-line
       }
     },
     onHide(isFinished) {
-      filterOutputField.classList.remove("filter-date-dropdown__field--active");
+      filterOutputField.classList.remove('filter-date-dropdown__field--active');
       if (isFinished) {
-        return;
+        return; // eslint-disable-line
       }
     },
   };
   const datepicker = customDatepicker(
-    filterDateDropdownSelector + " .filter-date-dropdown__input",
-    filterDatepickerOptions
+    `${filterDateDropdownSelector}  .js-filter-date-dropdown__input`,
+    filterDatepickerOptions,
   );
 
   if (selectedDates) {

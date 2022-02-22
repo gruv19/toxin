@@ -1,6 +1,9 @@
 .filter-date-dropdown {
-  max-width: 266px;
+  max-width: 260px;
   width: 100%;
+  @media (min-width: $screen-sm) {
+    max-width: 266px;
+  }
 }
 
 .filter-date-dropdown__group {
@@ -46,9 +49,3 @@
     }
   }
 }
-
-// .filter-date-dropdown__datepicker {
-//   width: 320px !important;
-//   padding: 20px !important;
-//   box-sizing: border-box !important;
-// }
