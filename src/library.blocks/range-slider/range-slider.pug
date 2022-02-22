@@ -1,7 +1,9 @@
-mixin range-slider(label="range slider")
+include ../label/label.pug
+
+mixin range-slider(label='range slider')
   .range-slider
-    .range-slider__group&attributes(attributes)
-      label.range-slider__label= label
-        input.range-slider__input.range-slider__input--from.visually-hidden(type="number", name="slider-from")
-        input.range-slider__input.range-slider__input--to.visually-hidden(type="number", name="slider-to")
-      .range-slider__visually
+    .range-slider__group.js-range-slider__group
+      +label(label)
+      .range-slider__visually.js-range-slider__visually
+      input.range-slider__input.range-slider__input--from.js-range-slider__input--from.visually-hidden(type='number', name='slider-from')
+      input.range-slider__input.range-slider__input--to.js-range-slider__input--to.visually-hidden(type='number', name='slider-to')

@@ -1,6 +1,11 @@
 .range-slider {
-  max-width: 266px;
+  max-width: 260px;
+  min-width: 260px;
   width: 100%;
+  position: relative;
+  @media (min-width: $screen-sm) {
+    max-width: 266px;
+  }
 }
 
 .range-slider__group {
@@ -11,14 +16,6 @@
   grid-row-gap: 22px;
   grid-column-gap: 20px;
   padding-bottom: 48px;
-}
-
-.range-slider__label {
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  color: $dark;
-  text-transform: uppercase;
 }
 
 .range-slider__visually {

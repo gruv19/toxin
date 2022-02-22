@@ -1,14 +1,16 @@
-import "nouislider/dist/nouislider.css";
-import noUiSlider from "nouislider";
+import 'nouislider/dist/nouislider.css';
+import noUiSlider from 'nouislider';
 
-import "./range-slider.scss";
+import '../label/label';
 
-function rangeSlider(sliderBlockSelector) {
+import './range-slider.scss';
+
+function rangeSlider(sliderBlockSelector = '.js-range-slider__group') {
   const handlesSlider = document.querySelector(sliderBlockSelector);
-  const sliderValueElement = handlesSlider.querySelector(".range-slider__visually");
-  const inputFrom = handlesSlider.querySelector(".range-slider__input--from");
-  const inputTo = handlesSlider.querySelector(".range-slider__input--to");
-  
+  const sliderValueElement = handlesSlider.querySelector('.js-range-slider__visually');
+  const inputFrom = handlesSlider.querySelector('.js-range-slider__input--from');
+  const inputTo = handlesSlider.querySelector('.js-range-slider__input--to');
+
   noUiSlider.create(handlesSlider, {
     start: [1000, 20000],
     step: 500,
@@ -19,10 +21,10 @@ function rangeSlider(sliderBlockSelector) {
     connect: [false, true, false],
     format: {
       to(value) {
-        return new Intl.NumberFormat("ru-RU", {
+        return new Intl.NumberFormat('ru-RU', {
           maximumFractionDigits: 0,
-          style: "currency",
-          currency: "RUB",
+          style: 'currency',
+          currency: 'RUB',
         }).format(value);
       },
       from(value) {
@@ -30,11 +32,11 @@ function rangeSlider(sliderBlockSelector) {
       },
     },
   });
-  
-  handlesSlider.noUiSlider.on("update", function (values) {
-    sliderValueElement.innerHTML = values.join(" - ");
-    inputFrom.val = +values[0].replace(/\D+/g,"");
-    inputTo.val = +values[1].replace(/\D+/g,"");
+
+  handlesSlider.noUiSlider.on('update', (values) => {
+    sliderValueElement.innerHTML = values.join(' - ');
+    inputFrom.val = +values[0].replace(/\D+/g, '');
+    inputTo.val = +values[1].replace(/\D+/g, '');
   });
 }
 
