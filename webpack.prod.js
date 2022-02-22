@@ -26,7 +26,7 @@ module.exports = merge(common, {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: ['./src/common.blocks/page/vars-and-mixins.scss'],
+              resources: ['./src/styles/vars-and-mixins.scss'],
             },
           },
         ],
