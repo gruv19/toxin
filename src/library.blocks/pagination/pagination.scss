@@ -7,6 +7,10 @@
   margin: 0 auto;
 }
 
+.my-pagination.my-pagination--uikit.paginationjs {
+  align-items: flex-start;
+}
+
 .my-pagination .paginationjs-pages {
   margin-bottom: 8px;
 }

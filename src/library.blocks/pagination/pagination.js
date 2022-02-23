@@ -10,6 +10,7 @@ function pagination(
   templateFunction,
   afterPagingHandler = null,
   defaultPage = 1,
+  className = 'my-pagination',
 ) {
   $(paginateSelector).pagination({
     dataSource,
@@ -18,7 +19,7 @@ function pagination(
     pageNumber: defaultPage,
     autoHidePrevious: true,
     autoHideNext: true,
-    className: 'my-pagination',
+    className,
     prevText: '',
     nextText: '',
     showNavigator: true,
