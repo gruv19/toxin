@@ -7,11 +7,19 @@
   &--focused .expandable-checkbox-list__checkbox-buttons {
     max-height: 1000px;
     padding-top: 2px;
-    transition: padding-top 0.1s;
+    transition: max-height 0.3s, padding-top 0.1s;
   }
   &--focused .expandable-checkbox-list__down-arrow {
     transform: rotateZ(180deg);
     transition: transform 0.5s;
+  }
+  &--expanded .expandable-checkbox-list__checkbox-buttons{
+    max-height: 1000px;
+    padding-top: 2px;
+  }
+
+  &--expanded .expandable-checkbox-list__down-arrow {
+    transform: rotateZ(180deg);
   }
 }
 
@@ -42,9 +50,8 @@
 .expandable-checkbox-list__checkbox-buttons {
   max-height: 0px;
   overflow: hidden;
-  transition: max-height 0.5s;
   display: grid;
   grid-row-gap: 10px;
   padding-top: 0;
-  transition: padding-top 0.1s;
+  transition: max-height 0.5s, padding-top 0.1s 0.3s;
 }
