@@ -64,7 +64,6 @@ function dropdown(dropdownSelector = '.js-dropdown', genitive = [{ one: 'гос�
   function changeValue(field, value, genitiveObject) {
     let counts = [];
     let res = '';
-    let stringLength = 20;
     buttons[0].parentNode.classList.remove('visually-hidden');
     if (genitiveObject.length === 1) {
       counts.push(commonSum());
@@ -76,10 +75,6 @@ function dropdown(dropdownSelector = '.js-dropdown', genitive = [{ one: 'гос�
     } else {
       counts = counts.map((item, idx) => getGenitive(item, genitiveObject[idx]));
       res = counts.join(', ');
-      if (output.clientWidth > 266) {
-        stringLength = 30;
-      }
-      res = res.length > stringLength ? `${res.slice(0, stringLength)}...` : res;
       output.innerText = res;
     }
     field.innerText = `${value}`; // eslint-disable-line
