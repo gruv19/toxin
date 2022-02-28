@@ -30,184 +30,204 @@ block content
   main.form-elements
     .form-elements__wrapper
       .form-elements__column
-        .form-elements__element.form-elements__element--textfield
+        .form-elements__element
           +label("text field", "default")
           +textfield({
             name: "email",
             placeholder: "Email",
             value: ""
           })
-        .form-elements__element.form-elements__element--mt-20.form-elements__element--textfield
+        .form-elements__element.form-elements__element--mt-20
           +label("text field", "hover/focus")
           +textfield({
             name: "message",
             placeholder: "Message",
             value: "This is pretty awesome"
           })
-        .form-elements__element.form-elements__element--mt-20.form-elements__element--dropdown
-          +label("dropdown")
-          +dropdown({
-            label: "Сколько гостей",
-            buttons: true,
-            list: [
-              {name: "adult", label: "Взрослые", value: "0"},
-              {name: "child", label: "Дети", value: "0"},
-              {name: "baby", label: "Младенцы", value: "0"}
-            ]
-          })(class="form-elements__dropdown")
-        .form-elements__element.form-elements__element--mt-23.form-elements__element--textfield
+        .form-elements__element.form-elements__element--mt-20
+          .form-elements__dropdown.js-form-elements__dropdown
+            +label("dropdown")
+            +dropdown({
+              label: "Сколько гостей",
+              buttons: true,
+              list: [
+                {name: "adult", label: "Взрослые", value: "0"},
+                {name: "child", label: "Дети", value: "0"},
+                {name: "baby", label: "Младенцы", value: "0"}
+              ]
+            })
+        .form-elements__element.form-elements__element--mt-23
           +label("masked textfield")
           +masked-textfield("birthday1")
-        .form-elements__element.form-elements__element--mt-40.form-elements__element--date-dropdown
-          +date-dropdown(class="form-elements__date-dropdown")
-        .form-elements__element.form-elements__element--mt-40.form-elements__element--filter-date-dropdown
+        .form-elements__element.form-elements__element--mt-40
+          .form-elements__date-dropdown.js-form-elements__date-dropdown
+            +date-dropdown
+        .form-elements__element.form-elements__element--mt-40
           +label("filter date dropdown")
-          +filter-date-dropdown(class="form-elements__filter-date-dropdown")
-        .form-elements__element.form-elements__element--mt-41.form-elements__element--subscribe-form
+          .form-elements__filter-date-dropdown.js-form-elements__filter-date-dropdown
+            +filter-date-dropdown
+        .form-elements__element.form-elements__element--mt-41
           +label("subscription text field")
           +subscribe-form("/subscribe")
-        
-      .form-elements__column
-        .form-elements__element.form-elements__checkbox-buttons
-          +label("checkbox buttons")
-          +checkbox-button({
-            state: false, 
-            value: "true", 
-            name: "smoke", 
-            label: "Можно курить"
-          })
-          +checkbox-button({
-            state: true, 
-            value: "true", 
-            name: "pet", 
-            label: "Можно с питомцами"
-          })
-          +checkbox-button({
-            state: true, 
-            value: "true", 
-            name: "guests", 
-            label: "Можно пригласить гостей (до 10 человек)"
-          })
-        .form-elements__element.form-elements__element--mt-40.form-elements__radio-buttons
-          +label("radio buttons")(class="form-elements__label--2-col")
-          +radio-button(
-            {
-              name: "sex",
-              label: "Мужчина",
-              value: "male",
-              state: true,
-            },
-            {
-              name: "sex",
-              label: "Женщина",
-              value: "female",
+
+      .form-elements__column.form-elements__column--center
+        .form-elements__element
+          .form-elements__checkbox-buttons
+            +label("checkbox buttons")
+            +checkbox-button({
               state: false,
-            }
-          )
-        .form-elements__element.form-elements__element--mt-41.form-elements__toggles
-          +label("toggle")
-          +toggle({
-            label: "Получать спецпредложения",
-            name: "special",
-            value: "true"
-          })
-          +toggle({
-            label: "Получать спецпредложения",
-            name: "special",
-            value: "false",
-          })
-        .form-elements__element.form-elements__element--mt-44.form-elements__like-buttons
-          +label("like button")(class="form-elements__label--2-col")
-          +like-button(false, 2) 
-          +like-button(true, 122) 
-        .form-elements__element.form-elements__element--mt-40.form-elements__rate-buttons
-          +label("rate button")(class="form-elements__label--2-col")
-          +rate-button({
-            name: "rate-button",
-            values: [1, 2, 3, 4, 5],
-            start: 4
-          })(class="form-elements__rate-button")
-          +rate-button({
-            name: "rate-button",
-            values: [1, 2, 3, 4, 5],
-            start: 5
-          })(class="form-elements__rate-button")
-      
+              value: "true",
+              name: "smoke",
+              label: "Можно курить"
+            })
+            +checkbox-button({
+              state: true,
+              value: "true",
+              name: "pet",
+              label: "Можно с питомцами"
+            })
+            +checkbox-button({
+              state: true,
+              value: "true",
+              name: "guests",
+              label: "Можно пригласить гостей (до 10 человек)"
+            })
+        .form-elements__element.form-elements__element--mt-41
+          .form-elements__radio-buttons
+            .form-elements__label.form-elements__label--head
+              +label("radio buttons")
+            +radio-button(
+              {
+                name: "sex",
+                label: "Мужчина",
+                value: "male",
+                state: true,
+              },
+              {
+                name: "sex",
+                label: "Женщина",
+                value: "female",
+                state: false,
+              }
+            )
+        .form-elements__element.form-elements__element--mt-41
+          .form-elements__toggles
+            +label("toggle")
+            +toggle({
+              label: "Получать спецпредложения",
+              name: "special",
+              isChecked: true
+            })
+            +toggle({
+              label: "Получать спецпредложения",
+              name: "special",
+            })
+        .form-elements__element.form-elements__element--mt-44
+          .form-elements__like-buttons
+            .form-elements__label.form-elements__label--head
+              +label("like button")
+            +like-button(false, 2)
+            +like-button(true, 122)
+        .form-elements__element.form-elements__element--mt-40
+          .form-elements__rate-buttons
+            .form-elements__label.form-elements__label--head
+              +label("rate button")
+            .form-elements__rate-button
+              +rate-button({
+                name: "rate-button",
+                startValue: 4
+              })
+            .form-elements__rate-button
+              +rate-button({
+                name: "rate-button",
+                startValue: 5
+              })
+
       .form-elements__column
-        .form-elements__element.form-elements__element--range-slider
-          +range-slider(class="form-elements__range-slider")
-        .form-elements__element.form-elements__element--mt-40.form-elements__element--buttons
-          +label("buttons")
-          .form-elements__flexbox.form-elements__flexbox--mt-11
-            +button("click me", "primary")(class="form-elements__button")
-            +button("click me", "primary")(class="form-elements__button form-elements__button--primary-hover")
-          .form-elements__flexbox.form-elements__flexbox--mt-30
-            +button("click me")(class="form-elements__button")
-            +button("click me")(class="form-elements__button form-elements__button--hover")
-          .form-elements__flexbox.form-elements__flexbox--mt-30
-            +button("click me", "link")(class="form-elements__button")
-            +button("click me", "link")(class="form-elements__button form-elements__button--link-hover")
-          .form-elements__flexbox.form-elements__flexbox--mt-32
-            +button("Перейти к оплате", "full")
-        .form-elements__element.form-elements__element--mt-40.form-elements__element--pagination
+        .form-elements__element
+          +range-slider
+        .form-elements__element.form-elements__element--mt-40
+          .form-elements__buttons
+            .form-elements__label.form-elements__label--head
+              +label("buttons")
+            .form-elements__button.form-elements__button--mt-11.form-elements__button--first-column
+              +button("click me", ["button--primary"])
+            .form-elements__button.form-elements__button--mt-11.form-elements__button--second-column
+              +button("click me", ["button--primary"])
+            .form-elements__button.form-elements__button--mt-30.form-elements__button--first-column
+              +button("click me")
+            .form-elements__button.form-elements__button--mt-30.form-elements__button--second-column
+              +button("click me")
+            .form-elements__button.form-elements__button--mt-30.form-elements__button--first-small-column
+              +button("click me", ["button--link"])
+            .form-elements__button.form-elements__button--mt-30.form-elements__button--second-small-column
+              +button("click me", ["button--link"])
+            .form-elements__button.form-elements__button--mt-31.form-elements__button--with-full
+              +button("Перейти к оплате", ["button--full"])
+        .form-elements__element.form-elements__element--mt-41
           +label("pagination")
-          .form-elements__data-container 
+          .form-elements__data-container
           .form-elements__paginate-container
 
-      .form-elements__column.form-elements__column--mt-100
-        .form-elements__element.form-elements__element--dropdown.form-elements__element--w-265
-          +label("dropdown", "default")      
-          +dropdown({
-            label: "Удобства в комнате",
-            buttons: false,
-            list: [
-              {name: "bedroom", label: "Спальни", value: "2"},
-              {name: "bed", label: "Кровати", value: "2"},
-              {name: "bathroom", label: "Ванные комнаты", value: "0"}
-            ]
-          })(class="form-elements__dropdown--room")
-        .form-elements__element.form-elements__element--mt-20.form-elements__element--dropdown.form-elements__element--w-265
+      .form-elements__column.form-elements__column--mt-101
+        .form-elements__element.form-elements__element--w-265
+          +label("dropdown", "default")
+          .form-elements__dropdown.form-elements__dropdown--room-facilities.js-form-elements__dropdown--room-facilities
+            +dropdown({
+              label: "Удобства в комнате",
+              buttons: false,
+              list: [
+                {name: "bedroom", label: "Спальни", value: "2"},
+                {name: "bed", label: "Кровати", value: "2"},
+                {name: "bathroom", label: "Ванные комнаты", value: "0"}
+              ]
+            })
+        .form-elements__element.form-elements__element--mt-20.form-elements__element--w-265
           +label("dropdown", "expanded")
-          +dropdown({
-            label: "Удобства в комнате",
-            buttons: false,
-            list: [
-              {name: "bedroom", label: "Спальни", value: "2"},
-              {name: "bed", label: "Кровати", value: "2"},
-              {name: "bathroom", label: "Ванные комнаты", value: "0"}
-            ]
-          })(class="form-elements__dropdown--room-expanded")
+          .form-elements__dropdown.form-elements__dropdown--room-facilities-expanded.js-form-elements__dropdown--room-facilities-expanded
+            +dropdown({
+              label: "Удобства в комнате",
+              buttons: false,
+              list: [
+                {name: "bedroom", label: "Спальни", value: "2"},
+                {name: "bed", label: "Кровати", value: "2"},
+                {name: "bathroom", label: "Ванные комнаты", value: "0"}
+              ]
+            })
 
-      .form-elements__column.form-elements__column--mt-100
-        .form-elements__element.form-elements__element--dropdown
-          +label("dropdown")
-          +dropdown({
-            label: "Сколько гостей",
-            buttons: true,
-            list: [
-              {name: "adult", label: "Взрослые", value: "0"},
-              {name: "child", label: "Дети", value: "0"},
-              {name: "baby", label: "Младенцы", value: "0"}
-            ]
-          })(class="form-elements__dropdown--guest-expanded-empty")
-      
-      .form-elements__column.form-elements__column--mt-100
-        .form-elements__element.form-elements__element--dropdown
-          +label("dropdown")
-          +dropdown({
-            label: "Сколько гостей",
-            buttons: true,
-            list: [
-              {name: "adult", label: "Взрослые", value: "2"},
-              {name: "child", label: "Дети", value: "1"},
-              {name: "baby", label: "Младенцы", value: "0"}
-            ]
-          })(class="form-elements__dropdown--guest-expanded-full")
+      .form-elements__column.form-elements__column--center.form-elements__column--mt-101
+        .form-elements__element
+          .form-elements__dropdown.form-elements__dropdown--expanded-empty.js-form-elements__dropdown--expanded-empty
+            +label("dropdown")
+            +dropdown({
+              label: "Сколько гостей",
+              buttons: true,
+              list: [
+                {name: "adult", label: "Взрослые", value: "0"},
+                {name: "child", label: "Дети", value: "0"},
+                {name: "baby", label: "Младенцы", value: "0"}
+              ]
+            })
 
-      .form-elements__column.form-elements__column--mt-54
+      .form-elements__column.form-elements__column--mt-101
+        .form-elements__element
+          .form-elements__dropdown.form-elements__dropdown--expanded-full.js-form-elements__dropdown--expanded-full
+            +label("dropdown")
+            +dropdown({
+              label: "Сколько гостей",
+              buttons: true,
+              list: [
+                {name: "adult", label: "Взрослые", value: "2"},
+                {name: "child", label: "Дети", value: "1"},
+                {name: "baby", label: "Младенцы", value: "0"}
+              ]
+            })
+
+      .form-elements__column.form-elements__column--mt-55
         .form-elements__element.form-elements__element--checkbox-list
           +expandable-checkbox-list(
             "expandable checkbox list",
+            false,
             {
               label: "Завтрак",
               name: "breakfast",
@@ -245,9 +265,10 @@ block content
               state: false,
             }
           )
-        .form-elements__element.form-elements__element--checkbox-list.form-elements__element--mt-18
+        .form-elements__element.form-elements__element--mt-34
           +expandable-checkbox-list(
             "expandable checkbox list",
+            true,
             {
               label: "Завтрак",
               name: "breakfast",
@@ -296,36 +317,37 @@ block content
               val: "true",
               state: false,
             }
-          )(class="expandable-checkbox-list--focus")
-      
-      .form-elements__column.form-elements__column--mt-54
+          )
+
+      .form-elements__column.form-elements__column--center.form-elements__column--mt-55
         .form-elements__element.form-elements__rich-checkboxes
-          +label("rich checkbox button") 
+          .form-elements__label.form-elements__label--mb-1
+            +label("rich checkbox button")
           +checkbox-button({
-            state: false, 
-            value: "wide", 
-            name: "corridor", 
+            state: false,
+            value: "wide",
+            name: "corridor",
             label: "Широкий коридор",
             rich: "Ширина коридоров в номере не менее 91 см."
           })
           +checkbox-button({
-            state: false, 
-            value: "helper", 
-            name: "disabled-person", 
+            state: false,
+            value: "helper",
+            name: "disabled-person",
             label: "Помощник для инвалидов",
             rich: "На 1 этаже вас встретит специалист  и проводит до номера."
           })
 
-      .form-elements__column.form-elements__column--mt-54
+      .form-elements__column.form-elements__column--mt-55
         .form-elements__element.form-elements__bullet-list
-          +label("bullet list") 
+          +label("bullet list")
           +bullet-list([
             "Нельзя с питомцами",
             "Без вечеринок и мероприятий",
             "Время прибытия — после 13:00, а выезд до 12:00"
           ])
 
-      .form-elements__column.form-elements__column--mt-20
+      .form-elements__column.form-elements__column--mt-19
         .form-elements__element.form-elements__element--info-card
           +info-card("smile", "Комфорт", "Шумопоглощающие стены")
           +info-card("location", "Удобство", "Окно в каждой из спален")
@@ -336,7 +358,7 @@ block content
             author: "Мурад Сарафанов",
             img: 'guest1.jpg',
             date: "5 дней назад",
-            likeActive: true, 
+            likeActive: true,
             like: 12,
             text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
           })

@@ -27,62 +27,58 @@ import './templates/form-elements/form-elements.scss';
 
 $(window).on('load', () => {
   function paginateTestTemplate(data) {
-    let html = '<ul>';
-    data.forEach((item) => {
-      html += `<li>${item}</li>`;
-    });
-    html += '</ul>';
-    return html;
+    return `<ul>${'<li></li>'.repeat(data.length)}</ul>`;
   }
 
   checkboxList();
-  filterDateDropdown('.form-elements__filter-date-dropdown', ['2021-12-20', '2021-12-18']);
-  dateDropdown('.form-elements__date-dropdown', ['2021-12-25', '2021-12-30']);
+  filterDateDropdown('.js-form-elements__filter-date-dropdown ', ['2021-12-20', '2021-12-18']);
+  dateDropdown('.js-form-elements__date-dropdown .js-date-dropdown', ['2021-12-25', '2021-12-30']);
   likeButtons();
   rateButton();
   maskedTextfield();
   pagination(
-    '.form-elements__data-container',
     '.form-elements__paginate-container',
+    '.form-elements__data-container',
     Array(180).fill(''),
     paginateTestTemplate,
     null,
-    3,
+    1,
+    'my-pagination my-pagination--uikit',
   );
-  rangeSlider('.form-elements__range-slider');
+  rangeSlider();
   subscribe();
-  dropdown('.form-elements__dropdown', [
+  dropdown('.js-form-elements__dropdown .js-dropdown', [
     { one: 'гость', twoToFour: 'гостя', moreThanFive: 'гостей' },
   ]);
-  dropdown('.form-elements__dropdown--guest-expanded-empty', [
+  dropdown('.js-form-elements__dropdown--expanded-empty .js-dropdown', [
     { one: 'гость', twoToFour: 'гостя', moreThanFive: 'гостей' },
   ]);
-  dropdown('.form-elements__dropdown--guest-expanded-full', [
+  dropdown('.js-form-elements__dropdown--expanded-full .js-dropdown', [
     { one: 'гость', twoToFour: 'гостя', moreThanFive: 'гостей' },
   ]);
-  dropdown('.form-elements__dropdown--room', [
+  dropdown('.js-form-elements__dropdown--room-facilities .js-dropdown', [
     { one: 'спальня', twoToFour: 'спальни', moreThanFive: 'спален' },
     { one: 'кровать', twoToFour: 'кровати', moreThanFive: 'кроватей' },
     { one: 'ванная комната', twoToFour: 'ванные комнаты', moreThanFive: 'ванных комнат' },
   ]);
-  dropdown('.form-elements__dropdown--room-expanded', [
+  dropdown('.js-form-elements__dropdown--room-facilities-expanded .js-dropdown', [
     { one: 'спальня', twoToFour: 'спальни', moreThanFive: 'спален' },
     { one: 'кровать', twoToFour: 'кровати', moreThanFive: 'кроватей' },
     { one: 'ванная комната', twoToFour: 'ванные комнаты', moreThanFive: 'ванных комнат' },
   ]);
 
-  const activeDropdownRoom = document.querySelector('.form-elements__dropdown--room-expanded');
-  activeDropdownRoom.firstElementChild.classList.add('dropdown__visually--active');
-  activeDropdownRoom.lastElementChild.classList.remove('visually-hidden');
-  activeDropdownRoom.lastElementChild.style.position = 'relative';
+  const expandedRoomFacilitiesDropdown = document.querySelector('.js-form-elements__dropdown--room-facilities-expanded .js-dropdown');
+  expandedRoomFacilitiesDropdown.firstElementChild.classList.add('dropdown__visually--active');
+  expandedRoomFacilitiesDropdown.lastElementChild.classList.remove('visually-hidden');
+  expandedRoomFacilitiesDropdown.lastElementChild.style.position = 'relative';
 
-  const emptyDropdownGuests = document.querySelector('.form-elements__dropdown--guest-expanded-empty');
-  emptyDropdownGuests.firstElementChild.classList.add('dropdown__visually--active');
-  emptyDropdownGuests.lastElementChild.classList.remove('visually-hidden');
-  emptyDropdownGuests.lastElementChild.style.position = 'relative';
+  const emptyExpandedDropdown = document.querySelector('.js-form-elements__dropdown--expanded-empty .js-dropdown');
+  emptyExpandedDropdown.firstElementChild.classList.add('dropdown__visually--active');
+  emptyExpandedDropdown.lastElementChild.classList.remove('visually-hidden');
+  emptyExpandedDropdown.lastElementChild.style.position = 'relative';
 
-  const fullDropdownGuests = document.querySelector('.form-elements__dropdown--guest-expanded-full');
-  fullDropdownGuests.firstElementChild.classList.add('dropdown__visually--active');
-  fullDropdownGuests.lastElementChild.classList.remove('visually-hidden');
-  fullDropdownGuests.lastElementChild.style.position = 'relative';
+  const fullExpandedDropdown = document.querySelector('.js-form-elements__dropdown--expanded-full .js-dropdown');
+  fullExpandedDropdown.firstElementChild.classList.add('dropdown__visually--active');
+  fullExpandedDropdown.lastElementChild.classList.remove('visually-hidden');
+  fullExpandedDropdown.lastElementChild.style.position = 'relative';
 });
