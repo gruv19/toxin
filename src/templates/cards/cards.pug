@@ -11,32 +11,38 @@ block page-title
   title UI kit - Cards
 
 block header
-  +uikit-header(class="uikit-header--transp")
+  +uikit-header(['uikit-header--transp'])
 
 block content
   main.cards
     .cards__wrapper
       .cards__col
-        +search-card
-        +registration-card
+        .cards__search-card
+          +search-card
+        .cards__registration-card
+          +registration-card
       .cards__col
-        +booking-card
-        +login-card
+        .cards__booking-card.js-cards__booking-card
+          +booking-card
+        .cards__login-card
+          +login-card
       .cards__col
-        input.cards__input.visually-hidden
-        +room-card({
-          number: 888,
-          category: "ЛЮКС",
-          cost: "9 990",
-          rating: 5,
-          reviewCount: 145,
-          images: ["image-1.min.jpg", "image-2.min.jpg", "image-3.min.jpg"]
-        })
-        +room-card({
-          number: 840,
-          category: "",
-          cost: "9 900",
-          rating: 4,
-          reviewCount: 65,
-          images: ["image-1.min.jpg", "image-2.min.jpg"]
-        })
+        input.cards__input.js-cards__input.visually-hidden
+        .cards__room-card
+          +room-card({
+            number: 888,
+            category: "ЛЮКС",
+            cost: "9 990",
+            rating: 5,
+            reviewCount: 145,
+            images: ["image-1.min.jpg", "image-2.min.jpg", "image-3.min.jpg"]
+          })
+        .cards__room-card
+          +room-card({
+            number: 840,
+            category: "",
+            cost: "9 900",
+            rating: 4,
+            reviewCount: 65,
+            images: ["image-1.min.jpg", "image-2.min.jpg"]
+          })

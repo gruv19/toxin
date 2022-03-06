@@ -16,12 +16,16 @@ $(window).on('load', () => {
   loginCard();
   bookingCard(
     {
-      number: 888, category: 'ЛЮКС', cost: 9990, service: 0, additional: 300,
+      cost: 9990,
+      number: 888,
+      category: 'ЛЮКС',
+      additional: 300,
+      discount: 2179,
     },
-    2179,
+    '.js-cards__booking-card .js-booking-card',
   );
   roomCard();
-  customDatepicker('.cards__input', {
+  customDatepicker('.js-cards__input', {
     inline: true,
     buttons: [
       'clear',
