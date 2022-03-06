@@ -27,6 +27,8 @@
 .booking-card__room-number {
   font-size: 2.4rem;
   line-height: 2.9rem;
+  margin-left: 4px;
+  margin-right: 8px;
 }
 
 .booking-card__room-category {
@@ -34,7 +36,6 @@
   font-size: 1.2rem;
   line-height: 1.5rem;
   text-transform: uppercase;
-  margin-left: 2px;
 }
 
 .booking-card__cost {

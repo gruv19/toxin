@@ -57,7 +57,7 @@ function bookingCard(roomData, bookingCardSelector = '.js-booking-card') {
   let baseSum = days * cost;
   let totalSum = baseSum - discount + service + additional;
 
-  roomNumber.textContent = ` ${number} `;
+  roomNumber.textContent = `${number}`;
   roomCategory.textContent = `${category}`;
   roomCost.prepend(`${costFormat(cost)} `);
   baseSumElem.textContent = costFormat(baseSum);
