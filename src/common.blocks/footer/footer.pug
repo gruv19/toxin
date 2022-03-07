@@ -2,15 +2,15 @@ include ../widget/widget.pug
 include ../../library.blocks/subscribe-form/subscribe-form.pug
 include ../copyright/copyright.pug
 
-mixin footer
-  footer.footer
-    .footer__navigation
-      .footer__wrapper
-        .footer__logo
+mixin footer(isOnlyMobile=false, hasBoxShabow=false)
+  footer.footer(class=isOnlyMobile ? 'footer--with-shadow' : '')
+    .footer__navigation(class=isOnlyMobile ? 'footer__navigation--mobile' : '')
+      .footer__wrapper(class=isOnlyMobile ? 'footer__wrapper--mobile' : '')
+        .footer__logo(class=isOnlyMobile ? 'footer__logo--mobile' : '')
           a.footer__link(href="/")
             img.footer__img(src=require('/src/common.blocks/footer/logo.svg'), alt="logo")
-          p.footer__info Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-        .footer__widgets
+          p.footer__info(class=isOnlyMobile ? 'footer__info--mobile' : '') Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        .footer__widgets(class=isOnlyMobile ? 'footer__widgets--mobile' : '')
           +widget({
             title: 'навигация',
             list: [
@@ -70,9 +70,9 @@ mixin footer
               }
             ]
           })
-        .footer__subcribe
+        .footer__subcribe(class=isOnlyMobile ? 'footer__subcribe--mobile' : '')
           h3.footer__subcribe-title подписка
           .footer__subcribe-info Получайте специальные предложения и новости сервиса
           +subscribe-form('/subscribe')
-    .footer__copyright
-      +copyright
+    .footer__copyright(class=isOnlyMobile ? 'footer__copyright--mobile' : '')
+      +copyright(isOnlyMobile)
