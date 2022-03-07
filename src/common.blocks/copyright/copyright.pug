@@ -1,9 +1,9 @@
 include ../socials/socials.pug
 
-mixin copyright(onlyMoblie=flase)
+mixin copyright(isOnlyMobile=false)
   .copyright
-    .copyright__wrapper(class=onlyMoblie ? 'copyright__wrapper--mobile' : '')
-      .copyright__info(class=onlyMoblie ? 'copyright__info--mobile' : '') Copyright © 2018 Toxin отель. Все права защищены.
+    .copyright__wrapper(class=isOnlyMobile ? 'copyright__wrapper--mobile' : '')
+      .copyright__info(class=isOnlyMobile ? 'copyright__info--mobile' : '') Copyright © 2018 Toxin отель. Все права защищены.
       .copyright__socials
         +socials(
           {
